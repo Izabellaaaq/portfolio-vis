@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Posts on Izabella Antonino</title>
+    <link>https://izabellaaaq.github.io/visualizacao/post/</link>
+    <description>Recent content in Posts on Izabella Antonino</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>© This post is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License，please give source if you likes to quote or reproduce.</copyright>
+    <lastBuildDate>Wed, 22 Nov 2017 09:07:49 -0300</lastBuildDate>
+    
+	<atom:link href="https://izabellaaaq.github.io/visualizacao/post/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>1º Visualização: gudyga</title>
+      <link>https://izabellaaaq.github.io/visualizacao/post/primeiro-post/</link>
+      <pubDate>Wed, 22 Nov 2017 09:07:49 -0300</pubDate>
+      
+      <guid>https://izabellaaaq.github.io/visualizacao/post/primeiro-post/</guid>
+      <description>&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>2° Visualização: algo que não lembro </title>
+      <link>https://izabellaaaq.github.io/visualizacao/post/segundo-post/</link>
+      <pubDate>Wed, 22 Nov 2017 09:07:49 -0300</pubDate>
+      
+      <guid>https://izabellaaaq.github.io/visualizacao/post/segundo-post/</guid>
+      <description>&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>3° Visualização: algo que não lembro 2 </title>
+      <link>https://izabellaaaq.github.io/visualizacao/post/terceiro-post/</link>
+      <pubDate>Wed, 22 Nov 2017 09:07:49 -0300</pubDate>
+      
+      <guid>https://izabellaaaq.github.io/visualizacao/post/terceiro-post/</guid>
+      <description>&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>
