@@ -1,5 +1,5 @@
 ---
-title: "2° Visualização: algo que não lembro "
+title: "Mínimo de volume do Açude de Boqueirão entre os anos de 1990 e 1999."
 date: 2017-11-22T09:07:49-03:00
 draft: false
 ---
@@ -16,31 +16,52 @@ draft: false
     const spec = {
     "$schema": "https://vega.github.io/schema/vega-lite/v2.json",
   "data": {
-    "url": "https://api.insa.gov.br/reservatorios/12172/monitoramento",
-    "format": {
-      "type": "json",
-      "property": "volumes"
-    }
+      "url":"https://api.insa.gov.br/reservatorios/12172/monitoramento",
+      "format": {
+          "type": "json",
+          "property": "volumes",
+          "parse": {"DataInformacao": "utc:'%d/%m/%Y'"}
+      }
   },
-  "mark": "bar",
-  "encoding": {
-    "x": {
-      "timeUnit": "yearmonth",
-      "field": "DataInformacao",
-      "type": "temporal",
-      "axis": {
-        "title": "Mês/Ano"
+  "mark": "line",
+  "width": 600,
+ "transform": [
+    {
+      "filter": {
+        "timeUnit": "year",
+        "field": "DataInformacao",
+        "range": [
+          1990,
+          1999
+        ]
       }
     },
-    "y": {
-      "aggregate": "mean",
-      "field": "VolumePercentual",
-      "type": "quantitative",
-      "axis": {
-        "title": "Volume Percentual (%)"
+    {
+      "filter": {
+        "timeUnit": "month",
+        "field": "DataInformacao",
+        "range": [
+          6,
+          7
+        ]
       }
     }
+  ],
+  
+"encoding": {
+  "x": {
+    "timeUnit": "year",
+    "field": "DataInformacao",
+    "type": "temporal",
+    "axis": {"title": "Anos"}
+  },
+  "y": {
+    "aggregate": "mean",
+    "field": "VolumePercentual",
+    "type": "quantitative",
+    "axis": {"title": "Média do volume (%)"}
   }
+}
 
      };
   	vegaEmbed('#vis', spec).catch(console.warn);

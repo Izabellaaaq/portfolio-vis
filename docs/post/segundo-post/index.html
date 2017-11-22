@@ -5,7 +5,7 @@
   <meta charset="utf-8" />
 
   
-  <title>2° Visualização: algo que não lembro </title>
+  <title>Mínimo de volume do Açude de Boqueirão entre os anos de 1990 e 1999.</title>
 
   
   
@@ -22,7 +22,7 @@
   
     <meta name="twitter:card" content="summary" />
     <meta name="twitter:site" content="@twitter_username" />
-    <meta name="twitter:title" content="2° Visualização: algo que não lembro " />
+    <meta name="twitter:title" content="Mínimo de volume do Açude de Boqueirão entre os anos de 1990 e 1999." />
     <meta name="twitter:description" content="
 " />
     <meta name="twitter:image" content="https://izabellaaaq.github.io/img/avatar.jpg" />
@@ -197,7 +197,7 @@
 
   <section class="main post-detail">
     <header class="post-header">
-      <h1 class="post-title">2° Visualização: algo que não lembro </h1>
+      <h1 class="post-title">Mínimo de volume do Açude de Boqueirão entre os anos de 1990 e 1999.</h1>
       <p class="post-meta">@Ritchie Zhu · Nov 22, 2017 · 1 min read</p>
     </header>
     <article class="post-content"><p></p>
@@ -211,31 +211,52 @@
     const spec = {
     "$schema": "https://vega.github.io/schema/vega-lite/v2.json",
   "data": {
-    "url": "https://api.insa.gov.br/reservatorios/12172/monitoramento",
-    "format": {
-      "type": "json",
-      "property": "volumes"
-    }
+      "url":"https://api.insa.gov.br/reservatorios/12172/monitoramento",
+      "format": {
+          "type": "json",
+          "property": "volumes",
+          "parse": {"DataInformacao": "utc:'%d/%m/%Y'"}
+      }
   },
-  "mark": "bar",
-  "encoding": {
-    "x": {
-      "timeUnit": "yearmonth",
-      "field": "DataInformacao",
-      "type": "temporal",
-      "axis": {
-        "title": "Mês/Ano"
+  "mark": "line",
+  "width": 600,
+ "transform": [
+    {
+      "filter": {
+        "timeUnit": "year",
+        "field": "DataInformacao",
+        "range": [
+          1990,
+          1999
+        ]
       }
     },
-    "y": {
-      "aggregate": "mean",
-      "field": "VolumePercentual",
-      "type": "quantitative",
-      "axis": {
-        "title": "Volume Percentual (%)"
+    {
+      "filter": {
+        "timeUnit": "month",
+        "field": "DataInformacao",
+        "range": [
+          6,
+          7
+        ]
       }
     }
+  ],
+  
+"encoding": {
+  "x": {
+    "timeUnit": "year",
+    "field": "DataInformacao",
+    "type": "temporal",
+    "axis": {"title": "Anos"}
+  },
+  "y": {
+    "aggregate": "mean",
+    "field": "VolumePercentual",
+    "type": "quantitative",
+    "axis": {"title": "Média do volume (%)"}
   }
+}
 
      };
     vegaEmbed('#vis', spec).catch(console.warn);
