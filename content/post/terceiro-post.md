@@ -63,7 +63,5 @@ De acordo com os dados analisados, percebe-se que a maior queda de percentual do
 </script>
 
 
-De acordo com os dados analisados, percebe-se que a maior queda de percentual do açude de Boqueirão foi entre 2011 até os dias atuais. Onde, o mesmo tinha 90% de sua capacidade em 2011 e foi caindo aos poucos, chegando a cerca de 8% de volume médio. Lembrando que nos últimos dois anos, tivemos racionamento e em 2017 a chegada das águas do Rio São Francisco por meio da transposição. 
-
 
 
