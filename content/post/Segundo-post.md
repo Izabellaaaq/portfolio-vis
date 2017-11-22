@@ -6,6 +6,8 @@ draft: false
 
 <!--more-->
 
+No intervalo de 1990  a 1999, a mínimo de volume foi no ano 1998, caiu de pouco mais de 80% em 1997 para cerca de 30% em 1998. Uma queda considerável de sua capacidade.
+
 
 <div id="vis" width=300></div>
 

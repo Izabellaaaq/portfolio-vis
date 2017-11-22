@@ -3,6 +3,8 @@ title: "Qual o máximo de volume que o açude de Boqueirão atingiu nos anos de 
 date: 2017-11-22T09:07:49-03:00
 draft: false
 ---
+ 
+Percebe-se que a maior média de volume atingido pelo Açude de Boqueirão foi no ano de 1992, com pouco mais de 90% de sua capacidade. No ano de 1990, o açude estava próximo dessa capacidade, porém em 1991 houve uma queda para quase 90%.
 
 <!--more-->
 
