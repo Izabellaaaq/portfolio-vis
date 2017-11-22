@@ -1,5 +1,5 @@
 ---
-title: "1º Visualização: gudyga"
+title: "1º Visualização: qual o máximo de volume que o açude de Boqueirão atingiu nos anos de 1990 a 1999? "
 date: 2017-11-22T09:07:49-03:00
 draft: false
 ---
@@ -15,32 +15,44 @@ draft: false
 <script>
     const spec = {
     "$schema": "https://vega.github.io/schema/vega-lite/v2.json",
-  "data": {
-    "url": "https://api.insa.gov.br/reservatorios/12172/monitoramento",
-    "format": {
-      "type": "json",
-      "property": "volumes"
-    }
+ "data": {
+      "url":"https://api.insa.gov.br/reservatorios/12172/monitoramento",
+      "format": {
+          "type": "json",
+          "property": "volumes",
+          "parse": {"DataInformacao": "utc:'%d/%m/%Y'"}
+      }
   },
   "mark": "bar",
-  "encoding": {
-    "x": {
-      "timeUnit": "yearmonth",
-      "field": "DataInformacao",
-      "type": "temporal",
-      "axis": {
-        "title": "Mês/Ano"
-      }
-    },
-    "y": {
-      "aggregate": "mean",
-      "field": "VolumePercentual",
-      "type": "quantitative",
-      "axis": {
-        "title": "Volume Percentual (%)"
+  "width": 180,
+ "transform": [
+    {
+      "filter": {
+        "timeUnit": "year",
+        "field": "DataInformacao",
+        "range": [
+          1990,
+          1999
+        ]
       }
     }
+
+  ],
+  
+"encoding": {
+  "x": {
+    "timeUnit": "year",
+    "field": "DataInformacao",
+    "type": "temporal",
+    "axis": {"title": "Anos"}
+  },
+  "y": {
+    "aggregate": "mean",
+    "field": "VolumePercentual",
+    "type": "quantitative",
+    "axis": {"title": "Média do volume (%)"}
   }
+}
 
      };
   	vegaEmbed('#vis', spec).catch(console.warn);
