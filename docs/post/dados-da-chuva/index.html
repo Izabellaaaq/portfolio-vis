@@ -15,16 +15,14 @@
 
   
   <meta name="author" content="Ritchie Zhu" />
-  <meta name="description" content="
-" />
+  <meta name="description" content="Dados de Boqueirão    Volume de Chuva - Boqueirão     .mychart rect { fill: purple; } /*.mychart dot { fill: #000; }*/ .mychart rect:hover { fill: pink; } .mychart text { font: 12px sans-serif; text-anchor: left; }  &#34;use strict&#34; function desenhaBarras(dados) { // Preencha aqui. var alturaSVG = 400, larguraSVG = 500; var	margin = {top: 10, right: 20, bottom:30, left: 45}, // para descolar a vis das bordas do grafico larguraVis = larguraSVG - margin." />
 
   
   
     <meta name="twitter:card" content="summary" />
     <meta name="twitter:site" content="@twitter_username" />
     <meta name="twitter:title" content="Dados Da Chuva" />
-    <meta name="twitter:description" content="
-" />
+    <meta name="twitter:description" content="Dados de Boqueirão    Volume de Chuva - Boqueirão     .mychart rect { fill: purple; } /*.mychart dot { fill: #000; }*/ .mychart rect:hover { fill: pink; } .mychart text { font: 12px sans-serif; text-anchor: left; }  &#34;use strict&#34; function desenhaBarras(dados) { // Preencha aqui. var alturaSVG = 400, larguraSVG = 500; var	margin = {top: 10, right: 20, bottom:30, left: 45}, // para descolar a vis das bordas do grafico larguraVis = larguraSVG - margin." />
     <meta name="twitter:image" content="https://izabellaaaq.github.io/img/avatar.jpg" />
   
 
@@ -200,136 +198,135 @@
       <h1 class="post-title">Dados Da Chuva</h1>
       <p class="post-meta">@Ritchie Zhu · Nov 28, 2017 · 2 min read</p>
     </header>
-    <article class="post-content"><p></p>
+    <article class="post-content"><!DOCTYPE html>
+<html lang="pt-br">
 
-<p>&lt;!DOCTYPE html&gt;
-<html lang="pt-br"></p>
-
-<p><head>
+<head>
   <meta charset="utf-8">
   <title>Dados de Boqueirão</title>
   <script src="https://d3js.org/d3.v4.min.js"></script>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
-</head></p>
+</head>
 
-<p><body>
+<body>
   <div class="container">
     <div class="row">
       <h2>Volume de Chuva - Boqueirão</h2>
     </div>
     <div class="row mychart" id="chart">
     </div>
-  </div></p>
+  </div>
 
-<p><style>
+  <style>
     .mychart rect {
       fill: purple;
-    }</p>
+    }
 
-<pre><code>/*.mychart dot {
-  fill: #000;
-}*/
+    /*.mychart dot {
+      fill: #000;
+    }*/
 
-.mychart rect:hover {
-  fill: pink;
-}
-.mychart text {
-  font: 12px sans-serif;
-  text-anchor: left;
-}
-</code></pre>
+    .mychart rect:hover {
+      fill: pink;
+    }
+    .mychart text {
+      font: 12px sans-serif;
+      text-anchor: left;
+    }
 
-<p></style></p>
 
-<p><script type="text/javascript">
-    &ldquo;use strict&rdquo;
+  </style>
+
+  <script type="text/javascript">
+    "use strict"
     function desenhaBarras(dados) {
       // Preencha aqui.
       var alturaSVG = 400, larguraSVG = 500;
-      var   margin = {top: 10, right: 20, bottom:30, left: 45}, // para descolar a vis das bordas do grafico
+      var	margin = {top: 10, right: 20, bottom:30, left: 45}, // para descolar a vis das bordas do grafico
           larguraVis = larguraSVG - margin.left - margin.right,
           alturaVis = alturaSVG - margin.top - margin.bottom;
       /*
        * Prepara onde adicionaremos a visualizacao
-       <em>/
-      var grafico = d3.select(&lsquo;#chart&rsquo;) // cria elemento <svg> com um <g> dentro
-        .append(&lsquo;svg&rsquo;)
-          .attr(&lsquo;width&rsquo;, larguraVis + margin.left + margin.right)
-          .attr(&lsquo;height&rsquo;, alturaVis + margin.top + margin.bottom)
-        .append(&lsquo;g&rsquo;) // para entender o <g> vá em x03-detalhes-svg.html
-          .attr(&lsquo;transform&rsquo;, &lsquo;translate(&rsquo; +  margin.left + &lsquo;,&rsquo; + margin.top + &lsquo;)&rsquo;);
+       */
+      var grafico = d3.select('#chart') // cria elemento <svg> com um <g> dentro
+        .append('svg')
+          .attr('width', larguraVis + margin.left + margin.right)
+          .attr('height', alturaVis + margin.top + margin.bottom)
+        .append('g') // para entender o <g> vá em x03-detalhes-svg.html
+          .attr('transform', 'translate(' +  margin.left + ',' + margin.top + ')');
       // === EDITE DAQUI ===
-      /</em>
+      /*
        * As escalas
        */
-      var value = function(d) {return (d.mes &gt;= 1 &amp; d.mes &lt;= 4);}, // Configure essa escala com domain, range e padding
-      color = d3.scaleOrdinal(d3.schemeCategory10);</p>
+      var value = function(d) {return (d.mes >= 1 & d.mes <= 4);}, // Configure essa escala com domain, range e padding
+      color = d3.scaleOrdinal(d3.schemeCategory10);
 
-<pre><code>  var x = d3.scaleLinear()
-            .domain([Math.min(...dados.map((d, i)=&gt; d.noventa_percentil))-1, Math.max(...dados.map((d, i)=&gt; d.noventa_percentil))+1])
-            .rangeRound([0,larguraVis]); // Configure essa escala com domain, range e padding
-  var y = d3.scaleLinear()
-            .domain([Math.min(...dados.map((d, i)=&gt; d.dez_percentil)) -2, Math.max(...dados.map((d, i)=&gt; d.dez_percentil))+2])
-            .rangeRound( [alturaVis, 0]);// Configure essa escala com domain e range
-                           // Lembre que uma escala pode converter de 1..10 -&gt; 100..1
-  // === ATÉ DAQUI ===
-
-
-  /*
-   * As marcas
-   */
-  grafico.selectAll('g')
-          .data(dados)
-          .enter()
-            .append('circle')
-              .attr(&quot;r&quot;, 5)
-              .attr('cx', d =&gt; x(d.noventa_percentil))
-              .attr('cy',d =&gt; y(d.dez_percentil))
-              .attr('height', (d) =&gt; alturaVis - y(d['dez_percentil']))
-              .style(&quot;fill&quot;, function(d) { return color(value(d)); });; // de cabeca para baixo
-
-  /*
-   * Os eixos
-   */
-  grafico.append(&quot;g&quot;)
-          .attr(&quot;class&quot;, &quot;x axis&quot;)
-          .attr(&quot;transform&quot;, &quot;translate(0,&quot; + alturaVis + &quot;)&quot;)
-          .call(d3.axisBottom(x)); // magica do d3: gera eixo a partir da escala
+      var x = d3.scaleLinear()
+                .domain([Math.min(...dados.map((d, i)=> d.noventa_percentil))-1, Math.max(...dados.map((d, i)=> d.noventa_percentil))+1])
+                .rangeRound([0,larguraVis]); // Configure essa escala com domain, range e padding
+      var y = d3.scaleLinear()
+                .domain([Math.min(...dados.map((d, i)=> d.dez_percentil)) -2, Math.max(...dados.map((d, i)=> d.dez_percentil))+2])
+                .rangeRound( [alturaVis, 0]);// Configure essa escala com domain e range
+                               // Lembre que uma escala pode converter de 1..10 -> 100..1
+      // === ATÉ DAQUI ===
 
 
- grafico.append(&quot;text&quot;)
-         .attr(&quot;transform&quot;, &quot;translate(&quot; + larguraVis/2 +&quot;,&quot; + (alturaVis+margin.bottom) + &quot;)&quot;)
-         .text(&quot;Noventa Percentil&quot;);
+      /*
+       * As marcas
+       */
+      grafico.selectAll('g')
+              .data(dados)
+              .enter()
+                .append('circle')
+                  .attr("r", 5)
+                  .attr('cx', d => x(d.noventa_percentil))
+                  .attr('cy',d => y(d.dez_percentil))
+                  .attr('height', (d) => alturaVis - y(d['dez_percentil']))
+                  .style("fill", function(d) { return color(value(d)); });; // de cabeca para baixo
 
- grafico.append('g')
-         .attr('transform', 'translate(0,0)')
-         .call(d3.axisLeft(y))  // gera eixo a partir da escala
-
-  grafico.append(&quot;text&quot;)
-         .attr(&quot;transform&quot;, &quot;translate(-30,&quot; + (alturaVis + margin.top)/2 + &quot;) rotate(-90)&quot;)
-         .text(&quot;Dez Percentil&quot;);
-
-
+      /*
+       * Os eixos
+       */
+      grafico.append("g")
+              .attr("class", "x axis")
+              .attr("transform", "translate(0," + alturaVis + ")")
+              .call(d3.axisBottom(x)); // magica do d3: gera eixo a partir da escala
 
 
-}
+     grafico.append("text")
+             .attr("transform", "translate(" + larguraVis/2 +"," + (alturaVis+margin.bottom) + ")")
+             .text("Noventa Percentil");
 
-d3.csv('https://raw.githubusercontent.com/izabellaaaq/intro-d3/master/dados/boqueirao-por-mes.csv', function(dados) {
-  desenhaBarras(dados);
-});
-/*
-* Assim como a função d3.tsv, existe a d3.csv e a d3.json
-* Em todas, o primeiro parâmetro é uma URL e o segundo a função que
-* será executada quando o dado for obtido.
-* &gt;&gt;&gt;&gt;&gt; A chamada ao d3.tsv é assíncrona &lt;&lt;&lt;&lt;&lt;&lt;
-*/
-</code></pre>
+     grafico.append('g')
+             .attr('transform', 'translate(0,0)')
+             .call(d3.axisLeft(y))  // gera eixo a partir da escala
 
-<p></script></p>
+      grafico.append("text")
+             .attr("transform", "translate(-30," + (alturaVis + margin.top)/2 + ") rotate(-90)")
+             .text("Dez Percentil");
 
-<p></body></p>
 
-<p></html></p></article>
+
+
+    }
+
+    d3.csv('https://raw.githubusercontent.com/izabellaaaq/intro-d3/master/dados/boqueirao-por-mes.csv', function(dados) {
+      desenhaBarras(dados);
+    });
+    /*
+    * Assim como a função d3.tsv, existe a d3.csv e a d3.json
+    * Em todas, o primeiro parâmetro é uma URL e o segundo a função que
+    * será executada quando o dado for obtido.
+    * >>>>> A chamada ao d3.tsv é assíncrona <<<<<<
+    */
+  </script>
+
+</body>
+
+</html>
+
+
+</article>
     <footer class="post-footer">
       
       <p class="post-copyright">
@@ -385,30 +382,6 @@ d3.csv('https://raw.githubusercontent.com/izabellaaaq/intro-d3/master/dados/boqu
 </script>
 <script type="text/x-mathjax-config">
   // Fix <code> tags after MathJax finishes running. This is a
-  // hack to overcome a shortcoming of Markdown. Discussion at
-  // https://github.com/mojombo/jekyll/issues/199
-  MathJax.Hub.Queue(() => {
-    MathJax.Hub.getAllJax().map(v => v.SourceElement().parentNode.className += ' has-jax');
-  });
-</script>
-
-<script src="https://izabellaaaq.github.io/portfolio-vis/js/bundle.js"></script>
-
-
-<script>
-window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
-ga('create', 'UA-XXXXXXXX-X', 'auto');
-ga('send', 'pageview');
-</script>
-<script async src='//www.google-analytics.com/analytics.js'></script>
-
-
-
-
-
-  </body>
-</html>
-<code> tags after MathJax finishes running. This is a
   // hack to overcome a shortcoming of Markdown. Discussion at
   // https://github.com/mojombo/jekyll/issues/199
   MathJax.Hub.Queue(() => {
