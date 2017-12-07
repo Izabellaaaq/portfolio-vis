@@ -65,7 +65,7 @@ draft: false
       /*
        * As escalas
        */
-       var cValue = function(d) {return (d.mes >= 1 & d.mes <= 4);},
+       var cValue = function(d) {return (d.horario_inicial == "07:00");},
        color = d3.scaleOrdinal(d3.schemeCategory10);
        // var color = d3.scaleBand()
        //          .domain([true, false])
@@ -101,13 +101,13 @@ draft: false
               .call(d3.axisBottom(x)); // magica do d3: gera eixo a partir da escala
       grafico.append("text")
         .attr("transform", "translate(" + (larguraVis)/2 + "," + (alturaVis + margin.bottom)  + ")")
-        .text("Volume - 90 percentil");
+        .text("Total Ciclistas");
       grafico.append('g')
               .attr('transform', 'translate(0,0)')
               .call(d3.axisLeft(y))  // gera eixo a partir da escala
       grafico.append("text")
         .attr("transform", "translate(-30," + (alturaVis + margin.top)/2 + ") rotate(-90)")
-        .text("Volume - 10 percentil");
+        .text("Total Motorizados");
     }
     d3.csv('https://raw.githubusercontent.com/luizaugustomm/pessoas-no-acude/master/dados/processados/dados.csv', function(dados) {
       desenhaBarras(dados);
