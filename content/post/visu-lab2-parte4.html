@@ -24,7 +24,7 @@ draft: false
 
   <style>
     .mychart rect {
-      fill: steelblue;
+      fill: green;
     }
     .mychart dot {
       stroke: #000;
@@ -86,7 +86,7 @@ draft: false
               .enter()
                 .append('circle')
                 .attr("class", "dot")
-                .attr("r", 6)
+                .attr("r", 4)
                 .attr('cx', d => x(d.total_ciclistas))   // usando a escala definida acima
                 .attr('width', (d) => alturaVis - x(d.total_ciclistas)) // largura da barra via escala
                 .attr('cy', d => y(d.total_motorizados))

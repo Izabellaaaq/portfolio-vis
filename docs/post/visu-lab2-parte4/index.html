@@ -15,14 +15,14 @@
 
   
   <meta name="author" content="Ritchie Zhu" />
-  <meta name="description" content="Barras simples    Não sei...     .mychart rect { fill: steelblue; } .mychart dot { stroke: #000; } .mychart rect:hover { fill: goldenrod; } .mychart text { font: 12px sans-serif; text-anchor: left; } .mychart tooltip { position: absolute; width: 200px; height: 28px; pointer-events: none; }  &#34;use strict&#34; function desenhaBarras(dados) { // Preencha aqui. var alturaSVG = 400, larguraSVG = 600; var	margin = {top: 10, right: 20, bottom:30, left: 45}, // para descolar a vis das bordas do grafico larguraVis = larguraSVG - margin." />
+  <meta name="description" content="Barras simples    Não sei...     .mychart rect { fill: green; } .mychart dot { stroke: #000; } .mychart rect:hover { fill: goldenrod; } .mychart text { font: 12px sans-serif; text-anchor: left; } .mychart tooltip { position: absolute; width: 200px; height: 28px; pointer-events: none; }  &#34;use strict&#34; function desenhaBarras(dados) { // Preencha aqui. var alturaSVG = 400, larguraSVG = 600; var	margin = {top: 10, right: 20, bottom:30, left: 45}, // para descolar a vis das bordas do grafico larguraVis = larguraSVG - margin." />
 
   
   
     <meta name="twitter:card" content="summary" />
     <meta name="twitter:site" content="@twitter_username" />
     <meta name="twitter:title" content="Lab na Rua" />
-    <meta name="twitter:description" content="Barras simples    Não sei...     .mychart rect { fill: steelblue; } .mychart dot { stroke: #000; } .mychart rect:hover { fill: goldenrod; } .mychart text { font: 12px sans-serif; text-anchor: left; } .mychart tooltip { position: absolute; width: 200px; height: 28px; pointer-events: none; }  &#34;use strict&#34; function desenhaBarras(dados) { // Preencha aqui. var alturaSVG = 400, larguraSVG = 600; var	margin = {top: 10, right: 20, bottom:30, left: 45}, // para descolar a vis das bordas do grafico larguraVis = larguraSVG - margin." />
+    <meta name="twitter:description" content="Barras simples    Não sei...     .mychart rect { fill: green; } .mychart dot { stroke: #000; } .mychart rect:hover { fill: goldenrod; } .mychart text { font: 12px sans-serif; text-anchor: left; } .mychart tooltip { position: absolute; width: 200px; height: 28px; pointer-events: none; }  &#34;use strict&#34; function desenhaBarras(dados) { // Preencha aqui. var alturaSVG = 400, larguraSVG = 600; var	margin = {top: 10, right: 20, bottom:30, left: 45}, // para descolar a vis das bordas do grafico larguraVis = larguraSVG - margin." />
     <meta name="twitter:image" content="https://izabellaaaq.github.io/img/avatar.jpg" />
   
 
@@ -218,7 +218,7 @@
 
   <style>
     .mychart rect {
-      fill: steelblue;
+      fill: green;
     }
     .mychart dot {
       stroke: #000;
@@ -280,7 +280,7 @@
               .enter()
                 .append('circle')
                 .attr("class", "dot")
-                .attr("r", 6)
+                .attr("r", 4)
                 .attr('cx', d => x(d.total_ciclistas))   // usando a escala definida acima
                 .attr('width', (d) => alturaVis - x(d.total_ciclistas)) // largura da barra via escala
                 .attr('cy', d => y(d.total_motorizados))
