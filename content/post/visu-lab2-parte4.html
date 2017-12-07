@@ -1,15 +1,15 @@
 ---
-title: "Fluxo na sociedade"
-date: 2017-12-05T09:34:30-03:00
+title: "Dados Da Chuva"
+date: 2017-11-28T17:54:22-03:00
 draft: false
 ---
-
+<!--more-->
 <!DOCTYPE html>
 <html lang="pt-br">
 
 <head>
   <meta charset="utf-8">
-  <title>Vizualização Lab na Rua</title>
+  <title>Dados de Boqueirão</title>
   <script src="https://d3js.org/d3.v4.min.js"></script>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
 </head>
@@ -17,7 +17,7 @@ draft: false
 <body>
   <div class="container">
     <div class="row">
-      <h1>Qual turno há uma movimentação maior de ciclistas?</h1>
+      <h2>Volume de Chuva - Boqueirão</h2>
     </div>
     <div class="row mychart" id="chart">
     </div>
@@ -25,31 +25,29 @@ draft: false
 
   <style>
     .mychart rect {
-      fill: steelblue;
+      fill: purple;
     }
-    .mychart dot {
-      stroke: #000;
-    }
+
+    /*.mychart dot {
+      fill: #000;
+    }*/
+
     .mychart rect:hover {
-      fill: goldenrod;
+      fill: pink;
     }
     .mychart text {
       font: 12px sans-serif;
       text-anchor: left;
     }
-    .mychart tooltip {
-      position: absolute;
-      width: 200px;
-      height: 28px;
-      pointer-events: none;
-    }
+
+
   </style>
 
   <script type="text/javascript">
     "use strict"
     function desenhaBarras(dados) {
       // Preencha aqui.
-      var alturaSVG = 400, larguraSVG = 600;
+      var alturaSVG = 400, larguraSVG = 500;
       var	margin = {top: 10, right: 20, bottom:30, left: 45}, // para descolar a vis das bordas do grafico
           larguraVis = larguraSVG - margin.left - margin.right,
           alturaVis = alturaSVG - margin.top - margin.bottom;
@@ -66,19 +64,19 @@ draft: false
       /*
        * As escalas
        */
-       var cValue = function(d) {return (d.mes >= 1 & d.mes <= 4);},
-       color = d3.scaleOrdinal(d3.schemeCategory10);
-       // var color = d3.scaleBand()
-       //          .domain([true, false])
-       //          .range(["orange", "steelblue"]);
+      var value = function(d) {return (d.mes >= 1 & d.mes <= 4);}, // Configure essa escala com domain, range e padding
+      color = d3.scaleOrdinal(d3.schemeCategory10);
+
       var x = d3.scaleLinear()
-                .domain([Math.min(...dados.map((d, i)=> d.carros))-1, Math.max(...dados.map((d, i)=> d.carros))+1])
-                .rangeRound([0, larguraVis]); // Configure essa escala com domain, range e padding
+                .domain([Math.min(...dados.map((d, i)=> d.noventa_percentil))-1, Math.max(...dados.map((d, i)=> d.noventa_percentil))+1])
+                .rangeRound([0,larguraVis]); // Configure essa escala com domain, range e padding
       var y = d3.scaleLinear()
-                .domain([Math.min(...dados.map((d, i)=> d.motos))-2, Math.max(...dados.map((d, i)=> d.motos))+2])
+                .domain([Math.min(...dados.map((d, i)=> d.dez_percentil)) -2, Math.max(...dados.map((d, i)=> d.dez_percentil))+2])
                 .rangeRound( [alturaVis, 0]);// Configure essa escala com domain e range
                                // Lembre que uma escala pode converter de 1..10 -> 100..1
       // === ATÉ DAQUI ===
+
+
       /*
        * As marcas
        */
@@ -86,13 +84,12 @@ draft: false
               .data(dados)
               .enter()
                 .append('circle')
-                .attr("class", "dot")
-                .attr("r", 6)
-                .attr('cx', d => x(d.carros))   // usando a escala definida acima
-                .attr('width', (d) => alturaVis - x(d.carros)) // largura da barra via escala
-                .attr('cy', d => y(d.motos))
-                .attr('height', (d) => alturaVis - y(d.motos))
-                .style("fill", function(d) { return color(cValue(d)); });; // de cabeca para baixo
+                  .attr("r", 5)
+                  .attr('cx', d => x(d.noventa_percentil))
+                  .attr('cy',d => y(d.dez_percentil))
+                  .attr('height', (d) => alturaVis - y(d['dez_percentil']))
+                  .style("fill", function(d) { return color(value(d)); });; // de cabeca para baixo
+
       /*
        * Os eixos
        */
@@ -100,20 +97,36 @@ draft: false
               .attr("class", "x axis")
               .attr("transform", "translate(0," + alturaVis + ")")
               .call(d3.axisBottom(x)); // magica do d3: gera eixo a partir da escala
+
+
+     grafico.append("text")
+             .attr("transform", "translate(" + larguraVis/2 +"," + (alturaVis+margin.bottom) + ")")
+             .text("Noventa Percentil");
+
+     grafico.append('g')
+             .attr('transform', 'translate(0,0)')
+             .call(d3.axisLeft(y))  // gera eixo a partir da escala
+
       grafico.append("text")
-        .attr("transform", "translate(" + (larguraVis)/2 + "," + (alturaVis + margin.bottom)  + ")")
-        .text("Volume - 90 percentil");
-      grafico.append('g')
-              .attr('transform', 'translate(0,0)')
-              .call(d3.axisLeft(y))  // gera eixo a partir da escala
-      grafico.append("text")
-        .attr("transform", "translate(-30," + (alturaVis + margin.top)/2 + ") rotate(-90)")
-        .text("Volume - 10 percentil");
+             .attr("transform", "translate(-30," + (alturaVis + margin.top)/2 + ") rotate(-90)")
+             .text("Dez Percentil");
+
+
+
+
     }
-    d3.csv('https://raw.githubusercontent.com/luizaugustomm/pessoas-no-acude/master/dados/processados/dados.csv', function(dados) {
+
+    d3.csv('https://raw.githubusercontent.com/izabellaaaq/intro-d3/master/dados/boqueirao-por-mes.csv', function(dados) {
       desenhaBarras(dados);
     });
+    /*
+    * Assim como a função d3.tsv, existe a d3.csv e a d3.json
+    * Em todas, o primeiro parâmetro é uma URL e o segundo a função que
+    * será executada quando o dado for obtido.
+    * >>>>> A chamada ao d3.tsv é assíncrona <<<<<<
+    */
   </script>
+
 </body>
 
 </html>
