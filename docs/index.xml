@@ -7,10 +7,19 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>© This post is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License，please give source if you likes to quote or reproduce.</copyright>
-    <lastBuildDate>Tue, 28 Nov 2017 17:54:22 -0300</lastBuildDate>
+    <lastBuildDate>Tue, 05 Dec 2017 09:34:30 -0300</lastBuildDate>
     
 	<atom:link href="https://izabellaaaq.github.io/portfolio-vis/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Fluxo na sociedade</title>
+      <link>https://izabellaaaq.github.io/portfolio-vis/post/visu-lab2-parte4/</link>
+      <pubDate>Tue, 05 Dec 2017 09:34:30 -0300</pubDate>
+      
+      <guid>https://izabellaaaq.github.io/portfolio-vis/post/visu-lab2-parte4/</guid>
+      <description>Barras simples    O que o fluxo da mobilidade pode nos contar sobre a sociedade     .mychart rect { fill: steelblue; } .mychart dot { stroke: #000; } .mychart rect:hover { fill: goldenrod; } .mychart text { font: 12px sans-serif; text-anchor: left; } .mychart tooltip { position: absolute; width: 200px; height: 28px; pointer-events: none; }  &#34;use strict&#34; function desenhaBarras(dados) { // Preencha aqui. var alturaSVG = 400, larguraSVG = 600; var	margin = {top: 10, right: 20, bottom:30, left: 45}, // para descolar a vis das bordas do grafico larguraVis = larguraSVG - margin.</description>
+    </item>
     
     <item>
       <title>Dados Da Chuva</title>
@@ -18,15 +27,6 @@
       <pubDate>Tue, 28 Nov 2017 17:54:22 -0300</pubDate>
       
       <guid>https://izabellaaaq.github.io/portfolio-vis/post/dados-da-chuva/</guid>
-      <description>Dados de Boqueirão    Volume de Chuva - Boqueirão     .mychart rect { fill: purple; } /*.mychart dot { fill: #000; }*/ .mychart rect:hover { fill: pink; } .mychart text { font: 12px sans-serif; text-anchor: left; }  &#34;use strict&#34; function desenhaBarras(dados) { // Preencha aqui. var alturaSVG = 400, larguraSVG = 500; var	margin = {top: 10, right: 20, bottom:30, left: 45}, // para descolar a vis das bordas do grafico larguraVis = larguraSVG - margin.</description>
-    </item>
-    
-    <item>
-      <title>Dados Da Chuva</title>
-      <link>https://izabellaaaq.github.io/portfolio-vis/post/visu-lab2-parte4/</link>
-      <pubDate>Tue, 28 Nov 2017 17:54:22 -0300</pubDate>
-      
-      <guid>https://izabellaaaq.github.io/portfolio-vis/post/visu-lab2-parte4/</guid>
       <description>Dados de Boqueirão    Volume de Chuva - Boqueirão     .mychart rect { fill: purple; } /*.mychart dot { fill: #000; }*/ .mychart rect:hover { fill: pink; } .mychart text { font: 12px sans-serif; text-anchor: left; }  &#34;use strict&#34; function desenhaBarras(dados) { // Preencha aqui. var alturaSVG = 400, larguraSVG = 500; var	margin = {top: 10, right: 20, bottom:30, left: 45}, // para descolar a vis das bordas do grafico larguraVis = larguraSVG - margin.</description>
     </item>
     
