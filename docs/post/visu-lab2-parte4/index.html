@@ -5,7 +5,7 @@
   <meta charset="utf-8" />
 
   
-  <title>Fluxo na sociedade</title>
+  <title>Lab na Rua</title>
 
   
   
@@ -15,14 +15,14 @@
 
   
   <meta name="author" content="Ritchie Zhu" />
-  <meta name="description" content="Barras simples    O que o fluxo da mobilidade pode nos contar sobre a sociedade     .mychart rect { fill: steelblue; } .mychart dot { stroke: #000; } .mychart rect:hover { fill: goldenrod; } .mychart text { font: 12px sans-serif; text-anchor: left; } .mychart tooltip { position: absolute; width: 200px; height: 28px; pointer-events: none; }  &#34;use strict&#34; function desenhaBarras(dados) { // Preencha aqui. var alturaSVG = 400, larguraSVG = 600; var	margin = {top: 10, right: 20, bottom:30, left: 45}, // para descolar a vis das bordas do grafico larguraVis = larguraSVG - margin." />
+  <meta name="description" content="Barras simples    Não sei...     .mychart rect { fill: steelblue; } .mychart dot { stroke: #000; } .mychart rect:hover { fill: goldenrod; } .mychart text { font: 12px sans-serif; text-anchor: left; } .mychart tooltip { position: absolute; width: 200px; height: 28px; pointer-events: none; }  &#34;use strict&#34; function desenhaBarras(dados) { // Preencha aqui. var alturaSVG = 400, larguraSVG = 600; var	margin = {top: 10, right: 20, bottom:30, left: 45}, // para descolar a vis das bordas do grafico larguraVis = larguraSVG - margin." />
 
   
   
     <meta name="twitter:card" content="summary" />
     <meta name="twitter:site" content="@twitter_username" />
-    <meta name="twitter:title" content="Fluxo na sociedade" />
-    <meta name="twitter:description" content="Barras simples    O que o fluxo da mobilidade pode nos contar sobre a sociedade     .mychart rect { fill: steelblue; } .mychart dot { stroke: #000; } .mychart rect:hover { fill: goldenrod; } .mychart text { font: 12px sans-serif; text-anchor: left; } .mychart tooltip { position: absolute; width: 200px; height: 28px; pointer-events: none; }  &#34;use strict&#34; function desenhaBarras(dados) { // Preencha aqui. var alturaSVG = 400, larguraSVG = 600; var	margin = {top: 10, right: 20, bottom:30, left: 45}, // para descolar a vis das bordas do grafico larguraVis = larguraSVG - margin." />
+    <meta name="twitter:title" content="Lab na Rua" />
+    <meta name="twitter:description" content="Barras simples    Não sei...     .mychart rect { fill: steelblue; } .mychart dot { stroke: #000; } .mychart rect:hover { fill: goldenrod; } .mychart text { font: 12px sans-serif; text-anchor: left; } .mychart tooltip { position: absolute; width: 200px; height: 28px; pointer-events: none; }  &#34;use strict&#34; function desenhaBarras(dados) { // Preencha aqui. var alturaSVG = 400, larguraSVG = 600; var	margin = {top: 10, right: 20, bottom:30, left: 45}, // para descolar a vis das bordas do grafico larguraVis = larguraSVG - margin." />
     <meta name="twitter:image" content="https://izabellaaaq.github.io/img/avatar.jpg" />
   
 
@@ -195,7 +195,7 @@
 
   <section class="main post-detail">
     <header class="post-header">
-      <h1 class="post-title">Fluxo na sociedade</h1>
+      <h1 class="post-title">Lab na Rua</h1>
       <p class="post-meta">@Ritchie Zhu · Dec 5, 2017 · 2 min read</p>
     </header>
     <article class="post-content"><!DOCTYPE html>
@@ -210,7 +210,7 @@
 <body>
   <div class="container">
     <div class="row">
-      <h1>O que o fluxo da mobilidade pode nos contar sobre a sociedade</h1>
+      <h1>Não sei...</h1>
     </div>
     <div class="row mychart" id="chart">
     </div>
@@ -265,10 +265,10 @@
        //          .domain([true, false])
        //          .range(["orange", "steelblue"]);
       var x = d3.scaleLinear()
-                .domain([Math.min(...dados.map((d, i)=> d.carros))-1, Math.max(...dados.map((d, i)=> d.carros))+1])
+                .domain([Math.min(...dados.map((d, i)=> d.total_ciclistas))-1, Math.max(...dados.map((d, i)=> d.total_ciclistas))+1])
                 .rangeRound([0, larguraVis]); // Configure essa escala com domain, range e padding
       var y = d3.scaleLinear()
-                .domain([Math.min(...dados.map((d, i)=> d.motos))-2, Math.max(...dados.map((d, i)=> d.motos))+2])
+                .domain([Math.min(...dados.map((d, i)=> d.total_motorizados))-2, Math.max(...dados.map((d, i)=> d.total_motorizados))+2])
                 .rangeRound( [alturaVis, 0]);// Configure essa escala com domain e range
                                // Lembre que uma escala pode converter de 1..10 -> 100..1
       // === ATÉ DAQUI ===
@@ -281,10 +281,10 @@
                 .append('circle')
                 .attr("class", "dot")
                 .attr("r", 6)
-                .attr('cx', d => x(d.carros))   // usando a escala definida acima
-                .attr('width', (d) => alturaVis - x(d.carros)) // largura da barra via escala
-                .attr('cy', d => y(d.motos))
-                .attr('height', (d) => alturaVis - y(d.motos))
+                .attr('cx', d => x(d.total_ciclistas))   // usando a escala definida acima
+                .attr('width', (d) => alturaVis - x(d.total_ciclistas)) // largura da barra via escala
+                .attr('cy', d => y(d.total_motorizados))
+                .attr('height', (d) => alturaVis - y(d.total_motorizados))
                 .style("fill", function(d) { return color(cValue(d)); });; // de cabeca para baixo
       /*
        * Os eixos

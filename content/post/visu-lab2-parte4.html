@@ -1,5 +1,5 @@
 ---
-title: "Fluxo na sociedade"
+title: "Lab na Rua"
 date: 2017-12-05T09:34:30-03:00
 draft: false
 ---
@@ -16,7 +16,7 @@ draft: false
 <body>
   <div class="container">
     <div class="row">
-      <h1>O que o fluxo da mobilidade pode nos contar sobre a sociedade</h1>
+      <h1>Não sei...</h1>
     </div>
     <div class="row mychart" id="chart">
     </div>
@@ -71,10 +71,10 @@ draft: false
        //          .domain([true, false])
        //          .range(["orange", "steelblue"]);
       var x = d3.scaleLinear()
-                .domain([Math.min(...dados.map((d, i)=> d.carros))-1, Math.max(...dados.map((d, i)=> d.carros))+1])
+                .domain([Math.min(...dados.map((d, i)=> d.total_ciclistas))-1, Math.max(...dados.map((d, i)=> d.total_ciclistas))+1])
                 .rangeRound([0, larguraVis]); // Configure essa escala com domain, range e padding
       var y = d3.scaleLinear()
-                .domain([Math.min(...dados.map((d, i)=> d.motos))-2, Math.max(...dados.map((d, i)=> d.motos))+2])
+                .domain([Math.min(...dados.map((d, i)=> d.total_motorizados))-2, Math.max(...dados.map((d, i)=> d.total_motorizados))+2])
                 .rangeRound( [alturaVis, 0]);// Configure essa escala com domain e range
                                // Lembre que uma escala pode converter de 1..10 -> 100..1
       // === ATÉ DAQUI ===
@@ -87,10 +87,10 @@ draft: false
                 .append('circle')
                 .attr("class", "dot")
                 .attr("r", 6)
-                .attr('cx', d => x(d.carros))   // usando a escala definida acima
-                .attr('width', (d) => alturaVis - x(d.carros)) // largura da barra via escala
-                .attr('cy', d => y(d.motos))
-                .attr('height', (d) => alturaVis - y(d.motos))
+                .attr('cx', d => x(d.total_ciclistas))   // usando a escala definida acima
+                .attr('width', (d) => alturaVis - x(d.total_ciclistas)) // largura da barra via escala
+                .attr('cy', d => y(d.total_motorizados))
+                .attr('height', (d) => alturaVis - y(d.total_motorizados))
                 .style("fill", function(d) { return color(cValue(d)); });; // de cabeca para baixo
       /*
        * Os eixos
