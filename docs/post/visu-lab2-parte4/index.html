@@ -11,7 +11,7 @@
 <body>
   <div class="container">
     <div class="row">
-      <h2>Barras com dados vindos de uma url</h2>
+      <h2>Frenquência de mulheres ciclistas na sociedade!</h2>
     </div>
     <div class="row mychart" id="chart">
     </div>
@@ -19,7 +19,7 @@
 
   <style>
     .mychart rect {
-      fill: purple;
+      fill: white;
     }
     .mychart rect:hover {
       fill: pink;
@@ -34,7 +34,7 @@
     "use strict"
     function desenhaBarras(dados) {
       
-      var alturaSVG = 400, larguraSVG = 900;
+      var alturaSVG = 400, larguraSVG = 700;
       var	margin = {top: 10, right: 20, bottom:30, left: 45}, 
           larguraVis = larguraSVG - margin.left - margin.right,
           alturaVis = alturaSVG - margin.top - margin.bottom;
