@@ -73,7 +73,7 @@ draft: false
        //          .domain([true, false])
        //          .range(["orange", "steelblue"]);
       var x = d3.scaleLinear()
-                .domain([Math.min(...dados.map((d, i)=> d.total_ciclistas))-1, Math.max(...dados.map((d, i)=> d.total_ciclistas))+1])
+                .domain([Math.min(...dados.map((d, i)=> d.total_ciclistas))/*-1*/, Math.max(...dados.map((d, i)=> d.total_ciclistas))/*+1*/])
                 .rangeRound([0, larguraVis]); // Configure essa escala com domain, range e padding
       var y = d3.scaleLinear()
                 .domain([Math.min(...dados.map((d, i)=> d.total_motorizados))-2, Math.max(...dados.map((d, i)=> d.total_motorizados))+2])
