@@ -1,93 +1,23 @@
 <!DOCTYPE html>
-<html lang="pt-br">
-
+<html>
 <head>
-  <meta charset="utf-8">
-  <title>Barras simples</title>
-  <script src="https://d3js.org/d3.v4.min.js"></script>
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+<title>Gantt Chart Example 3</title>
+<link type="text/css" href="http://mbostock.github.io/d3/style.css" rel="stylesheet" />
+<link type="text/css" href="example.css" rel="stylesheet" />
 </head>
-
 <body>
-  <div class="container">
-    <div class="row">
-      <h2>Frenquência de mulheres ciclistas na sociedade!</h2>
-    </div>
-    <div class="row mychart" id="chart">
-    </div>
-  </div>
-
-  <style>
-    .mychart rect {
-      fill: white;
-    }
-    .mychart rect: {
-      fill: pink;
-    }
-    .mychart text {
-      font: 12px sans-serif;
-      text-anchor: left;
-    }
-  </style>
-
-  <script type="text/javascript">
-    "use strict"
-    function desenhaBarras(dados) {
-      
-      var alturaSVG = 400, larguraSVG = 700;
-      var	margin = {top: 10, right: 20, bottom:30, left: 45}, 
-          larguraVis = larguraSVG - margin.left - margin.right,
-          alturaVis = alturaSVG - margin.top - margin.bottom;
-      
-
-      var grafico = d3.select('#chart') 
-        .append('svg')
-          .attr('width', larguraVis + margin.left + margin.right)
-          .attr('height', alturaVis + margin.top + margin.bottom)
-        .append('g') 
-          .attr('transform', 'translate(' +  margin.left + ',' + margin.top + ')');
-      
-      
-
-      var x = d3.scaleBand()
-                .domain(dados.map((dado, indice) => dado.mulheres_ciclistas))
-                .rangeRound([0,larguraVis])
-                .padding(.1); 
-      var y = d3.scaleLinear()
-                .domain([0, d3.max(dados, (d, i) => d.total_ciclistas)])
-                .rangeRound( [alturaVis, 0]);
-                               
-      
-      
-
-      grafico.selectAll('g')
-              .data(dados)
-              .enter()
-                .append('rect')
-                  .attr('x', d => x(d.mulheres_ciclistas))   
-                  .attr('width', x.bandwidth()) 
-                  .attr('y', d => y(d.total_ciclistas))
-                  .attr('height', (d) => alturaVis - y(d.total_ciclistas)); 
-      
-
-      grafico.append("g")
-              .attr("class", "x axis")
-              .attr("transform", "translate(0," + alturaVis + ")")
-              .call(d3.axisBottom(x)); 
-      grafico.append('g')
-              .attr('transform', 'translate(0,0)')
-              .call(d3.axisLeft(y))  
-      grafico.append("text")
-        .attr("transform", "translate(-30," + (alturaVis + margin.top)/2 + ") rotate(-90)")
-        .text("Frequência (%)");
-    }
-    d3.csv('https://raw.githubusercontent.com/luizaugustomm/pessoas-no-acude/master/dados/processados/dados.csv', function(dados) {
-      desenhaBarras(dados);
-    });
-    
-
-  </script>
-
+        <a id="forkme_banner" href="http://dk8996.github.io/Gantt-Chart/" target="_blank">View on GitHub</a>
+	<a id="twittme_banner"
+		href="https://twitter.com/intent/tweet?hashtags=d3&original_referer=http%3A%2F%2Fdk8996.github.io%2FGantt-Chart%2F&text=D3%20Gantt%20Chart&tw_p=tweetbutton&url=http%3A%2F%2Fdk8996.github.com%2FGantt-Chart&screen_name=dk8996" target="_blank">Share on Twitter</a>
+	<button type="button" onclick="addTask()">Add Task</button>
+	<button type="button" onclick="removeTask()">Remove Task</button>
+	<button type="button" onclick="changeTimeDomain('1hr')">1 HR</button>
+	<button type="button" onclick="changeTimeDomain('3hr')">3 HR</button>
+	<button type="button" onclick="changeTimeDomain('6hr')">6 HR</button>
+        <button type="button" onclick="changeTimeDomain('1day')">1 DAY</button>
+        <button type="button" onclick="changeTimeDomain('1week')">1 WEEK</button>
 </body>
-
 </html>
+        <script type="text/javascript" src="http://d3js.org/d3.v3.min.js"></script>
+	<script type="text/javascript" src="http://static.mentful.com/gantt-chart-d3v2.js"></script>
+	<script type="text/javascript" src="example3.js"></script>
