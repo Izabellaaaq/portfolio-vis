@@ -1,9 +1,3 @@
----
-title: "Lab na Rua"
-date: 2017-12-05T09:34:30-03:00
-draft: false
----
-
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -17,7 +11,7 @@ draft: false
 <body>
   <div class="container">
     <div class="row">
-      <h1>Não sei...</h1>
+      <h2>Barras com dados vindos de uma url</h2>
     </div>
     <div class="row mychart" id="chart">
     </div>
@@ -25,24 +19,14 @@ draft: false
 
   <style>
     .mychart rect {
-      fill: steelblue;
-    }
-    .mychart dot {
-      stroke: #000;
-      fill: green;
+      fill: purple;
     }
     .mychart rect:hover {
-      fill: goldenrod;
+      fill: pink;
     }
     .mychart text {
       font: 12px sans-serif;
       text-anchor: left;
-    }
-    .mychart tooltip {
-      position: absolute;
-      width: 200px;
-      height: 28px;
-      pointer-events: none;
     }
   </style>
 
@@ -50,8 +34,8 @@ draft: false
     "use strict"
     function desenhaBarras(dados) {
       // Preencha aqui.
-      var alturaSVG = 400, larguraSVG = 600;
-      var	margin = {top: 10, right: 50, bottom:30, left: 45}, // para descolar a vis das bordas do grafico
+      var alturaSVG = 400, larguraSVG = 900;
+      var	margin = {top: 10, right: 20, bottom:30, left: 45}, // para descolar a vis das bordas do grafico
           larguraVis = larguraSVG - margin.left - margin.right,
           alturaVis = alturaSVG - margin.top - margin.bottom;
       /*
@@ -67,16 +51,12 @@ draft: false
       /*
        * As escalas
        */
-       var cValue = function(d) {return (d.horario_inicial == "07:00");},
-       color = d3.scaleOrdinal(d3.schemeCategory10);
-       // var color = d3.scaleBand()
-       //          .domain([true, false])
-       //          .range(["orange", "steelblue"]);
-      var x = d3.scaleLinear()
-                .domain([Math.min(...dados.map((d, i)=> d.mulheres_ciclistas)), Math.max(...dados.map((d, i)=> d.mulheres_ciclistas))+1])
-                .rangeRound([0, larguraVis]); // Configure essa escala com domain, range e padding
+      var x = d3.scaleBand()
+                .domain(dados.map((dado, indice) => dado.mulheres_ciclistas))
+                .rangeRound([0,larguraVis])
+                .padding(.1); // Configure essa escala com domain, range e padding
       var y = d3.scaleLinear()
-                .domain([Math.min(...dados.map((d, i)=> d.homens_ciclistas	))-2, Math.max(...dados.map((d, i)=> d.homens_ciclistas	))+2])
+                .domain([0, d3.max(dados, (d, i) => d.total_ciclistas)])
                 .rangeRound( [alturaVis, 0]);// Configure essa escala com domain e range
                                // Lembre que uma escala pode converter de 1..10 -> 100..1
       // === ATÉ DAQUI ===
@@ -86,14 +66,11 @@ draft: false
       grafico.selectAll('g')
               .data(dados)
               .enter()
-                .append('circle')
-                .attr("class", "dot")
-                .attr("r", 4)
-                .attr('cx', d => x(d.mulheres_ciclistas))   // usando a escala definida acima
-                .attr('width', (d) => alturaVis - x(d.mulheres_ciclistas)) // largura da barra via escala
-                .attr('cy', d => y(d.homens_ciclistas))
-                .attr('height', (d) => alturaVis - y(d.homens_ciclistas))
-                .style("fill", function(d) { return color(cValue(d)); });; // de cabeca para baixo
+                .append('rect')
+                  .attr('x', d => x(d.mulheres_ciclistas))   // usando a escala definida acima
+                  .attr('width', x.bandwidth()) // largura da barra via escala
+                  .attr('y', d => y(d.total_ciclistas))
+                  .attr('height', (d) => alturaVis - y(d.total_ciclistas)); // de cabeca para baixo
       /*
        * Os eixos
        */
@@ -101,20 +78,24 @@ draft: false
               .attr("class", "x axis")
               .attr("transform", "translate(0," + alturaVis + ")")
               .call(d3.axisBottom(x)); // magica do d3: gera eixo a partir da escala
-      grafico.append("text")
-        .attr("transform", "translate(" + (larguraVis)/2 + "," + (alturaVis + margin.bottom)  + ")")
-        .text("Total Ciclistas");
       grafico.append('g')
               .attr('transform', 'translate(0,0)')
               .call(d3.axisLeft(y))  // gera eixo a partir da escala
       grafico.append("text")
         .attr("transform", "translate(-30," + (alturaVis + margin.top)/2 + ") rotate(-90)")
-        .text("Total Motorizados");
+        .text("Frequência (%)");
     }
     d3.csv('https://raw.githubusercontent.com/luizaugustomm/pessoas-no-acude/master/dados/processados/dados.csv', function(dados) {
       desenhaBarras(dados);
     });
+    /*
+    * Assim como a função d3.tsv, existe a d3.csv e a d3.json
+    * Em todas, o primeiro parâmetro é uma URL e o segundo a função que
+    * será executada quando o dado for obtido.
+    * >>>>> A chamada ao d3.tsv é assíncrona <<<<<<
+    */
   </script>
+
 </body>
 
 </html>
