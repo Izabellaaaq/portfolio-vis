@@ -1,23 +1,120 @@
+---
+title: "Lab na Rua"
+date: 2017-12-05T09:34:30-03:00
+draft: false
+---
+
 <!DOCTYPE html>
-<html>
+<html lang="pt-br">
+
 <head>
-<title>Gantt Chart Example 3</title>
-<link type="text/css" href="http://mbostock.github.io/d3/style.css" rel="stylesheet" />
-<link type="text/css" href="example.css" rel="stylesheet" />
+  <meta charset="utf-8">
+  <title>Barras simples</title>
+  <script src="https://d3js.org/d3.v4.min.js"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
 </head>
+
 <body>
-        <a id="forkme_banner" href="http://dk8996.github.io/Gantt-Chart/" target="_blank">View on GitHub</a>
-	<a id="twittme_banner"
-		href="https://twitter.com/intent/tweet?hashtags=d3&original_referer=http%3A%2F%2Fdk8996.github.io%2FGantt-Chart%2F&text=D3%20Gantt%20Chart&tw_p=tweetbutton&url=http%3A%2F%2Fdk8996.github.com%2FGantt-Chart&screen_name=dk8996" target="_blank">Share on Twitter</a>
-	<button type="button" onclick="addTask()">Add Task</button>
-	<button type="button" onclick="removeTask()">Remove Task</button>
-	<button type="button" onclick="changeTimeDomain('1hr')">1 HR</button>
-	<button type="button" onclick="changeTimeDomain('3hr')">3 HR</button>
-	<button type="button" onclick="changeTimeDomain('6hr')">6 HR</button>
-        <button type="button" onclick="changeTimeDomain('1day')">1 DAY</button>
-        <button type="button" onclick="changeTimeDomain('1week')">1 WEEK</button>
+  <div class="container">
+    <div class="row">
+      <h1>Não sei...</h1>
+    </div>
+    <div class="row mychart" id="chart">
+    </div>
+  </div>
+
+  <style>
+    .mychart rect {
+      fill: steelblue;
+    }
+    .mychart dot {
+      stroke: #000;
+      fill: green;
+    }
+    .mychart rect:hover {
+      fill: goldenrod;
+    }
+    .mychart text {
+      font: 12px sans-serif;
+      text-anchor: left;
+    }
+    .mychart tooltip {
+      position: absolute;
+      width: 200px;
+      height: 28px;
+      pointer-events: none;
+    }
+  </style>
+
+  <script type="text/javascript">
+    "use strict"
+    function desenhaBarras(dados) {
+      // Preencha aqui.
+      var alturaSVG = 400, larguraSVG = 600;
+      var	margin = {top: 10, right: 50, bottom:30, left: 45}, // para descolar a vis das bordas do grafico
+          larguraVis = larguraSVG - margin.left - margin.right,
+          alturaVis = alturaSVG - margin.top - margin.bottom;
+      /*
+       * Prepara onde adicionaremos a visualizacao
+       */
+      var grafico = d3.select('#chart') // cria elemento <svg> com um <g> dentro
+        .append('svg')
+          .attr('width', larguraVis + margin.left + margin.right)
+          .attr('height', alturaVis + margin.top + margin.bottom)
+        .append('g') // para entender o <g> vá em x03-detalhes-svg.html
+          .attr('transform', 'translate(' +  margin.left + ',' + margin.top + ')');
+      // === EDITE DAQUI ===
+      /*
+       * As escalas
+       */
+       var cValue = function(d) {return (d.horario_inicial == "07:00");},
+       color = d3.scaleOrdinal(d3.schemeCategory10);
+       // var color = d3.scaleBand()
+       //          .domain([true, false])
+       //          .range(["orange", "steelblue"]);
+      var x = d3.scaleLinear()
+                .domain([Math.min(...dados.map((d, i)=> d.mulheres_ciclistas))-1, Math.max(...dados.map((d, i)=> d.mulheres_ciclistas))+1])
+                .rangeRound([0, larguraVis]); // Configure essa escala com domain, range e padding
+      var y = d3.scaleLinear()
+                .domain([Math.min(...dados.map((d, i)=> d.homens_ciclistas	))-2, Math.max(...dados.map((d, i)=> d.homens_ciclistas	))+2])
+                .rangeRound( [alturaVis, 0]);// Configure essa escala com domain e range
+                               // Lembre que uma escala pode converter de 1..10 -> 100..1
+      // === ATÉ DAQUI ===
+      /*
+       * As marcas
+       */
+      grafico.selectAll('g')
+              .data(dados)
+              .enter()
+                .append('circle')
+                .attr("class", "dot")
+                .attr("r", 4)
+                .attr('cx', d => x(d.mulheres_ciclistas))   // usando a escala definida acima
+                .attr('width', (d) => alturaVis - x(d.mulheres_ciclistas)) // largura da barra via escala
+                .attr('cy', d => y(d.homens_ciclistas))
+                .attr('height', (d) => alturaVis - y(d.homens_ciclistas))
+                .style("fill", function(d) { return color(cValue(d)); });; // de cabeca para baixo
+      /*
+       * Os eixos
+       */
+      grafico.append("g")
+              .attr("class", "x axis")
+              .attr("transform", "translate(0," + alturaVis + ")")
+              .call(d3.axisBottom(x)); // magica do d3: gera eixo a partir da escala
+      grafico.append("text")
+        .attr("transform", "translate(" + (larguraVis)/2 + "," + (alturaVis + margin.bottom)  + ")")
+        .text("Mulheres Ciclistas");
+      grafico.append('g')
+              .attr('transform', 'translate(0,0)')
+              .call(d3.axisLeft(y))  // gera eixo a partir da escala
+      grafico.append("text")
+        .attr("transform", "translate(-30," + (alturaVis + margin.top)/2 + ") rotate(-90)")
+        .text("Homens Motorizados");
+    }
+    d3.csv('https://raw.githubusercontent.com/luizaugustomm/pessoas-no-acude/master/dados/processados/dados.csv', function(dados) {
+      desenhaBarras(dados);
+    });
+  </script>
 </body>
+
 </html>
-        <script type="text/javascript" src="http://d3js.org/d3.v3.min.js"></script>
-	<script type="text/javascript" src="http://static.mentful.com/gantt-chart-d3v2.js"></script>
-	<script type="text/javascript" src="example3.js"></script>
