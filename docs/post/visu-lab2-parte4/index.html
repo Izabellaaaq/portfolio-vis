@@ -15,14 +15,14 @@
 
   
   <meta name="author" content="Ritchie Zhu" />
-  <meta name="description" content="Barras simples    Não sei...     .mychart rect { fill: steelblue; } .mychart dot { stroke: #000; fill: green; } .mychart rect:hover { fill: goldenrod; } .mychart text { font: 12px sans-serif; text-anchor: left; } .mychart tooltip { position: absolute; width: 200px; height: 28px; pointer-events: none; }  &#34;use strict&#34; function desenhaBarras(dados) { // Preencha aqui. var alturaSVG = 400, larguraSVG = 600; var	margin = {top: 10, right: 50, bottom:30, left: 45}, // para descolar a vis das bordas do grafico larguraVis = larguraSVG - margin." />
+  <meta name="description" content="Barras simples    Não sei...     .mychart rect { fill: steelblue; } .mychart bar { stroke: #000; fill: green; } .mychart rect:hover { fill: goldenrod; } .mychart text { font: 12px sans-serif; text-anchor: left; } .mychart tooltip { position: absolute; width: 200px; height: 28px; pointer-events: none; }  &#34;use strict&#34; function desenhaBarras(dados) { // Preencha aqui. var alturaSVG = 400, larguraSVG = 600; var	margin = {top: 10, right: 50, bottom:30, left: 45}, // para descolar a vis das bordas do grafico larguraVis = larguraSVG - margin." />
 
   
   
     <meta name="twitter:card" content="summary" />
     <meta name="twitter:site" content="@twitter_username" />
     <meta name="twitter:title" content="Lab na Rua" />
-    <meta name="twitter:description" content="Barras simples    Não sei...     .mychart rect { fill: steelblue; } .mychart dot { stroke: #000; fill: green; } .mychart rect:hover { fill: goldenrod; } .mychart text { font: 12px sans-serif; text-anchor: left; } .mychart tooltip { position: absolute; width: 200px; height: 28px; pointer-events: none; }  &#34;use strict&#34; function desenhaBarras(dados) { // Preencha aqui. var alturaSVG = 400, larguraSVG = 600; var	margin = {top: 10, right: 50, bottom:30, left: 45}, // para descolar a vis das bordas do grafico larguraVis = larguraSVG - margin." />
+    <meta name="twitter:description" content="Barras simples    Não sei...     .mychart rect { fill: steelblue; } .mychart bar { stroke: #000; fill: green; } .mychart rect:hover { fill: goldenrod; } .mychart text { font: 12px sans-serif; text-anchor: left; } .mychart tooltip { position: absolute; width: 200px; height: 28px; pointer-events: none; }  &#34;use strict&#34; function desenhaBarras(dados) { // Preencha aqui. var alturaSVG = 400, larguraSVG = 600; var	margin = {top: 10, right: 50, bottom:30, left: 45}, // para descolar a vis das bordas do grafico larguraVis = larguraSVG - margin." />
     <meta name="twitter:image" content="https://izabellaaaq.github.io/img/avatar.jpg" />
   
 
@@ -221,7 +221,7 @@
     .mychart rect {
       fill: steelblue;
     }
-    .mychart dot {
+    .mychart bar {
       stroke: #000;
       fill: green;
     }
@@ -261,17 +261,20 @@
       /*
        * As escalas
        */
-       var cValue = function(d) {return (d.horario_inicial == "07:00");},
        color = d3.scaleOrdinal(d3.schemeCategory10);
        // var color = d3.scaleBand()
        //          .domain([true, false])
        //          .range(["orange", "steelblue"]);
-      var x = d3.scaleLinear()
-                .domain([Math.min(...dados.map((d, i)=> d.mulheres_ciclistas))-1, Math.max(...dados.map((d, i)=> d.mulheres_ciclistas))+1])
-                .rangeRound([0, larguraVis]); // Configure essa escala com domain, range e padding
-      var y = d3.scaleLinear()
-                .domain([Math.min(...dados.map((d, i)=> d.homens_ciclistas	))-2, Math.max(...dados.map((d, i)=> d.homens_ciclistas	))+2])
-                .rangeRound( [alturaVis, 0]);// Configure essa escala com domain e range
+      var motos = d3.scaleLinear().domain(Math.sum(...dados.map((d,1) => d.motos)));
+
+      var x = ['motos', 'carros', 'onibus', 'bicicletas', 'caminhão'];
+      var y = [motos, 2,3,4,5];
+      // var x = d3.scaleLinear()
+      //           .domain([Math.min(...dados.map((d, i)=> d.mulheres_ciclistas))-1, Math.max(...dados.map((d, i)=> d.mulheres_ciclistas))+1])
+      //           .rangeRound([0, larguraVis]); // Configure essa escala com domain, range e padding
+      // var y = d3.scaleLinear()
+      //           .domain([Math.min(...dados.map((d, i)=> d.homens_ciclistas	))-2, Math.max(...dados.map((d, i)=> d.homens_ciclistas	))+2])
+      //           .rangeRound( [alturaVis, 0]);// Configure essa escala com domain e range
                                // Lembre que uma escala pode converter de 1..10 -> 100..1
       // === ATÉ DAQUI ===
       /*
@@ -282,11 +285,11 @@
               .enter()
                 .append('circle')
                 .attr("class", "dot")
-                .attr("r", 4)
-                .attr('cx', d => x(d.mulheres_ciclistas))   // usando a escala definida acima
-                .attr('width', (d) => alturaVis - x(d.mulheres_ciclistas)) // largura da barra via escala
-                .attr('cy', d => y(d.homens_ciclistas))
-                .attr('height', (d) => alturaVis - y(d.homens_ciclistas))
+                // .attr("r", 4)
+                // .attr('cx', d => x(d.mulheres_ciclistas))   // usando a escala definida acima
+                // .attr('width', (d) => alturaVis - x(d.mulheres_ciclistas)) // largura da barra via escala
+                // .attr('cy', d => y(d.homens_ciclistas))
+                // .attr('height', (d) => alturaVis - y(d.homens_ciclistas))
                 .style("fill", function(d) { return color(cValue(d)); });; // de cabeca para baixo
       /*
        * Os eixos

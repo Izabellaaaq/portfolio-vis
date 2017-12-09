@@ -27,7 +27,7 @@ draft: false
     .mychart rect {
       fill: steelblue;
     }
-    .mychart dot {
+    .mychart bar {
       stroke: #000;
       fill: green;
     }
@@ -67,17 +67,20 @@ draft: false
       /*
        * As escalas
        */
-       var cValue = function(d) {return (d.horario_inicial == "07:00");},
        color = d3.scaleOrdinal(d3.schemeCategory10);
        // var color = d3.scaleBand()
        //          .domain([true, false])
        //          .range(["orange", "steelblue"]);
-      var x = d3.scaleLinear()
-                .domain([Math.min(...dados.map((d, i)=> d.mulheres_ciclistas))-1, Math.max(...dados.map((d, i)=> d.mulheres_ciclistas))+1])
-                .rangeRound([0, larguraVis]); // Configure essa escala com domain, range e padding
-      var y = d3.scaleLinear()
-                .domain([Math.min(...dados.map((d, i)=> d.homens_ciclistas	))-2, Math.max(...dados.map((d, i)=> d.homens_ciclistas	))+2])
-                .rangeRound( [alturaVis, 0]);// Configure essa escala com domain e range
+      var motos = d3.scaleLinear().domain(Math.sum(...dados.map((d,1) => d.motos)));
+
+      var x = ['motos', 'carros', 'onibus', 'bicicletas', 'caminhão'];
+      var y = [motos, 2,3,4,5];
+      // var x = d3.scaleLinear()
+      //           .domain([Math.min(...dados.map((d, i)=> d.mulheres_ciclistas))-1, Math.max(...dados.map((d, i)=> d.mulheres_ciclistas))+1])
+      //           .rangeRound([0, larguraVis]); // Configure essa escala com domain, range e padding
+      // var y = d3.scaleLinear()
+      //           .domain([Math.min(...dados.map((d, i)=> d.homens_ciclistas	))-2, Math.max(...dados.map((d, i)=> d.homens_ciclistas	))+2])
+      //           .rangeRound( [alturaVis, 0]);// Configure essa escala com domain e range
                                // Lembre que uma escala pode converter de 1..10 -> 100..1
       // === ATÉ DAQUI ===
       /*
@@ -88,11 +91,11 @@ draft: false
               .enter()
                 .append('circle')
                 .attr("class", "dot")
-                .attr("r", 4)
-                .attr('cx', d => x(d.mulheres_ciclistas))   // usando a escala definida acima
-                .attr('width', (d) => alturaVis - x(d.mulheres_ciclistas)) // largura da barra via escala
-                .attr('cy', d => y(d.homens_ciclistas))
-                .attr('height', (d) => alturaVis - y(d.homens_ciclistas))
+                // .attr("r", 4)
+                // .attr('cx', d => x(d.mulheres_ciclistas))   // usando a escala definida acima
+                // .attr('width', (d) => alturaVis - x(d.mulheres_ciclistas)) // largura da barra via escala
+                // .attr('cy', d => y(d.homens_ciclistas))
+                // .attr('height', (d) => alturaVis - y(d.homens_ciclistas))
                 .style("fill", function(d) { return color(cValue(d)); });; // de cabeca para baixo
       /*
        * Os eixos
