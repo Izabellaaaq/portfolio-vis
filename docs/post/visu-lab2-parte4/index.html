@@ -1,204 +1,4 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-
-  <meta charset="utf-8" />
-
-  
-  <title>Lab na Rua</title>
-
-  
-  
-
-
-
-
-  
-  <meta name="author" content="Ritchie Zhu" />
-  <meta name="description" content="Barras simples    Não sei...     .mychart rect { fill: green; } .mychart dot { stroke: #000; } .mychart rect:hover { fill: goldenrod; } .mychart text { font: 12px sans-serif; text-anchor: left; } .mychart tooltip { position: absolute; width: 200px; height: 28px; pointer-events: none; }  &#34;use strict&#34; function desenhaBarras(dados) { // Preencha aqui. var alturaSVG = 400, larguraSVG = 600; var	margin = {top: 10, right: 20, bottom:30, left: 45}, // para descolar a vis das bordas do grafico larguraVis = larguraSVG - margin." />
-
-  
-  
-    <meta name="twitter:card" content="summary" />
-    <meta name="twitter:site" content="@twitter_username" />
-    <meta name="twitter:title" content="Lab na Rua" />
-    <meta name="twitter:description" content="Barras simples    Não sei...     .mychart rect { fill: green; } .mychart dot { stroke: #000; } .mychart rect:hover { fill: goldenrod; } .mychart text { font: 12px sans-serif; text-anchor: left; } .mychart tooltip { position: absolute; width: 200px; height: 28px; pointer-events: none; }  &#34;use strict&#34; function desenhaBarras(dados) { // Preencha aqui. var alturaSVG = 400, larguraSVG = 600; var	margin = {top: 10, right: 20, bottom:30, left: 45}, // para descolar a vis das bordas do grafico larguraVis = larguraSVG - margin." />
-    <meta name="twitter:image" content="https://izabellaaaq.github.io/img/avatar.jpg" />
-  
-
-
-
-
-<meta name="generator" content="Hugo 0.30.2" />
-
-
-<link rel="canonical" href="https://izabellaaaq.github.io/portfolio-vis/post/visu-lab2-parte4/" />
-<link rel="alternative" href="https://izabellaaaq.github.io/portfolio-vis/index.xml" title="Izabella Antonino" type="application/atom+xml" />
-
-
-<meta name="renderer" content="webkit" />
-<meta name="viewport" content="width=device-width,initial-scale=1" />
-<meta name="format-detection" content="telephone=no,email=no,adress=no" />
-<meta http-equiv="Cache-Control" content="no-transform" />
-
-
-<meta name="robots" content="index,follow" />
-<meta name="referrer" content="origin-when-cross-origin" />
-<meta name="google-site-verification" content="_moDmnnBNVLBN1rzNxyGUGdPHE20YgbmrtzLIbxaWFc" />
-<meta name="msvalidate.01" content="22596E34341DD1D17D6022C44647E587" />
-
-
-
-
-
-<meta name="apple-mobile-web-app-capable" content="yes" />
-<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
-<meta name="apple-mobile-web-app-title" content="Izabella Antonino" />
-<meta name="msapplication-tooltip" content="Izabella Antonino" />
-<meta name='msapplication-navbutton-color' content="#5fbf5e" />
-<meta name="msapplication-TileColor" content="#5fbf5e" />
-<meta name="msapplication-TileImage" content="/img/tile-image-windows.png" />
-<link rel="icon" href="https://izabellaaaq.github.io/portfolio-vis/img/favicon.ico" />
-<link rel="icon" type="image/png" sizes="16x16" href="https://izabellaaaq.github.io/portfolio-vis/img/favicon-16x16.png" />
-<link rel="icon" type="image/png" sizes="32x32" href="https://izabellaaaq.github.io/portfolio-vis/img/favicon-32x32.png" />
-<link rel="icon" sizes="192x192" href="https://izabellaaaq.github.io/portfolio-vis/img/touch-icon-android.png" />
-<link rel="apple-touch-icon" href="https://izabellaaaq.github.io/portfolio-vis/img/touch-icon-apple.png" />
-<link rel="mask-icon" href="https://izabellaaaq.github.io/portfolio-vis/img/safari-pinned-tab.svg" color="#5fbf5e" />
-
-
-
-<link rel="stylesheet" href="//cdn.bootcss.com/video.js/6.2.8/alt/video-js-cdn.min.css" />
-
-<link rel="stylesheet" href="https://izabellaaaq.github.io/portfolio-vis/css/bundle.css" />
-
-
-  
-  <!--[if lt IE 9]>
-    <script src="//cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js"></script>
-    <script src="//cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
-    <script src="//cdn.bootcss.com/video.js/6.2.8/ie8/videojs-ie8.min.js"></script>
-  <![endif]-->
-
-<!--[if lte IE 11]>
-    <script src="//cdn.bootcss.com/classlist/1.1.20170427/classList.min.js"></script>
-  <![endif]-->
-
-
-<script src="//cdn.bootcss.com/object-fit-images/3.2.3/ofi.min.js"></script>
-
-
-<script src="//cdn.bootcss.com/smooth-scroll/12.1.4/js/smooth-scroll.polyfills.min.js"></script>
-
-
-</head>
-  <body>
-    
-    <div class="suspension">
-      <a title="Go to top" class="to-top is-hide"><span class="icon icon-up"></span></a>
-      
-        
-        <a title="Go to comments" class="to-comment" href="#disqus_thread"><span class="icon icon-comment"></span></a>
-        
-      
-    </div>
-    
-    
-  <header class="site-header">
-  <img class="avatar" src="https://izabellaaaq.github.io/portfolio-vis/img/avatar.jpg" alt="Avatar">
-  
-  <h2 class="title">Izabella Antonino</h2>
-  
-  <p class="subtitle">Visualizações de dados do Açude de Boqueirão</p>
-  <button class="menu-toggle" type="button">
-    <span class="icon icon-menu"></span>
-  </button>
-  <nav class="site-menu collapsed">
-    <h2 class="offscreen">Main Menu</h2>
-    <ul class="menu-list">
-      
-      
-      
-      
-        <li class="menu-item  is-active"><a href="https://izabellaaaq.github.io/portfolio-vis/">Home</a></li>
-      
-        <li class="menu-item "><a href="https://github.com/laozhu">Works</a></li>
-      
-    </ul>
-  </nav>
-  <nav class="social-menu collapsed">
-    <h2 class="offscreen">Social Networks</h2>
-    <ul class="social-list">
-
-      
-      <li class="social-item">
-        <a href="mailto:name@domain.com" title="Email"><span class="icon icon-email"></span></a>
-      </li>
-
-      
-      <li class="social-item">
-        <a href="//github.com/github_username" title="GitHub"><span class="icon icon-github"></span></a>
-      </li>
-
-      <li class="social-item">
-        <a href="//twitter.com/twitter_username" title="Twitter"><span class="icon icon-twitter"></span></a>
-      </li>
-
-      
-
-      
-
-      
-
-      
-
-      
-
-      
-
-      
-
-      
-
-      
-
-      
-
-      
-
-      
-
-      <li class="social-item">
-        <a href="//weibo.com/weibo_username" title="Weibo"><span class="icon icon-weibo"></span></a>
-      </li>
-
-      <li class="social-item">
-        <a href="https://izabellaaaq.github.io/portfolio-vis/img/qrcode.jpg" title="Wechat"><span class="icon icon-wechat"></span></a>
-      </li>
-
-      <li class="social-item">
-        <a href="//www.linkedin.com/in/linkedin_username" title="Linkedin"><span class="icon icon-linkedin"></span></a>
-      </li>
-
-      
-
-      
-
-      
-
-      <li class="social-item">
-        <a href="https://izabellaaaq.github.io/portfolio-vis/index.xml"><span class="icon icon-rss" title="RSS"></span></a>
-      </li>
-
-    </ul>
-  </nav>
-</header>
-
-  <section class="main post-detail">
-    <header class="post-header">
-      <h1 class="post-title">Lab na Rua</h1>
-      <p class="post-meta">@Ritchie Zhu · Dec 5, 2017 · 2 min read</p>
-    </header>
-    <article class="post-content"><!DOCTYPE html>
 <html lang="pt-br">
 
 <head>
@@ -210,15 +10,15 @@
 <body>
   <div class="container">
     <div class="row">
-      <h1>Não sei...</h1>
+      <h1>O que o fluxo da mobilidade pode nos contar sobre a sociedade?</h1>
     </div>
-    <div class="row mychart" id="chart">
+    <div class="row mychart" id="chart1">
     </div>
   </div>
 
   <style>
     .mychart rect {
-      fill: green;
+      fill: steelblue;
     }
     .mychart dot {
       stroke: #000;
@@ -236,156 +36,120 @@
       height: 28px;
       pointer-events: none;
     }
+    .mychart rect.bordered {
+      stroke: #E6E6E6;
+      stroke-width:2px;
+    }
+    .mychart text.mono {
+      font-size: 9pt;
+      font-family: Consolas, courier;
+      fill: #818080;
+    }
+    .mychart text.axis-grupo {
+      fill: #818080;
+    }
+    .mychart text.axis-horas {
+      fill: #818080;
+    }`
   </style>
 
   <script type="text/javascript">
     "use strict"
-    function desenhaBarras(dados) {
-      // Preencha aqui.
+      function onlyUnique(value, index, self) {
+          return self.indexOf(value) === index;
+      }
+      function tipoToNum(tipo) {
+        if (tipo === "carros") return 0;
+        if (tipo === "motos") return 1;
+        if (tipo === "caminhoes") return 2;
+        if (tipo === "onibus") return 3;
+        if (tipo === "total_ciclistas") return 4;
+        return 5;
+      }
+      function pickColor(colors, n, tipo){
+        n = Math.floor(n/205*9);
+        return colors[n]
+      }
+      
       var alturaSVG = 400, larguraSVG = 600;
-      var	margin = {top: 10, right: 20, bottom:30, left: 45}, // para descolar a vis das bordas do grafico
+      var	margin = {top: 50, right: 40, bottom:100, left:80}, 
           larguraVis = larguraSVG - margin.left - margin.right,
-          alturaVis = alturaSVG - margin.top - margin.bottom;
-      /*
-       * Prepara onde adicionaremos a visualizacao
-       */
-      var grafico = d3.select('#chart') // cria elemento <svg> com um <g> dentro
+          alturaVis = alturaSVG - margin.top - margin.bottom,
+          gridSize = Math.floor(larguraVis / 15),
+          legendElementWidth = Math.floor(larguraVis / 9),
+          buckets = 9,
+          colors = ["#ffffd9","#edf8b1","#c7e9b4","#7fcdbb","#41b6c4","#1d91c0","#225ea8","#253494","#081d58"]; 
+      
+
+      var grafico = d3.select('#chart1') 
         .append('svg')
           .attr('width', larguraVis + margin.left + margin.right)
           .attr('height', alturaVis + margin.top + margin.bottom)
-        .append('g') // para entender o <g> vá em x03-detalhes-svg.html
+        .append('g') 
           .attr('transform', 'translate(' +  margin.left + ',' + margin.top + ')');
-      // === EDITE DAQUI ===
-      /*
-       * As escalas
-       */
-       var cValue = function(d) {return (d.horario_inicial == "07:00");},
-       color = d3.scaleOrdinal(d3.schemeCategory10);
-       // var color = d3.scaleBand()
-       //          .domain([true, false])
-       //          .range(["orange", "steelblue"]);
-      var x = d3.scaleLinear()
-                .domain([Math.min(...dados.map((d, i)=> d.total_ciclistas))-1, Math.max(...dados.map((d, i)=> d.total_ciclistas))+1])
-                .rangeRound([0, larguraVis]); // Configure essa escala com domain, range e padding
-      var y = d3.scaleLinear()
-                .domain([Math.min(...dados.map((d, i)=> d.total_motorizados))-2, Math.max(...dados.map((d, i)=> d.total_motorizados))+2])
-                .rangeRound( [alturaVis, 0]);// Configure essa escala com domain e range
-                               // Lembre que uma escala pode converter de 1..10 -> 100..1
-      // === ATÉ DAQUI ===
-      /*
-       * As marcas
-       */
-      grafico.selectAll('g')
-              .data(dados)
-              .enter()
-                .append('circle')
-                .attr("class", "dot")
-                .attr("r", 4)
-                .attr('cx', d => x(d.total_ciclistas))   // usando a escala definida acima
-                .attr('width', (d) => alturaVis - x(d.total_ciclistas)) // largura da barra via escala
-                .attr('cy', d => y(d.total_motorizados))
-                .attr('height', (d) => alturaVis - y(d.total_motorizados))
-                .style("fill", function(d) { return color(cValue(d)); });; // de cabeca para baixo
-      /*
-       * Os eixos
-       */
-      grafico.append("g")
-              .attr("class", "x axis")
-              .attr("transform", "translate(0," + alturaVis + ")")
-              .call(d3.axisBottom(x)); // magica do d3: gera eixo a partir da escala
-      grafico.append("text")
-        .attr("transform", "translate(" + (larguraVis)/2 + "," + (alturaVis + margin.bottom)  + ")")
-        .text("Total Ciclistas");
-      grafico.append('g')
-              .attr('transform', 'translate(0,0)')
-              .call(d3.axisLeft(y))  // gera eixo a partir da escala
-      grafico.append("text")
-        .attr("transform", "translate(-30," + (alturaVis + margin.top)/2 + ") rotate(-90)")
-        .text("Total Motorizados");
-    }
-    d3.csv('https://raw.githubusercontent.com/luizaugustomm/pessoas-no-acude/master/dados/processados/dados.csv', function(dados) {
-      desenhaBarras(dados);
-    });
+      var grupoLabels = grafico.selectAll(".grupoLabel")
+          .data(["Carros", "Motos", "Caminhoes", "Onibus", "Ciclistas", "Pedestres"])
+          .enter().append("text")
+            .text(function (d) { return d; })
+            .attr("x", 0)
+            .attr("y", function (d, i) { return i * gridSize; })
+            .style("text-anchor", "end")
+            .attr("transform", "translate(-6," + gridSize / 1.5 + ")")
+            .attr("class", function (d, i) { return "grupoLabel mono axis axis-grupo"; });
+      var timeLabels = grafico.selectAll(".timeLabel")
+                .data([6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20])
+                .enter().append("text")
+                  .text(function(d) { return d; })
+                  .attr("x", function(d, i) { return i * gridSize; })
+                  .attr("y", 0)
+                  .style("text-anchor", "middle")
+                  .attr("transform", "translate(" + gridSize / 2 + ", -6)")
+                  .attr("class", function(d, i) { return "timeLabel mono axis"; });
+      var heatmapChart = function() {
+        d3.csv("https://raw.githubusercontent.com/michellymenezes/portifolio-visualizacao/master/data/tipos-fluxo-campina-median.csv",
+        function(error, dados) {
+          
+          
+          
+          var colorScale = d3.scaleThreshold()
+              .domain([0, 10, 30, 70, 100, 120, 150, 170, 190])
+              .range([0].concat(colors));
+          var cards = grafico.selectAll(".hour")
+              .data(dados);
+          cards.append("title");
+          cards.enter().append("rect")
+              .attr("x", function(d) { return (d.hora - 6) * gridSize; })
+              .attr("y", function(d) { return (tipoToNum(d.tipo)) * gridSize; })
+              .attr("rx", 4)
+              .attr("ry", 4)
+              .attr("class", "hour bordered")
+              .attr("width", gridSize)
+              .attr("height", gridSize)
+              .style("fill", function(d) { return pickColor(colors, d.n, d.tipo)});
+          cards.transition().duration(1000)
+              .style("fill", function(d) { return colorScale(d.n); });
+          cards.select("title").text(function(d) { return d.n; });
+          cards.exit().remove();
+          var legend = grafico.selectAll(".legend")
+              .data(colorScale.domain(), function(d) { return d; })
+              .enter().append("g")
+              .attr("class", "legend");
+          legend.append("rect")
+            .attr("x", function(d, i) { return legendElementWidth * i; })
+            .attr("y", alturaVis)
+            .attr("width", legendElementWidth)
+            .attr("height", gridSize / 2)
+            .style("fill", function(d, i) { return colors[i]; });
+          legend.append("text")
+            .attr("class", "mono")
+            .text(function(d) { return "≥ " + Math.round(d); })
+            .attr("x", function(d, i) { return legendElementWidth * i; })
+            .attr("y", alturaVis + gridSize);
+          legend.exit().remove();
+        });
+      };
+      heatmapChart();
   </script>
 </body>
 
-</html>
-</article>
-    <footer class="post-footer">
-      
-      <p class="post-copyright">
-        © This post is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License，please give source if you likes to quote or reproduce.
-      </p>
-    </footer>
-    
-      <div id="disqus_thread"></div>
-<script>
-    var disqus_config = function () {
-    
-    
-    
-    };
-    (function() {
-        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
-            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
-            return;
-        }
-        var d = document, s = d.createElement('script'); s.async = true;
-        s.src = '//' + "disqus_shortname" + '.disqus.com/embed.js';
-        s.setAttribute('data-timestamp', +new Date());
-        (d.head || d.body).appendChild(s);
-    })();
-</script>
-<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
-      
-    
-  </section>
-  <footer class="site-footer">
-  <p>© 2017 Izabella Antonino</p>
-  <p>Powered by <a href="https://gohugo.io/" target="_blank">Hugo</a> with theme <a href="https://github.com/laozhu/hugo-nuo" target="_blank">Nuo</a>.</p>
-  
-</footer>
-
-
-
-<script async src="//cdn.bootcss.com/video.js/6.2.8/alt/video.novtt.min.js"></script>
-<script async src="//cdn.bootcss.com/mathjax/2.7.2/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-<script type="text/x-mathjax-config">
-  MathJax.Hub.Config({
-    tex2jax: {
-      inlineMath: [['$','$'], ['\\(','\\)']],
-      displayMath: [['$$','$$'], ['\[','\]']],
-      processEscapes: true,
-      processEnvironments: true,
-      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
-      TeX: { equationNumbers: { autoNumber: "AMS" },
-      extensions: ["AMSmath.js", "AMSsymbols.js"] }
-    }
-  });
-</script>
-<script type="text/x-mathjax-config">
-  // Fix <code> tags after MathJax finishes running. This is a
-  // hack to overcome a shortcoming of Markdown. Discussion at
-  // https://github.com/mojombo/jekyll/issues/199
-  MathJax.Hub.Queue(() => {
-    MathJax.Hub.getAllJax().map(v => v.SourceElement().parentNode.className += ' has-jax');
-  });
-</script>
-
-<script src="https://izabellaaaq.github.io/portfolio-vis/js/bundle.js"></script>
-
-
-<script>
-window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
-ga('create', 'UA-XXXXXXXX-X', 'auto');
-ga('send', 'pageview');
-</script>
-<script async src='//www.google-analytics.com/analytics.js'></script>
-
-
-
-
-
-  </body>
 </html>
