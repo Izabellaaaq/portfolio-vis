@@ -263,15 +263,22 @@
        */
 
        var transportes = ["Motos", "Carros", "Ônibus", "Caminhão"];
-       var x = d3.scaleBand() //escala de banda ordinal :https://github.com/d3/d3-scale/blob/master/README.md#scaleBand
-                .domain(t)
-                .range([0,larguraVis])
-                .padding(.10);
-
        var x = d3.scaleBand()
-                .domain(t)
-                .range([0,larguraVis])
-                .padding(.10);
+          .domain(true)
+          .range([0,larguraVis])
+          .padding(.10);
+       var y = d3.scaleLinear()
+          .domain([-500, 500])
+          .range([0, alturaVis]);
+       // var x = d3.scaleBand() //escala de banda ordinal :https://github.com/d3/d3-scale/blob/master/README.md#scaleBand
+       //          .domain(true)
+       //          .range([0,larguraVis])
+       //          .padding(.10);
+       //
+       // var x = d3.scaleBand()
+       //          .domain(true)
+       //          .range([0,larguraVis])
+       //          .padding(.10);
 
       // === ATÉ DAQUI ===
       /*
