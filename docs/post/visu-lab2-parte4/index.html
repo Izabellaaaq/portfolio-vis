@@ -15,14 +15,14 @@
 
   
   <meta name="author" content="Ritchie Zhu" />
-  <meta name="description" content="Barras simples    Não sei...     .mychart circle:hover { fill: lemonchiffon; } /*.mychart rect { fill: steelblue; } .mychart bar { stroke: #000; fill: green; } .mychart rect:hover { fill: goldenrod; } .mychart text { font: 12px sans-serif; text-anchor: left; }*/  &#34;use strict&#34; function desenhaBarras(dados) { // Preencha aqui. var alturaSVG = 400, larguraSVG = 600; var	margin = {top: 10, right: 50, bottom:30, left: 45}, // para descolar a vis das bordas do grafico larguraVis = larguraSVG - margin." />
+  <meta name="description" content="Barras simples    Não sei...     .mychart bar:hover { fill: lemonchiffon; } /*.mychart rect { fill: steelblue; } .mychart bar { stroke: #000; fill: green; } .mychart rect:hover { fill: goldenrod; } .mychart text { font: 12px sans-serif; text-anchor: left; }*/  &#34;use strict&#34; function desenhaBarras(dados) { // Preencha aqui. var alturaSVG = 400, larguraSVG = 600; var	margin = {top: 10, right: 50, bottom:30, left: 45}, // para descolar a vis das bordas do grafico larguraVis = larguraSVG - margin." />
 
   
   
     <meta name="twitter:card" content="summary" />
     <meta name="twitter:site" content="@twitter_username" />
     <meta name="twitter:title" content="Lab na Rua" />
-    <meta name="twitter:description" content="Barras simples    Não sei...     .mychart circle:hover { fill: lemonchiffon; } /*.mychart rect { fill: steelblue; } .mychart bar { stroke: #000; fill: green; } .mychart rect:hover { fill: goldenrod; } .mychart text { font: 12px sans-serif; text-anchor: left; }*/  &#34;use strict&#34; function desenhaBarras(dados) { // Preencha aqui. var alturaSVG = 400, larguraSVG = 600; var	margin = {top: 10, right: 50, bottom:30, left: 45}, // para descolar a vis das bordas do grafico larguraVis = larguraSVG - margin." />
+    <meta name="twitter:description" content="Barras simples    Não sei...     .mychart bar:hover { fill: lemonchiffon; } /*.mychart rect { fill: steelblue; } .mychart bar { stroke: #000; fill: green; } .mychart rect:hover { fill: goldenrod; } .mychart text { font: 12px sans-serif; text-anchor: left; }*/  &#34;use strict&#34; function desenhaBarras(dados) { // Preencha aqui. var alturaSVG = 400, larguraSVG = 600; var	margin = {top: 10, right: 50, bottom:30, left: 45}, // para descolar a vis das bordas do grafico larguraVis = larguraSVG - margin." />
     <meta name="twitter:image" content="https://izabellaaaq.github.io/img/avatar.jpg" />
   
 
@@ -219,7 +219,7 @@
 
   <style>
 
-  .mychart circle:hover {
+  .mychart bar:hover {
     fill: lemonchiffon;
   }
 
@@ -303,7 +303,7 @@
                 .append('circle')
                 .attr("class", "dot")
                 .attr("r", 4)
-                .attr('cx', 0)
+                .attr('cx', 1)
                 .attr('cy', 150)
                 .style('fill', corMotos);
 
@@ -313,7 +313,7 @@
                   .append('circle')
                   .attr("class", "dot")
                   .attr("r", 4)
-                  .attr('cx', 0)
+                  .attr('cx', 1)
                   .attr('cy', 150)
                   .style('fill', corCarros);
 
@@ -323,7 +323,7 @@
                   .append('circle')
                   .attr("class", "dot")
                   .attr("r", 4)
-                  .attr('cx',0)
+                  .attr('cx',1)
                   .attr('cy', 150)
                   .style('fill', corCaminhoes);
 
@@ -333,7 +333,7 @@
                     .append('circle')
                     .attr("class", "dot")
                     .attr("r", 4)
-                    .attr('cx', 0)
+                    .attr('cx', 1)
                     .attr('cy', 150)
                     .style('fill', corCaminhoes);
 
