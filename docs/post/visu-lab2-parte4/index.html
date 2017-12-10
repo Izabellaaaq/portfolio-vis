@@ -286,10 +286,10 @@
        */
 
 
-       var motos = dados.sum(d => {return d.motos});
-       var carros = dados.sum(d => {return d.carros});
-       var caminhoes = dados.sum(d => {return d.caminhoes});
-       var onibus = dados.sum(d => {return d.onibus});
+       var motos = d3.sum(d => {return d.motos});
+       var carros = d3.sum(d => {return d.carros});
+       var caminhoes = d3.sum(d => {return d.caminhoes});
+       var onibus = d3.sum(d => {return d.onibus});
 
        var corMotos = '#D9D3B3'; //cinza
        var corCarros = '#499B8F'; //azul
