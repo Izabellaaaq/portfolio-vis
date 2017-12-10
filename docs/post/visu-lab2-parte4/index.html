@@ -15,14 +15,14 @@
 
   
   <meta name="author" content="Ritchie Zhu" />
-  <meta name="description" content="Barras simples    Não sei...     .mychart bar:hover { fill: lemonchiffon; } /*.mychart rect { fill: steelblue; } .mychart bar { stroke: #000; fill: green; } .mychart rect:hover { fill: goldenrod; } .mychart text { font: 12px sans-serif; text-anchor: left; }*/  &#34;use strict&#34; function desenhaBarras(dados) { // Preencha aqui. var alturaSVG = 400, larguraSVG = 600; var	margin = {top: 10, right: 50, bottom:30, left: 45}, // para descolar a vis das bordas do grafico larguraVis = larguraSVG - margin." />
+  <meta name="description" content="Barras simples    Não sei...     .mychart rect { fill: lemonchiffon; } /*.mychart rect { fill: steelblue; } .mychart bar { stroke: #000; fill: green; } .mychart rect:hover { fill: goldenrod; } .mychart text { font: 12px sans-serif; text-anchor: left; }*/  &#34;use strict&#34; function desenhaBarras(dados) { // Preencha aqui. var alturaSVG = 400, larguraSVG = 600; var	margin = {top: 10, right: 50, bottom:30, left: 45}, // para descolar a vis das bordas do grafico larguraVis = larguraSVG - margin." />
 
   
   
     <meta name="twitter:card" content="summary" />
     <meta name="twitter:site" content="@twitter_username" />
     <meta name="twitter:title" content="Lab na Rua" />
-    <meta name="twitter:description" content="Barras simples    Não sei...     .mychart bar:hover { fill: lemonchiffon; } /*.mychart rect { fill: steelblue; } .mychart bar { stroke: #000; fill: green; } .mychart rect:hover { fill: goldenrod; } .mychart text { font: 12px sans-serif; text-anchor: left; }*/  &#34;use strict&#34; function desenhaBarras(dados) { // Preencha aqui. var alturaSVG = 400, larguraSVG = 600; var	margin = {top: 10, right: 50, bottom:30, left: 45}, // para descolar a vis das bordas do grafico larguraVis = larguraSVG - margin." />
+    <meta name="twitter:description" content="Barras simples    Não sei...     .mychart rect { fill: lemonchiffon; } /*.mychart rect { fill: steelblue; } .mychart bar { stroke: #000; fill: green; } .mychart rect:hover { fill: goldenrod; } .mychart text { font: 12px sans-serif; text-anchor: left; }*/  &#34;use strict&#34; function desenhaBarras(dados) { // Preencha aqui. var alturaSVG = 400, larguraSVG = 600; var	margin = {top: 10, right: 50, bottom:30, left: 45}, // para descolar a vis das bordas do grafico larguraVis = larguraSVG - margin." />
     <meta name="twitter:image" content="https://izabellaaaq.github.io/img/avatar.jpg" />
   
 
@@ -219,7 +219,7 @@
 
   <style>
 
-  .mychart bar:hover {
+  .mychart rect {
     fill: lemonchiffon;
   }
 
@@ -340,22 +340,22 @@
       /*
        * Os eixos
        */
-       grafico.append("text")
-         .attr("transform", "translate(-20," + (alturaVis + margin.top)/12 + ")")
-         .text("Motos")
-         .style('font-size', '20');
-       grafico.append("text")
-         .attr("transform", "translate(250," + (alturaVis + margin.top)/12 + ")")
-         .text("Carros")
-         .style('font-size', '20');
-       grafico.append("text")
-         .attr("transform", "translate(400," + (alturaVis + margin.top)*0.23 + ")")
-         .text("Caminhões")
-         .style('font-size', '20');
-       grafico.append("text")
-         .attr("transform", "translate(400," + (alturaVis + margin.top)*0.6 + ")")
-         .text("Ônibus")
-         .style('font-size', '20');
+       grafico.append("g")
+            .attr("class", "x axis")
+            .attr("transform", "translate(0," + alturaVis + ")")
+            .call(d3.axisBottom(x)); // magica do d3: gera eixo a partir da escala
+
+      grafico.append("text")
+             .attr("transform", "translate(" + (larguraVis)/2 + "," + (alturaVis + margin.bottom)  + ")")
+             .text("Meios de Transportes");
+
+      grafico.append('g')
+              .attr('transform', 'translate(0,0)')
+              .call(d3.axisLeft(y))  // gera eixo a partir da escala
+
+      grafico.append("text")
+              .attr("transform", "translate(-30," + (alturaVis + margin.top)/2 + ") rotate(-90)")
+              .text("Frequência");
     }
     d3.csv('https://raw.githubusercontent.com/luizaugustomm/pessoas-no-acude/master/dados/processados/dados.csv', function(dados) {
       desenhaBarras(dados);

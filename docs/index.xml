@@ -18,7 +18,7 @@
       <pubDate>Tue, 05 Dec 2017 09:34:30 -0300</pubDate>
       
       <guid>https://izabellaaaq.github.io/portfolio-vis/post/visu-lab2-parte4/</guid>
-      <description>Barras simples    Não sei...     .mychart bar:hover { fill: lemonchiffon; } /*.mychart rect { fill: steelblue; } .mychart bar { stroke: #000; fill: green; } .mychart rect:hover { fill: goldenrod; } .mychart text { font: 12px sans-serif; text-anchor: left; }*/  &#34;use strict&#34; function desenhaBarras(dados) { // Preencha aqui. var alturaSVG = 400, larguraSVG = 600; var	margin = {top: 10, right: 50, bottom:30, left: 45}, // para descolar a vis das bordas do grafico larguraVis = larguraSVG - margin.</description>
+      <description>Barras simples    Não sei...     .mychart rect { fill: lemonchiffon; } /*.mychart rect { fill: steelblue; } .mychart bar { stroke: #000; fill: green; } .mychart rect:hover { fill: goldenrod; } .mychart text { font: 12px sans-serif; text-anchor: left; }*/  &#34;use strict&#34; function desenhaBarras(dados) { // Preencha aqui. var alturaSVG = 400, larguraSVG = 600; var	margin = {top: 10, right: 50, bottom:30, left: 45}, // para descolar a vis das bordas do grafico larguraVis = larguraSVG - margin.</description>
     </item>
     
     <item>

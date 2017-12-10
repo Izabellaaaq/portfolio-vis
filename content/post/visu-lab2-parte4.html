@@ -25,7 +25,7 @@ draft: false
 
   <style>
 
-  .mychart bar:hover {
+  .mychart rect {
     fill: lemonchiffon;
   }
 
@@ -146,22 +146,22 @@ draft: false
       /*
        * Os eixos
        */
-       grafico.append("text")
-         .attr("transform", "translate(-20," + (alturaVis + margin.top)/12 + ")")
-         .text("Motos")
-         .style('font-size', '20');
-       grafico.append("text")
-         .attr("transform", "translate(250," + (alturaVis + margin.top)/12 + ")")
-         .text("Carros")
-         .style('font-size', '20');
-       grafico.append("text")
-         .attr("transform", "translate(400," + (alturaVis + margin.top)*0.23 + ")")
-         .text("Caminhões")
-         .style('font-size', '20');
-       grafico.append("text")
-         .attr("transform", "translate(400," + (alturaVis + margin.top)*0.6 + ")")
-         .text("Ônibus")
-         .style('font-size', '20');
+       grafico.append("g")
+            .attr("class", "x axis")
+            .attr("transform", "translate(0," + alturaVis + ")")
+            .call(d3.axisBottom(x)); // magica do d3: gera eixo a partir da escala
+
+      grafico.append("text")
+             .attr("transform", "translate(" + (larguraVis)/2 + "," + (alturaVis + margin.bottom)  + ")")
+             .text("Meios de Transportes");
+
+      grafico.append('g')
+              .attr('transform', 'translate(0,0)')
+              .call(d3.axisLeft(y))  // gera eixo a partir da escala
+
+      grafico.append("text")
+              .attr("transform", "translate(-30," + (alturaVis + margin.top)/2 + ") rotate(-90)")
+              .text("Frequência");
     }
     d3.csv('https://raw.githubusercontent.com/luizaugustomm/pessoas-no-acude/master/dados/processados/dados.csv', function(dados) {
       desenhaBarras(dados);
