@@ -5,10 +5,7 @@
   <meta charset="utf-8" />
 
   
-  <title>
-  Posts
-   | Izabella (SEO Version)
-</title>
+  <title>Dados do Lab na Rua 2</title>
 
   
   
@@ -18,14 +15,14 @@
 
   
   <meta name="author" content="Ritchie Zhu" />
-  <meta name="description" content="" />
+  <meta name="description" content="body { font: 10px sans-serif; } .axis path, .axis line { fill: none; stroke: #000; shape-rendering: crispEdges; } .bar { fill: steelblue; } .x.axis path { display: none; }     var margin = {top: 20, right: 20, bottom: 30, left: 40}, width = 960 - margin.left - margin.right, height = 500 - margin.top - margin.bottom; var x0 = d3.scale.ordinal() .rangeRoundBands([0, width], .1); var x1 = d3.scale.ordinal(); var y = d3." />
 
   
   
     <meta name="twitter:card" content="summary" />
     <meta name="twitter:site" content="@twitter_username" />
-    <meta name="twitter:title" content="Posts" />
-    <meta name="twitter:description" content="" />
+    <meta name="twitter:title" content="Dados do Lab na Rua 2" />
+    <meta name="twitter:description" content="body { font: 10px sans-serif; } .axis path, .axis line { fill: none; stroke: #000; shape-rendering: crispEdges; } .bar { fill: steelblue; } .x.axis path { display: none; }     var margin = {top: 20, right: 20, bottom: 30, left: 40}, width = 960 - margin.left - margin.right, height = 500 - margin.top - margin.bottom; var x0 = d3.scale.ordinal() .rangeRoundBands([0, width], .1); var x1 = d3.scale.ordinal(); var y = d3." />
     <meta name="twitter:image" content="https://izabellaaaq.github.io/img/avatar.jpg" />
   
 
@@ -35,7 +32,7 @@
 <meta name="generator" content="Hugo 0.30.2" />
 
 
-<link rel="canonical" href="https://izabellaaaq.github.io/portfolio-vis/post/" />
+<link rel="canonical" href="https://izabellaaaq.github.io/portfolio-vis/post/visu2/" />
 <link rel="alternative" href="https://izabellaaaq.github.io/portfolio-vis/index.xml" title="Izabella Antonino" type="application/atom+xml" />
 
 
@@ -98,6 +95,10 @@
     
     <div class="suspension">
       <a title="Go to top" class="to-top is-hide"><span class="icon icon-up"></span></a>
+      
+        
+        <a title="Go to comments" class="to-comment" href="#disqus_thread"><span class="icon icon-comment"></span></a>
+        
       
     </div>
     
@@ -192,84 +193,144 @@
   </nav>
 </header>
 
-  <section class="main post-list">
-    <header class="list-header offscreen">
-      <h2 class="list-label">Posts List</h2>
+  <section class="main post-detail">
+    <header class="post-header">
+      <h1 class="post-title">Dados do Lab na Rua 2</h1>
+      <p class="post-meta">@Ritchie Zhu · Dec 5, 2017 · 2 min read</p>
     </header>
+    <article class="post-content"><!DOCTYPE html>
+<meta charset="utf-8">
+<style>
+body {
+  font: 10px sans-serif;
+}
+.axis path,
+.axis line {
+  fill: none;
+  stroke: #000;
+  shape-rendering: crispEdges;
+}
+.bar {
+  fill: steelblue;
+}
+.x.axis path {
+  display: none;
+}
+</style>
+<body>
+<script src="//d3js.org/d3.v3.min.js"></script>
+<script>
+var margin = {top: 20, right: 20, bottom: 30, left: 40},
+    width = 960 - margin.left - margin.right,
+    height = 500 - margin.top - margin.bottom;
+var x0 = d3.scale.ordinal()
+    .rangeRoundBands([0, width], .1);
+var x1 = d3.scale.ordinal();
+var y = d3.scale.linear()
+    .range([height, 0]);
+var color = d3.scale.ordinal()
+    .range(["#98abc5", "#8a89a6", "#7b6888", "#6b486b", "#a05d56", "#d0743c", "#ff8c00"]);
+var xAxis = d3.svg.axis()
+    .scale(x0)
+    .orient("bottom");
+var yAxis = d3.svg.axis()
+    .scale(y)
+    .orient("left")
+    .tickFormat(d3.format(".2s"));
+var svg = d3.select("body").append("svg")
+    .attr("width", width + margin.left + margin.right)
+    .attr("height", height + margin.top + margin.bottom)
+  .append("g")
+    .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+  d3.csv(  d3.csv('https://raw.githubusercontent.com/luizaugustomm/pessoas-no-acude/master/dados/processados/dados.csv', function(error, data) {
+  if (error) throw error;
+  var motos = d3.keys(data[0]).filter(function(key) { return key !== "motos"; });
+  data.forEach(function(d) {
+    d.parte = motos.map(function(name) { return {name: name, value: +d[name]}; });
+  });
+  x0.domain(data.map(function(d) { return d.motos; }));
+  x1.domain(motos).rangeRoundBands([0, x0.rangeBand()]);
+  y.domain([0, d3.max(data, function(d) { return d3.max(d.parte, function(d) { return d.value; }); })]);
+  svg.append("g")
+      .attr("class", "x axis")
+      .attr("transform", "translate(0," + height + ")")
+      .call(xAxis);
+  svg.append("g")
+      .attr("class", "y axis")
+      .call(yAxis)
+    .append("text")
+      .attr("transform", "rotate(-90)")
+      .attr("y", 6)
+      .attr("dy", ".71em")
+      .style("text-anchor", "end")
+      .text("Total");
+  var state = svg.selectAll(".state")
+      .data(data)
+    .enter().append("g")
+      .attr("class", "state")
+      .attr("transform", function(d) { return "translate(" + x0(d.motos) + ",0)"; });
+  state.selectAll("rect")
+      .data(function(d) { return d.parte; })
+    .enter().append("rect")
+      .attr("width", x1.rangeBand())
+      .attr("x", function(d) { return x1(d.name); })
+      .attr("y", function(d) { return y(d.value); })
+      .attr("height", function(d) { return height - y(d.value); })
+      .style("fill", function(d) { return color(d.name); });
+  var legend = svg.selectAll(".legend")
+      .data(motos.slice().reverse())
+    .enter().append("g")
+      .attr("class", "legend")
+      .attr("transform", function(d, i) { return "translate(0," + i * 20 + ")"; });
+  legend.append("rect")
+      .attr("x", width - 18)
+      .attr("width", 18)
+      .attr("height", 18)
+      .style("fill", color);
+  legend.append("text")
+      .attr("x", width - 24)
+      .attr("y", 9)
+      .attr("dy", ".35em")
+      .style("text-anchor", "end")
+      .text(function(d) { return d; });
+  svg.append("text")
+        .attr("x", (width / 2))
+        .attr("y", 20 - (margin.top / 2))
+        .attr("text-anchor", "middle")
+        .style("font-size", "20px")
+        .style("text-decoration", "underline")
+        .text("Distribuição das Escolhas de numero Aleatorio por parte do dia");
+});
+</script>
+</article>
+    <footer class="post-footer">
+      
+      <p class="post-copyright">
+        © This post is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License，please give source if you likes to quote or reproduce.
+      </p>
+    </footer>
+    
+      <div id="disqus_thread"></div>
+<script>
+    var disqus_config = function () {
     
     
-      
-        <article class="post-entry">
-  <header class="post-header">
-    <h3 class="post-title"><a href="https://izabellaaaq.github.io/portfolio-vis/post/visu2/" class="post-link">Dados do Lab na Rua 2</a></h3>
-    <p class="post-meta">@Ritchie Zhu · Dec 5, 2017 · 2 min read</p>
-  </header>
-  
-  <p class="post-summary">body { font: 10px sans-serif; } .axis path, .axis line { fill: none; stroke: #000; shape-rendering: crispEdges; } .bar { fill: steelblue; } .x.axis path { display: none; }     var margin = {top: 20, right: 20, bottom: 30, left: 40}, width = 960 - margin.left - margin.right, height = 500 - margin.top - margin.bottom; var x0 = d3.scale.ordinal() .rangeRoundBands([0, width], .1); var x1 = d3.scale.ordinal(); var y = d3.</p>
-  <footer class="post-footer">
-    <a class="read-more" href="https://izabellaaaq.github.io/portfolio-vis/post/visu2/">Read More →</a>
-  </footer>
-</article>
-
-      
-        <article class="post-entry">
-  <header class="post-header">
-    <h3 class="post-title"><a href="https://izabellaaaq.github.io/portfolio-vis/post/dados-da-chuva/" class="post-link">Dados Da Chuva</a></h3>
-    <p class="post-meta">@Ritchie Zhu · Nov 28, 2017 · 2 min read</p>
-  </header>
-  
-  <p class="post-summary">Dados de Boqueirão    Volume de Chuva - Boqueirão     .mychart rect { fill: purple; } /*.mychart dot { fill: #000; }*/ .mychart rect:hover { fill: pink; } .mychart text { font: 12px sans-serif; text-anchor: left; }  &#34;use strict&#34; function desenhaBarras(dados) { // Preencha aqui. var alturaSVG = 400, larguraSVG = 500; var	margin = {top: 10, right: 20, bottom:30, left: 45}, // para descolar a vis das bordas do grafico larguraVis = larguraSVG - margin.</p>
-  <footer class="post-footer">
-    <a class="read-more" href="https://izabellaaaq.github.io/portfolio-vis/post/dados-da-chuva/">Read More →</a>
-  </footer>
-</article>
-
-      
-        <article class="post-entry">
-  <header class="post-header">
-    <h3 class="post-title"><a href="https://izabellaaaq.github.io/portfolio-vis/post/primeiro-post/" class="post-link">Qual o máximo de volume que o açude de Boqueirão atingiu nos anos de 1990 a 1999? </a></h3>
-    <p class="post-meta">@Ritchie Zhu · Nov 22, 2017 · 1 min read</p>
-  </header>
-  
-  <p class="post-summary">Percebe-se que a maior média de volume atingido pelo Açude de Boqueirão foi no ano de 1992, com pouco mais de 90% de sua capacidade. No ano de 1990, o açude estava próximo dessa capacidade, porém em 1991 houve uma queda para quase 90%.
-
-</p>
-  <footer class="post-footer">
-    <a class="read-more" href="https://izabellaaaq.github.io/portfolio-vis/post/primeiro-post/">Read More →</a>
-  </footer>
-</article>
-
-      
-        <article class="post-entry">
-  <header class="post-header">
-    <h3 class="post-title"><a href="https://izabellaaaq.github.io/portfolio-vis/post/segundo-post/" class="post-link">Mínimo de volume do Açude de Boqueirão entre os anos de 1990 e 1999.</a></h3>
-    <p class="post-meta">@Ritchie Zhu · Nov 22, 2017 · 1 min read</p>
-  </header>
-  
-  <p class="post-summary">
-</p>
-  <footer class="post-footer">
-    <a class="read-more" href="https://izabellaaaq.github.io/portfolio-vis/post/segundo-post/">Read More →</a>
-  </footer>
-</article>
-
-      
-        <article class="post-entry">
-  <header class="post-header">
-    <h3 class="post-title"><a href="https://izabellaaaq.github.io/portfolio-vis/post/terceiro-post/" class="post-link">Maior queda de percentual do Açude de Boqueirão</a></h3>
-    <p class="post-meta">@Ritchie Zhu · Nov 22, 2017 · 1 min read</p>
-  </header>
-  
-  <p class="post-summary">De acordo com os dados analisados, percebe-se que a maior queda de percentual do açude de Boqueirão foi entre 2011 até os dias atuais. Onde, o mesmo tinha 90% de sua capacidade em 2011 e foi caindo aos poucos, chegando a cerca de 8% de volume médio. Lembrando que nos últimos dois anos, tivemos racionamento e em 2017 a chegada das águas do Rio São Francisco por meio da transposição.
-
-</p>
-  <footer class="post-footer">
-    <a class="read-more" href="https://izabellaaaq.github.io/portfolio-vis/post/terceiro-post/">Read More →</a>
-  </footer>
-</article>
-
-      
     
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "disqus_shortname" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+      
     
   </section>
   <footer class="site-footer">
