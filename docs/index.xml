@@ -7,19 +7,10 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>© This post is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License，please give source if you likes to quote or reproduce.</copyright>
-    <lastBuildDate>Tue, 05 Dec 2017 09:34:30 -0300</lastBuildDate>
+    <lastBuildDate>Tue, 28 Nov 2017 17:54:22 -0300</lastBuildDate>
     
 	<atom:link href="https://izabellaaaq.github.io/portfolio-vis/index.xml" rel="self" type="application/rss+xml" />
     
-    
-    <item>
-      <title>Dados do Lab na Rua</title>
-      <link>https://izabellaaaq.github.io/portfolio-vis/post/visu-lab2-parte4/</link>
-      <pubDate>Tue, 05 Dec 2017 09:34:30 -0300</pubDate>
-      
-      <guid>https://izabellaaaq.github.io/portfolio-vis/post/visu-lab2-parte4/</guid>
-      <description>form { font-family: &#34;Helvetica Neue&#34;, Helvetica, Arial, sans-serif; position: absolute; left: 10px; top: 10px; } label { display: block; }   Grouped Stacked     var barchart = function() { d3.csv(&#34;https://raw.githubusercontent.com/michellymenezes/portifolio-visualizacao/master/data/fluxo-homens-mulheres-median.csv&#34;, function(error, dados) { var n = 4, // The number of series. m = 15; // The number of values per series. function associaTipoN(n) { return dados.filter(e = e == n) } var tipos = [&#34;</description>
-    </item>
     
     <item>
       <title>Dados Da Chuva</title>
