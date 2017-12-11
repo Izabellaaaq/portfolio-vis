@@ -242,7 +242,7 @@ var svg = d3.select("body").append("svg")
     .attr("height", height + margin.top + margin.bottom)
   .append("g")
     .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
-  d3.csv(  d3.csv('https://raw.githubusercontent.com/luizaugustomm/pessoas-no-acude/master/dados/processados/dados.csv', function(error, data) {
+  d3.csv('https://raw.githubusercontent.com/luizaugustomm/pessoas-no-acude/master/dados/processados/dados.csv', function(error, data) {
   if (error) throw error;
   var motos = d3.keys(data[0]).filter(function(key) { return key !== "motos"; });
   data.forEach(function(d) {
@@ -299,9 +299,8 @@ var svg = d3.select("body").append("svg")
         .attr("text-anchor", "middle")
         .style("font-size", "20px")
         .style("text-decoration", "underline");
-        // .text("Distribuição das Escolhas de numero Aleatorio por parte do dia");
-
-</script>
+        .text("Distribuição das Escolhas de numero Aleatorio por parte do dia");
+});
 </article>
     <footer class="post-footer">
       
