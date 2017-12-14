@@ -1,6 +1,6 @@
 baseURL = "https://izabellaaaq.github.io/portfolio-vis/"
 languageCode = "en"
-title = "Izabella Antonino"
+title = "Izabella Ayra Antonino de Queiroz"
 theme = "hugo-nuo"
 publishDir = "docs"
 enableRobotsTXT = true
@@ -35,8 +35,8 @@ copyright = "© This post is licensed under a Creative Commons Attribution-NonCo
   author = "Ritchie Zhu"
   avatar = "/img/avatar.jpg"
   seotitle = "Izabella (SEO Version)"
-  subtitle = "Visualizações de dados do Açude de Boqueirão"
-  description = "Hugo is one of the most popular open-source static site generators. With its amazing speed and flexibility, Hugo makes building websites fun again."
+  subtitle = "Portfólio de Disciplina de Visualização da Informação"
+  description = "Aqui serão expostas visualizações feitas por Izabella na disciplina de Visualização da Informação no período 2017.2"
   paginate = 10
 
   # Choose your social networks
