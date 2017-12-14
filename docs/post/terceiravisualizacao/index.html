@@ -5,10 +5,7 @@
   <meta charset="utf-8" />
 
   
-  <title>
-  Posts
-   | Izabella (SEO Version)
-</title>
+  <title>TerceiraVisualizacao</title>
 
   
   
@@ -18,14 +15,14 @@
 
   
   <meta name="author" content="Ritchie Zhu" />
-  <meta name="description" content="" />
+  <meta name="description" content="Visualização 3            .bubbleChart svg{ background: white; }    Movimentação de pessoas em torno do Açude Velho nos Horários de Piques  $(document).ready(function () { var bubbleChart = new d3.svg.BubbleChart({ size: 600, innerRadius: 800 /8, radiusMin: 80, data: {items: [{text: &#34;Manhã: 06h às 07h&#34;, count: &#34;3.808&#34;}, {text: &#34;Tarde: 12h às 13h&#34;, count: &#34;6.220&#34;}, {text: &#34;Noite: 18h às 19h&#34;" />
 
   
   
     <meta name="twitter:card" content="summary" />
     <meta name="twitter:site" content="@twitter_username" />
-    <meta name="twitter:title" content="Posts" />
-    <meta name="twitter:description" content="" />
+    <meta name="twitter:title" content="TerceiraVisualizacao" />
+    <meta name="twitter:description" content="Visualização 3            .bubbleChart svg{ background: white; }    Movimentação de pessoas em torno do Açude Velho nos Horários de Piques  $(document).ready(function () { var bubbleChart = new d3.svg.BubbleChart({ size: 600, innerRadius: 800 /8, radiusMin: 80, data: {items: [{text: &#34;Manhã: 06h às 07h&#34;, count: &#34;3.808&#34;}, {text: &#34;Tarde: 12h às 13h&#34;, count: &#34;6.220&#34;}, {text: &#34;Noite: 18h às 19h&#34;" />
     <meta name="twitter:image" content="https://izabellaaaq.github.io/img/avatar.jpg" />
   
 
@@ -35,7 +32,7 @@
 <meta name="generator" content="Hugo 0.30.2" />
 
 
-<link rel="canonical" href="https://izabellaaaq.github.io/portfolio-vis/post/" />
+<link rel="canonical" href="https://izabellaaaq.github.io/portfolio-vis/post/terceiravisualizacao/" />
 <link rel="alternative" href="https://izabellaaaq.github.io/portfolio-vis/index.xml" title="Izabella Antonino" type="application/atom+xml" />
 
 
@@ -98,6 +95,10 @@
     
     <div class="suspension">
       <a title="Go to top" class="to-top is-hide"><span class="icon icon-up"></span></a>
+      
+        
+        <a title="Go to comments" class="to-comment" href="#disqus_thread"><span class="icon icon-comment"></span></a>
+        
       
     </div>
     
@@ -192,110 +193,114 @@
   </nav>
 </header>
 
-  <section class="main post-list">
-    <header class="list-header offscreen">
-      <h2 class="list-label">Posts List</h2>
+  <section class="main post-detail">
+    <header class="post-header">
+      <h1 class="post-title">TerceiraVisualizacao</h1>
+      <p class="post-meta">@Ritchie Zhu · Dec 14, 2017 · 1 min read</p>
     </header>
+    <article class="post-content"><!DOCTYPE html>
+
+<html>
+<head>
+    <title>Visualização 3</title>
+    <meta charset="utf-8">
+    <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,600,200italic,600italic&subset=latin,vietnamese'
+    rel='stylesheet' type='text/css'>
+    <script src="https://phuonghuynh.github.io/js/bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="https://phuonghuynh.github.io/js/bower_components/d3/d3.min.js"></script>
+    <script src="https://phuonghuynh.github.io/js/bower_components/d3-transform/src/d3-transform.js"></script>
+    <script src="https://phuonghuynh.github.io/js/bower_components/cafej/src/extarray.js"></script>
+    <script src="https://phuonghuynh.github.io/js/bower_components/cafej/src/misc.js"></script>
+    <script src="https://phuonghuynh.github.io/js/bower_components/cafej/src/micro-observer.js"></script>
+    <script src="https://phuonghuynh.github.io/js/bower_components/microplugin/src/microplugin.js"></script>
+    <script src="https://phuonghuynh.github.io/js/bower_components/bubble-chart/src/bubble-chart.js"></script>
+    <script src="https://phuonghuynh.github.io/js/bower_components/bubble-chart/src/plugins/central-click/central-click.js"></script>
+    <script src="https://phuonghuynh.github.io/js/bower_components/bubble-chart/src/plugins/lines/lines.js"></script>
+    <style>
+        .bubbleChart svg{
+            background: white;
+        }
+    </style>
+</head>
+<body style="background: white">
+  <div class="bubbleChart"/>
+      <h2> Movimentação de pessoas em torno do Açude Velho nos Horários de Piques</h2>
+<script>
+    $(document).ready(function () {
+        var bubbleChart = new d3.svg.BubbleChart({
+            size: 600,
+            innerRadius: 800 /8,
+            radiusMin: 80,
+            data: {items: [{text: "Manhã: 06h às 07h", count: "3.808"}, {text: "Tarde: 12h às 13h", count: "6.220"}, {text: "Noite: 18h às 19h", count: "6.245"},],
+                eval: function (item) {return item.count;}, classed: function (item) {return item.text.split(" ").join("");}
+            },
+            plugins: [
+              {
+                    name: "lines",
+                    options: {
+                        format: [
+                            {
+                                textField: "count",
+                                classed: {count: true},
+                                style: {"font-size": "20px", "font-family": "Source Sans Pro, sans-serif","text-anchor": "middle",
+                                fill: "Black"},
+                                attr: {
+                                    dy: "0px",
+                                    x: function (d) {return d.cx;},
+                                    y: function (d) {return d.cy;}
+                                }
+                            },
+                            {
+                                textField: "text",
+                                classed: {text: true},
+                                style: {
+                                    "font-size": "20px", "font-family": "Source Sans Pro, sans-serif", "text-anchor": "middle",
+                                    fill: "Blue" //nome do Patrimônio
+                                },
+                                attr: {
+                                    dy: "20px",
+                                    x: function (d) {return d.cx;},
+                                    y: function (d) {return d.cy;}
+                                }
+                            }
+                        ],
+                        centralFormat: [{style: {"font-size": "50px"}, attr: {}},{style: {"font-size": "20px"},attr: {dy: "50px"}}]
+                    }
+                }]
+        });
+    });
+</script>
+</body>
+</html>
+</article>
+    <footer class="post-footer">
+      
+      <p class="post-copyright">
+        © This post is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License，please give source if you likes to quote or reproduce.
+      </p>
+    </footer>
+    
+      <div id="disqus_thread"></div>
+<script>
+    var disqus_config = function () {
     
     
-      
-        <article class="post-entry">
-  <header class="post-header">
-    <h3 class="post-title"><a href="https://izabellaaaq.github.io/portfolio-vis/post/terceiravisualizacao/" class="post-link">TerceiraVisualizacao</a></h3>
-    <p class="post-meta">@Ritchie Zhu · Dec 14, 2017 · 1 min read</p>
-  </header>
-  
-  <p class="post-summary">Visualização 3            .bubbleChart svg{ background: white; }    Movimentação de pessoas em torno do Açude Velho nos Horários de Piques  $(document).ready(function () { var bubbleChart = new d3.svg.BubbleChart({ size: 600, innerRadius: 800 /8, radiusMin: 80, data: {items: [{text: &#34;Manhã: 06h às 07h&#34;, count: &#34;3.808&#34;}, {text: &#34;Tarde: 12h às 13h&#34;, count: &#34;6.220&#34;}, {text: &#34;Noite: 18h às 19h&#34;</p>
-  <footer class="post-footer">
-    <a class="read-more" href="https://izabellaaaq.github.io/portfolio-vis/post/terceiravisualizacao/">Read More →</a>
-  </footer>
-</article>
-
-      
-        <article class="post-entry">
-  <header class="post-header">
-    <h3 class="post-title"><a href="https://izabellaaaq.github.io/portfolio-vis/post/segundavisualizacao/" class="post-link">SegundaVisualizacao</a></h3>
-    <p class="post-meta">@Ritchie Zhu · Dec 14, 2017 · 2 min read</p>
-  </header>
-  
-  <p class="post-summary">Barras simples    Descrição ainda..      .mychart rect { fill: goldenrod; } .mychart text { font: 12px sans-serif; text-anchor: left; }  &#34;use strict&#34; function desenhaBarras(dados) { // definicoes de altura e largura do svg e da vis dentro var alturaSVG = 400, larguraSVG = 1000; var	margin = {top: 10, right: 60, bottom:60, left: 70}, // para descolar a vis das bordas do grafico larguraVis = larguraSVG - margin.</p>
-  <footer class="post-footer">
-    <a class="read-more" href="https://izabellaaaq.github.io/portfolio-vis/post/segundavisualizacao/">Read More →</a>
-  </footer>
-</article>
-
-      
-        <article class="post-entry">
-  <header class="post-header">
-    <h3 class="post-title"><a href="https://izabellaaaq.github.io/portfolio-vis/post/primeiravisualizacao/" class="post-link">PrimeiraVisualizacao</a></h3>
-    <p class="post-meta">@Ritchie Zhu · Dec 14, 2017 · 3 min read</p>
-  </header>
-  
-  <p class="post-summary">Dados vindos do Lab na Rua    Movimentação de ciclista e admiradores dos Pontos Turísticos do Açude Velho.     .mychart rect { fill: steelblue; } .mychart rect:hover { fill: goldenrod; } .mychart text { font: 12px sans-serif; text-anchor: left; }  &#34;use strict&#34; function desenhaBarras(dados) { var alturaSVG = 300, larguraSVG = 1000; var	margin = {top: 10, right: 20, bottom:50, left: 65}, // para descolar a vis das bordas do grafico larguraVis = larguraSVG - margin.</p>
-  <footer class="post-footer">
-    <a class="read-more" href="https://izabellaaaq.github.io/portfolio-vis/post/primeiravisualizacao/">Read More →</a>
-  </footer>
-</article>
-
-      
-        <article class="post-entry">
-  <header class="post-header">
-    <h3 class="post-title"><a href="https://izabellaaaq.github.io/portfolio-vis/post/dados-da-chuva/" class="post-link">Dados Da Chuva</a></h3>
-    <p class="post-meta">@Ritchie Zhu · Nov 28, 2017 · 2 min read</p>
-  </header>
-  
-  <p class="post-summary">Dados de Boqueirão    Volume de Chuva - Boqueirão     .mychart rect { fill: purple; } /*.mychart dot { fill: #000; }*/ .mychart rect:hover { fill: pink; } .mychart text { font: 12px sans-serif; text-anchor: left; }  &#34;use strict&#34; function desenhaBarras(dados) { // Preencha aqui. var alturaSVG = 400, larguraSVG = 500; var	margin = {top: 10, right: 20, bottom:30, left: 45}, // para descolar a vis das bordas do grafico larguraVis = larguraSVG - margin.</p>
-  <footer class="post-footer">
-    <a class="read-more" href="https://izabellaaaq.github.io/portfolio-vis/post/dados-da-chuva/">Read More →</a>
-  </footer>
-</article>
-
-      
-        <article class="post-entry">
-  <header class="post-header">
-    <h3 class="post-title"><a href="https://izabellaaaq.github.io/portfolio-vis/post/primeiro-post/" class="post-link">Qual o máximo de volume que o açude de Boqueirão atingiu nos anos de 1990 a 1999? </a></h3>
-    <p class="post-meta">@Ritchie Zhu · Nov 22, 2017 · 1 min read</p>
-  </header>
-  
-  <p class="post-summary">Percebe-se que a maior média de volume atingido pelo Açude de Boqueirão foi no ano de 1992, com pouco mais de 90% de sua capacidade. No ano de 1990, o açude estava próximo dessa capacidade, porém em 1991 houve uma queda para quase 90%.
-
-</p>
-  <footer class="post-footer">
-    <a class="read-more" href="https://izabellaaaq.github.io/portfolio-vis/post/primeiro-post/">Read More →</a>
-  </footer>
-</article>
-
-      
-        <article class="post-entry">
-  <header class="post-header">
-    <h3 class="post-title"><a href="https://izabellaaaq.github.io/portfolio-vis/post/segundo-post/" class="post-link">Mínimo de volume do Açude de Boqueirão entre os anos de 1990 e 1999.</a></h3>
-    <p class="post-meta">@Ritchie Zhu · Nov 22, 2017 · 1 min read</p>
-  </header>
-  
-  <p class="post-summary">
-</p>
-  <footer class="post-footer">
-    <a class="read-more" href="https://izabellaaaq.github.io/portfolio-vis/post/segundo-post/">Read More →</a>
-  </footer>
-</article>
-
-      
-        <article class="post-entry">
-  <header class="post-header">
-    <h3 class="post-title"><a href="https://izabellaaaq.github.io/portfolio-vis/post/terceiro-post/" class="post-link">Maior queda de percentual do Açude de Boqueirão</a></h3>
-    <p class="post-meta">@Ritchie Zhu · Nov 22, 2017 · 1 min read</p>
-  </header>
-  
-  <p class="post-summary">De acordo com os dados analisados, percebe-se que a maior queda de percentual do açude de Boqueirão foi entre 2011 até os dias atuais. Onde, o mesmo tinha 90% de sua capacidade em 2011 e foi caindo aos poucos, chegando a cerca de 8% de volume médio. Lembrando que nos últimos dois anos, tivemos racionamento e em 2017 a chegada das águas do Rio São Francisco por meio da transposição.
-
-</p>
-  <footer class="post-footer">
-    <a class="read-more" href="https://izabellaaaq.github.io/portfolio-vis/post/terceiro-post/">Read More →</a>
-  </footer>
-</article>
-
-      
     
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "disqus_shortname" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+      
     
   </section>
   <footer class="site-footer">
