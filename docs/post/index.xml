@@ -7,18 +7,27 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>© This post is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License，please give source if you likes to quote or reproduce.</copyright>
-    <lastBuildDate>Tue, 05 Dec 2017 09:34:30 -0300</lastBuildDate>
+    <lastBuildDate>Thu, 14 Dec 2017 10:47:23 -0300</lastBuildDate>
     
 	<atom:link href="https://izabellaaaq.github.io/portfolio-vis/post/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>Dados do Lab na Rua 2</title>
-      <link>https://izabellaaaq.github.io/portfolio-vis/post/visu2/</link>
-      <pubDate>Tue, 05 Dec 2017 09:34:30 -0300</pubDate>
+      <title>SegundaVisualizacao</title>
+      <link>https://izabellaaaq.github.io/portfolio-vis/post/segundavisualizacao/</link>
+      <pubDate>Thu, 14 Dec 2017 10:47:23 -0300</pubDate>
       
-      <guid>https://izabellaaaq.github.io/portfolio-vis/post/visu2/</guid>
-      <description>body { font: 10px sans-serif; } .axis path, .axis line { fill: none; stroke: #000; shape-rendering: crispEdges; } .bar { fill: steelblue; } .x.axis path { display: none; }     var margin = {top: 20, right: 20, bottom: 30, left: 40}, width = 960 - margin.left - margin.right, height = 500 - margin.top - margin.bottom; var x0 = d3.scale.ordinal() .rangeRoundBands([0, width], .1); var x1 = d3.scale.ordinal(); var y = d3.</description>
+      <guid>https://izabellaaaq.github.io/portfolio-vis/post/segundavisualizacao/</guid>
+      <description>Barras simples    Descrição ainda..      .mychart rect { fill: goldenrod; } .mychart text { font: 12px sans-serif; text-anchor: left; }  &#34;use strict&#34; function desenhaBarras(dados) { // definicoes de altura e largura do svg e da vis dentro var alturaSVG = 400, larguraSVG = 1000; var	margin = {top: 10, right: 60, bottom:60, left: 70}, // para descolar a vis das bordas do grafico larguraVis = larguraSVG - margin.</description>
+    </item>
+    
+    <item>
+      <title>PrimeiraVisualizacao</title>
+      <link>https://izabellaaaq.github.io/portfolio-vis/post/primeiravisualizacao/</link>
+      <pubDate>Thu, 14 Dec 2017 10:45:59 -0300</pubDate>
+      
+      <guid>https://izabellaaaq.github.io/portfolio-vis/post/primeiravisualizacao/</guid>
+      <description>Dados vindos do Lab na Rua    Movimentação de ciclista e admiradores dos Pontos Turísticos do Açude Velho.     .mychart rect { fill: steelblue; } .mychart rect:hover { fill: goldenrod; } .mychart text { font: 12px sans-serif; text-anchor: left; }  &#34;use strict&#34; function desenhaBarras(dados) { var alturaSVG = 300, larguraSVG = 1000; var	margin = {top: 10, right: 20, bottom:50, left: 65}, // para descolar a vis das bordas do grafico larguraVis = larguraSVG - margin.</description>
     </item>
     
     <item>
