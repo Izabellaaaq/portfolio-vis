@@ -1,12 +1,26 @@
 ---
-title: "Turismo e Saúde"
+title: "Quantidade de ciclistas e admiradores dos pontos turísticos do Açude Velho."
 date: 2017-12-14T10:45:59-03:00
 draft: false
 ---
 
+<!--more-->
+
 <!DOCTYPE html>
 <html lang="pt-br">
 
+<cite>Campina Grande, cidade do Agreste do estado da Paraíba, é conhecida por ser uma cidade universitária. Em uma pesquisa
+realizada por equipe chamada Lab Na Rua, em parceria com o Analytics - Laboratório de análise de dados situado na UFCG - foram coletados dados ao redor do cartão postal da cidade, o Açude Velho.
+Foram colhidos dados a respeito da circulação dos veículos, ciclistas e pessoas durante o dia (06:00 às 20:00) ao redor do açude, especialmente, passando
+pelos dois pontos turísticos, a estátua de Jackson e o monumento dos "burrinhos", e no estabelecimento Bobs a cada quinze minutos.
+No gráfico abaixo, temos no eixo x os horários coletados durante o dia e no eixo y a quantidade de ciclistas que passaram em frente aos pontos
+turísticos. O intuito é mostrar o trajeto feito pelos ciclistas no seu dia-a-dia, em que horário mais temos ciclitas passando por Jackson e pelos "burrinhos".
+Legenda:
+- Os pontos verdes: Estátua de Jackson do pandeiro;
+- Os pontos marrons: Monumento dos "burrinhos".
+
+Podemos visualizar que, por volta das 20:30 da noite, cerca de 100 ciclistas passam pelo momumento dos burrinhos; E o horário com maior quantidade de ciclistas que
+passaram pela estátua de Jackson, foi por volta das 16:30 da tarde, com 50 pessoas.</cite>
 <head>
   <meta charset="utf-8">
   <title>Dados vindos do Lab na Rua</title>
@@ -17,8 +31,7 @@ draft: false
 <body>
   <div class="container">
     <div class="row">
-      <h2>Movimentação de ciclista e admiradores dos Pontos Turísticos do Açude Velho.</h2>
-    </div>
+
     <div class="row mychart" id="chart">
     </div>
   </div>
@@ -88,18 +101,7 @@ draft: false
                 .attr('cy', d => y(d.total_ciclistas))
                 .attr('r', 4)
                 .attr('fill', "brown")
-      //
-      // grafico.selectAll('g')
-      //         .data(dados.filter((d) => d.local == "jackson"))
-      //         .enter()
-      //           .append('circle')
-      //             .attr('cx', d => x(d.horario_inicial))
-      //             .attr('cy', d => y(d.total_ciclistas))
-      //             .attr('r', 4)
-      //             .attr('fill', "green")
-      /*
-       * Os eixos
-       */
+
       grafico.append("g")
               .attr("class", "x axis")
               .attr("transform", "translate(0," + alturaVis + ")")
@@ -114,27 +116,20 @@ draft: false
               .attr('transform', 'translate(0,0)')
               .call(d3.axisLeft(y))  // gera eixo a partir da escala
       grafico.append("text")
-        .attr("transform", "translate(-30," + (alturaVis + margin.top)/2 + ") rotate(-90)")
-        .text("Ciclistas");
+        .attr("transform", "translate(-30," + (alturaVis + margin.top)/1.5 + ") rotate(-90)")
+        .text("Quantidade de ciclistas");
       grafico.append("text")
-          .attr("transform", "translate(" + larguraVis/2 +"," + (alturaVis+margin.bottom) + ")")
-          .text("Horário");
-      // grafico.append("text")
-      //     .attr("transform", "translate(10,10)")
-      //     .text("Azul: Burrinhos");
-      //
-      // grafico.append("text")
-      //     .attr("transform", "translate(10,30)")
-      //     .text("Laranja: Bobs");
-      //
-      // grafico.append("text")
-      //     .attr("transform", "translate(10,50)")
-      //     .text("Vermelho: Jackson");
+          .attr("transform", "translate(" + larguraVis/2.5 +"," + (alturaVis+margin.bottom) + ")")
+          .text("Horário de registro");
+
     }
     d3.csv('https://raw.githubusercontent.com/luizaugustomm/pessoas-no-acude/master/dados/processados/dados.csv', function(dados) {
       console.log("provavelmente acontece depois")
       desenhaBarras(dados);
     });
+
+
+
 
     /*
     * Assim como a função d3.tsv, existe a d3.csv e a d3.json

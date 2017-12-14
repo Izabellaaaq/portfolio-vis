@@ -1,10 +1,19 @@
 ---
-title: "TerceiraVisualizacao"
+title: "Como se comporta o trânsito de veículos próximo ao Açude Velho nos horários de Pique."
 date: 2017-12-14T10:51:44-03:00
 draft: false
 ---
 
 <!DOCTYPE html>
+
+<cite>Campina Grande, cidade do Agreste do estado da Paraíba, é conhecida por ser uma cidade universitária. Em uma pesquisa
+realizada por equipe chamada Lab Na Rua, em parceria com o Analytics - Laboratório de análise de dados situado na UFCG - foram coletados dados ao redor do cartão postal da cidade, o Açude Velho.
+Foram colhidos dados a respeito da circulação dos veículos, ciclistas e pessoas durante o dia (06:00 às 20:00) ao redor do açude, especialmente, passando
+pelos dois pontos turísticos, a estátua de Jackson e o monumento dos "burrinhos", e no estabelecimento Bobs a cada quinze minutos.
+Na visualização abaixo, cada círculo vai possuir informações sobre o trânsito na cidade e em especial, próximo ao Açude Velho nos horários de pique. O açude é
+situado no centro da cidade, é o caminho que muitos pais levam seus filhos para as escolas e pessoas seguem para seu trabalho. Cada bolha possui o valor
+de automotores naqueles horários estipulados como de pique.
+</cite>
 
 <html>
 <head>
@@ -30,7 +39,8 @@ draft: false
 </head>
 <body style="background: white">
   <div class="bubbleChart"/>
-      <h2> Movimentação de pessoas em torno do Açude Velho nos Horários de Piques</h2>
+
+<!--more-->
 <script>
     $(document).ready(function () {
         var bubbleChart = new d3.svg.BubbleChart({

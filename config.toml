@@ -8,33 +8,14 @@ pygmentsuseclasses = true
 PygmentsCodeFences = true
 canonifyurls = true
 
-# Disqus Username
-disqusShortname = "disqus_shortname"
-
-# Google Analytics UA number
-googleAnalytics = "UA-XXXXXXXX-X"
-
-# Copyright of your post
-copyright = "© This post is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License，please give source if you likes to quote or reproduce."
 
 # Initial site menu, you can extend menu with content.
-[[menu.main]]
-  name = "Home"
-  weight = 10
-  identifier = "home"
-  url = "/"
-
-[[menu.main]]
-  name = "Works"
-  weight = 20
-  identifier = "works"
-  url = "https://github.com/laozhu"
 
 # Add your own params here
 [params]
-  author = "Ritchie Zhu"
-  avatar = "/img/avatar.jpg"
-  seotitle = "Izabella (SEO Version)"
+  # author = "Ritchie Zhu"
+  avatar = "/img/perfil.jpg"
+  seotitle = "Izabella Queiroz"
   subtitle = "Portfólio de Disciplina de Visualização da Informação"
   description = "Aqui serão expostas visualizações feitas por Izabella na disciplina de Visualização da Informação no período 2017.2"
   paginate = 10
