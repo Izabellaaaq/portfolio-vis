@@ -1,0 +1,90 @@
+---
+title: "VisualizacaoComInteracao"
+date: 2017-12-21T09:36:15-03:00
+draft: false
+---
+
+<!DOCTYPE html>
+
+<!-- <cite>Campina Grande, cidade do Agreste do estado da Paraíba, é conhecida por ser uma cidade universitária. Em uma pesquisa
+realizada por equipe chamada Lab Na Rua, em parceria com o Analytics - Laboratório de análise de dados situado na UFCG - foram coletados dados ao redor do cartão postal da cidade, o Açude Velho.
+Foram colhidos dados a respeito da circulação dos veículos, ciclistas e pessoas durante o dia (06:00 às 20:00) ao redor do açude, especialmente, passando
+pelos dois pontos turísticos, a estátua de Jackson e o monumento dos "burrinhos", e no estabelecimento Bobs a cada quinze minutos.
+Na visualização abaixo, cada círculo vai possuir informações sobre o trânsito na cidade e em especial, próximo ao Açude Velho nos horários de pique. O açude é
+situado no centro da cidade, é o caminho que muitos pais levam seus filhos para as escolas e pessoas seguem para seu trabalho. Cada bolha possui o valor
+de automotores naqueles horários estipulados como de pique.
+</cite> -->
+
+<html>
+<head>
+    <title>Visualização 3</title>
+    <meta charset="utf-8">
+    <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,600,200italic,600italic&subset=latin,vietnamese'
+    rel='stylesheet' type='text/css'>
+    <script src="https://phuonghuynh.github.io/js/bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="https://phuonghuynh.github.io/js/bower_components/d3/d3.min.js"></script>
+    <script src="https://phuonghuynh.github.io/js/bower_components/d3-transform/src/d3-transform.js"></script>
+    <script src="https://phuonghuynh.github.io/js/bower_components/cafej/src/extarray.js"></script>
+    <script src="https://phuonghuynh.github.io/js/bower_components/cafej/src/misc.js"></script>
+    <script src="https://phuonghuynh.github.io/js/bower_components/cafej/src/micro-observer.js"></script>
+    <script src="https://phuonghuynh.github.io/js/bower_components/microplugin/src/microplugin.js"></script>
+    <script src="https://phuonghuynh.github.io/js/bower_components/bubble-chart/src/bubble-chart.js"></script>
+    <script src="https://phuonghuynh.github.io/js/bower_components/bubble-chart/src/plugins/central-click/central-click.js"></script>
+    <script src="https://phuonghuynh.github.io/js/bower_components/bubble-chart/src/plugins/lines/lines.js"></script>
+    <style>
+        .bubbleChart svg{
+            background: white;
+        }
+    </style>
+</head>
+<body style="background: white">
+  <div class="bubbleChart"/>
+
+<!--more-->
+<script>
+    $(document).ready(function () {
+        var bubbleChart = new d3.svg.BubbleChart({
+            size: 600,
+            innerRadius: 800 /8,
+            radiusMin: 80,
+            data: {items: [{text: "Manhã: 06h às 07h", count: "3.808"}, {text: "Tarde: 12h às 13h", count: "6.220"}, {text: "Noite: 18h às 19h", count: "6.245"},],
+                eval: function (item) {return item.count;}, classed: function (item) {return item.text.split(" ").join("");}
+            },
+            plugins: [
+              {
+                    name: "lines",
+                    options: {
+                        format: [
+                            {
+                                textField: "count",
+                                classed: {count: true},
+                                style: {"font-size": "20px", "font-family": "Source Sans Pro, sans-serif","text-anchor": "middle",
+                                fill: "Black"},
+                                attr: {
+                                    dy: "0px",
+                                    x: function (d) {return d.cx;},
+                                    y: function (d) {return d.cy;}
+                                }
+                            },
+                            {
+                                textField: "text",
+                                classed: {text: true},
+                                style: {
+                                    "font-size": "20px", "font-family": "Source Sans Pro, sans-serif", "text-anchor": "middle",
+                                    fill: "Blue" //nome do Patrimônio
+                                },
+                                attr: {
+                                    dy: "20px",
+                                    x: function (d) {return d.cx;},
+                                    y: function (d) {return d.cy;}
+                                }
+                            }
+                        ],
+                        centralFormat: [{style: {"font-size": "50px"}, attr: {}},{style: {"font-size": "20px"},attr: {dy: "50px"}}]
+                    }
+                }]
+        });
+    });
+</script>
+</body>
+</html>
