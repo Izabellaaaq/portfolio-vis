@@ -5,7 +5,7 @@
   <meta charset="utf-8" />
 
   
-  <title>Visualização 3 Com Interação</title>
+  <title>Visualização 1 Com Interação</title>
 
   
   
@@ -21,7 +21,7 @@
   
     <meta name="twitter:card" content="summary" />
     <meta name="twitter:site" content="@twitter_username" />
-    <meta name="twitter:title" content="Visualização 3 Com Interação" />
+    <meta name="twitter:title" content="Visualização 1 Com Interação" />
     <meta name="twitter:description" content="Campina Grande, cidade do Agreste do estado da Paraíba, é conhecida por ser uma cidade universitária. Em uma pesquisa realizada por equipe chamada Lab Na Rua, em parceria com o Analytics - Laboratório de análise de dados situado na UFCG - foram coletados dados ao redor do cartão postal da cidade, o Açude Velho. Foram colhidos dados a respeito da circulação dos veículos, ciclistas e pessoas durante o dia (06:00 às 20:00) ao redor do açude, especialmente, passando pelos dois pontos turísticos, a estátua de Jackson e o monumento dos &#34;" />
     <meta name="twitter:image" content="https://izabellaaaq.github.io/img/perfil.jpg" />
   
@@ -32,7 +32,7 @@
 <meta name="generator" content="Hugo 0.30.2" />
 
 
-<link rel="canonical" href="https://izabellaaaq.github.io/portfolio-vis/post/visualizacaocominteracao/" />
+<link rel="canonical" href="https://izabellaaaq.github.io/portfolio-vis/post/visualizacao1cominteracao/" />
 <link rel="alternative" href="https://izabellaaaq.github.io/portfolio-vis/index.xml" title="Izabella Ayra Antonino de Queiroz" type="application/atom+xml" />
 
 
@@ -189,95 +189,175 @@
 
   <section class="main post-detail">
     <header class="post-header">
-      <h1 class="post-title">Visualização 3 Com Interação</h1>
-      <p class="post-meta">@ · Dec 21, 2017 · 2 min read</p>
+      <h1 class="post-title">Visualização 1 Com Interação</h1>
+      <p class="post-meta">@ · Dec 22, 2017 · 3 min read</p>
     </header>
     <article class="post-content"><!DOCTYPE html>
-
 <cite>Campina Grande, cidade do Agreste do estado da Paraíba, é conhecida por ser uma cidade universitária. Em uma pesquisa
 realizada por equipe chamada Lab Na Rua, em parceria com o Analytics - Laboratório de análise de dados situado na UFCG - foram coletados dados ao redor do cartão postal da cidade, o Açude Velho.
 Foram colhidos dados a respeito da circulação dos veículos, ciclistas e pessoas durante o dia (06:00 às 20:00) ao redor do açude, especialmente, passando
 pelos dois pontos turísticos, a estátua de Jackson e o monumento dos "burrinhos", e no estabelecimento Bobs a cada quinze minutos.
-Na visualização abaixo, cada círculo vai possuir informações sobre o trânsito na cidade e em especial, próximo ao Açude Velho nos horários de pique. O açude é
-situado no centro da cidade, é o caminho que muitos pais levam seus filhos para as escolas e pessoas seguem para seu trabalho. Cada bolha possui o valor
-de automotores naqueles horários estipulados como de pique.
-</cite>
+No gráfico abaixo, temos no eixo x os horários coletados durante o dia e no eixo y a quantidade de ciclistas que passaram em frente aos pontos
+turísticos. O intuito é mostrar o trajeto feito pelos ciclistas no seu dia-a-dia, em que horário mais temos ciclitas passando por Jackson e pelos "burrinhos".
+Legenda:
+- Os pontos verdes: Estátua de Jackson do pandeiro;
+- Os pontos marrons: Monumento dos "burrinhos".
 
-<html>
-<head>
-    <title>Visualização 3</title>
-    <meta charset="utf-8">
-    <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,600,200italic,600italic&subset=latin,vietnamese'
-    rel='stylesheet' type='text/css'>
-    <script src="https://phuonghuynh.github.io/js/bower_components/jquery/dist/jquery.min.js"></script>
-    <script src="https://phuonghuynh.github.io/js/bower_components/d3/d3.min.js"></script>
-    <script src="https://phuonghuynh.github.io/js/bower_components/cafej/src/extarray.js"></script>
-    <script src="https://phuonghuynh.github.io/js/bower_components/cafej/src/misc.js"></script>
-    <script src="https://phuonghuynh.github.io/js/bower_components/cafej/src/micro-observer.js"></script>
-    <script src="https://phuonghuynh.github.io/js/bower_components/microplugin/src/microplugin.js"></script>
-    <script src="https://phuonghuynh.github.io/js/bower_components/bubble-chart/src/bubble-chart.js"></script>
-    <script src="https://phuonghuynh.github.io/js/bower_components/bubble-chart/src/plugins/central-click/central-click.js"></script>
-    <script src="https://phuonghuynh.github.io/js/bower_components/bubble-chart/src/plugins/lines/lines.js"></script>
-    <style>
-        .bubbleChart svg{
-            background: white;
+Podemos visualizar que, por volta das 20:30 da noite, cerca de 100 ciclistas passam pelo momumento dos burrinhos; E o horário com maior quantidade de ciclistas que
+passaram pela estátua de Jackson, foi por volta das 16:30 da tarde, com 50 pessoas.</cite>
+
+<html lang="pt-br">
+   <head>
+
+      <meta http-equiv='Content-Type' content='text/html; charset=utf-8'>
+      <!-- <script src="https://code.jquery.com/jquery-3.2.1.js" integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin="anonymous"></script>
+      <script src="https://d3js.org/colorbrewer.v1.min.js"></script> -->
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+      <script src="https://d3js.org/d3.v4.min.js"></script>
+      <style>
+         div.tooltip {
+         position: absolute;
+         text-align: center;
+         width: 80px;
+         height: 80px;
+         padding: 0px;
+         font: 12px sans-serif;
+         background: pink;
+         border: 0px;
+         border-radius: 8px;
+         pointer-events: none;
+         }
+         .mychart rect {
+           fill: steelblue;
+         }
+
+        .mychart text {
+        font: 12px sans-serif;
+        text-anchor: left;
         }
-    </style>
-</head>
-<body style="background: white">
-  <div class="bubbleChart"/>
+      </style>
+      <!--more-->
+      <script>
+      "use strict"
+      function desenhaBarras(dados) {
+        var alturaSVG = 300, larguraSVG = 1000;
+        var	margin = {top: 10, right: 20, bottom:50, left: 65}, // para descolar a vis das bordas do grafico
+            larguraVis = larguraSVG - margin.left - margin.right,
+            alturaVis = alturaSVG - margin.top - margin.bottom;
+        /*
+         * Prepara onde adicionaremos a visualizacao
+         */
+        var grafico = d3.select('#chart') // cria elemento <svg> com um <g> dentro
+          .append('svg')
+            .attr('width', larguraVis + margin.left + margin.right)
+            .attr('height', alturaVis + margin.top + margin.bottom)
+            .append('g') // para entender o <g> vá em x03-detalhes-svg.html
+            .attr('transform', 'translate(' +  margin.left + ',' + margin.top + ')');
+         // === EDITE DAQUI ===
+         /*
+          * As escalas
+          */
+          var listX = dados.map((dado, indice) => dado.horario_inicial)
+          listX = listX.filter (function (value, index, array) {
+            return array.indexOf (value) == index;
+          });
+          var x = d3.scaleBand()
+          x.domain(listX)
+          x.range([0,larguraSVG - margin.left - margin.right])
+          var max = d3.max(dados, (d, i) => d.total_ciclistas)
+          var y = d3.scaleLinear() // Configure essa escala com domain e range
+          y.domain([0, 120])
+          y.range([alturaSVG-margin.bottom-margin.top,0]);   // Lembre que uma escala pode converter de 1..10 -> 100..1
+         // === ATÉ DAQUI ===
+         /*
+          * As marcas
+          */
+          var div = d3.select('#chart')
+              .append("div")
+              .attr("class", "tooltip")
+              .style("opacity", 0);
+        grafico.selectAll('g')
+                      .data(dados.filter((d) => d.local == "jackson"))
+                      .enter()
+                        .append('circle')
+                        .attr('cx', d => x(d.horario_inicial))
+                        .attr('cy', d => y(d.total_ciclistas))
+                        .attr('r', 4)
+                        .attr('fill', "green")
+              //
+        grafico.selectAll('g')
+                      .data(dados.filter((d) => d.local == "burrinhos"))
+                      .enter()
+                        .append('circle')
+                        .attr('cx', d => x(d.horario_inicial))
+                        .attr('cy', d => y(d.total_ciclistas))
+                        .attr('r', 4)
+                        .attr('fill', "brown")
 
-<!--more-->
-<script src="https://phuonghuynh.github.io/js/bower_components/d3-transform/src/d3-transform.js"></script>
-
-<script>
-    $(document).ready(function () {
-        var bubbleChart = new d3.svg.BubbleChart({
-            size: 600,
-            innerRadius: 800 /8,
-            radiusMin: 80,
-            data: {items: [{text: "Manhã: 06h às 07h", count: "3.808"}, {text: "Tarde: 12h às 13h", count: "6.220"}, {text: "Noite: 18h às 19h", count: "6.245"},],
-                eval: function (item) {return item.count;}, classed: function (item) {return item.text.split(" ").join("");}
-            },
-            plugins: [
-              {
-                    name: "lines",
-                    options: {
-                        format: [
-                            {
-                                textField: "count",
-                                classed: {count: true},
-                                style: {"font-size": "20px", "font-family": "Source Sans Pro, sans-serif","text-anchor": "middle",
-                                fill: "Black"},
-                                attr: {
-                                    dy: "0px",
-                                    x: function (d) {return d.cx;},
-                                    y: function (d) {return d.cy;}
-                                }
-                            },
-                            {
-                                textField: "text",
-                                classed: {text: true},
-                                style: {
-                                    "font-size": "20px", "font-family": "Source Sans Pro, sans-serif", "text-anchor": "middle",
-                                    fill: "Blue" //nome do Patrimônio
-                                },
-                                attr: {
-                                    dy: "20px",
-                                    x: function (d) {return d.cx;},
-                                    y: function (d) {return d.cy;}
-                                }
-                            }
-                        ],
-                        centralFormat: [{style: {"font-size": "50px"}, attr: {}},{style: {"font-size": "20px"},attr: {dy: "50px"}}]
-                    }
-                }]
-        });
-    });
+        grafico.selectAll("circle").on("mouseover", clique);
+        grafico.selectAll("circle").on("mouseout", naoClique);
+        function clique(d){
+          d3.selectAll("circle") //Exemplo de quinta-feira
+          .transition()
+          .duration(200)
+          div.transition()
+              .duration(200)
+              .style("opacity", .9);
+              div.html("Hora: " + d.horario_inicial
+                + "<br/>Ciclistas: "  + d.total_ciclistas)
+              .style("left", (d3.event.pageX) + "px")      //Coloca o quadro onde o mouse estiver
+              .style("top", (d3.event.pageY-35) + "px");
+        }
+        function naoClique(d){
+          d3.selectAll("circle")
+          .transition()
+          .duration(500)
+          .attr("r", 5)
+          div.transition()
+              .duration(500)
+              .style("opacity", 0);
+        }
+         /*
+          * Os eixos
+          */
+          grafico.append("g")
+                  .attr("class", "x axis")
+                  .attr("transform", "translate(0," + alturaVis + ")")
+                  .call(d3.axisBottom(x))
+                  .selectAll("text")
+                  .style("text-anchor", "end")
+                  .attr("dx", "-.8em")
+                  .attr("dy", ".15em")
+                  .attr("transform", "rotate(-90)");
+                   // magica do d3: gera eixo a partir da escala
+          grafico.append('g')
+                  .attr('transform', 'translate(0,0)')
+                  .call(d3.axisLeft(y))  // gera eixo a partir da escala
+          grafico.append("text")
+            .attr("transform", "translate(-30," + (alturaVis + margin.top)/1.5 + ") rotate(-90)")
+            .text("Quantidade de ciclistas");
+          grafico.append("text")
+              .attr("transform", "translate(" + larguraVis/2.5 +"," + (alturaVis+margin.bottom) + ")")
+              .text("Horário de registro");
 
 
-</script>
-</body>
+         }
+         d3.csv('https://raw.githubusercontent.com/luizaugustomm/pessoas-no-acude/master/dados/processados/dados.csv', function(dados) {
+           desenhaBarras(dados);
+         });
+
+      </script>
+   </head>
+   <body>
+
+      <div class="container">
+         <div class="row">
+            <!-- <div class="container" style="overflow-x: auto; overflow-y: hidden; width: 800;"> -->
+              <div class="mychart" id="chart"></div>
+         </div>
+      </div>
+   </body>
+
 </html>
 </article>
     <footer class="post-footer">

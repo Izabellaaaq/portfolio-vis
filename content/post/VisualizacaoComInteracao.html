@@ -1,19 +1,19 @@
 ---
-title: "VisualizacaoComInteracao"
+title: "Visualização 3 Com Interação"
 date: 2017-12-21T09:36:15-03:00
 draft: false
 ---
 
 <!DOCTYPE html>
 
-<!-- <cite>Campina Grande, cidade do Agreste do estado da Paraíba, é conhecida por ser uma cidade universitária. Em uma pesquisa
+<cite>Campina Grande, cidade do Agreste do estado da Paraíba, é conhecida por ser uma cidade universitária. Em uma pesquisa
 realizada por equipe chamada Lab Na Rua, em parceria com o Analytics - Laboratório de análise de dados situado na UFCG - foram coletados dados ao redor do cartão postal da cidade, o Açude Velho.
 Foram colhidos dados a respeito da circulação dos veículos, ciclistas e pessoas durante o dia (06:00 às 20:00) ao redor do açude, especialmente, passando
 pelos dois pontos turísticos, a estátua de Jackson e o monumento dos "burrinhos", e no estabelecimento Bobs a cada quinze minutos.
 Na visualização abaixo, cada círculo vai possuir informações sobre o trânsito na cidade e em especial, próximo ao Açude Velho nos horários de pique. O açude é
 situado no centro da cidade, é o caminho que muitos pais levam seus filhos para as escolas e pessoas seguem para seu trabalho. Cada bolha possui o valor
 de automotores naqueles horários estipulados como de pique.
-</cite> -->
+</cite>
 
 <html>
 <head>
@@ -23,7 +23,6 @@ de automotores naqueles horários estipulados como de pique.
     rel='stylesheet' type='text/css'>
     <script src="https://phuonghuynh.github.io/js/bower_components/jquery/dist/jquery.min.js"></script>
     <script src="https://phuonghuynh.github.io/js/bower_components/d3/d3.min.js"></script>
-    <script src="https://phuonghuynh.github.io/js/bower_components/d3-transform/src/d3-transform.js"></script>
     <script src="https://phuonghuynh.github.io/js/bower_components/cafej/src/extarray.js"></script>
     <script src="https://phuonghuynh.github.io/js/bower_components/cafej/src/misc.js"></script>
     <script src="https://phuonghuynh.github.io/js/bower_components/cafej/src/micro-observer.js"></script>
@@ -41,6 +40,8 @@ de automotores naqueles horários estipulados como de pique.
   <div class="bubbleChart"/>
 
 <!--more-->
+<script src="https://phuonghuynh.github.io/js/bower_components/d3-transform/src/d3-transform.js"></script>
+
 <script>
     $(document).ready(function () {
         var bubbleChart = new d3.svg.BubbleChart({
@@ -85,6 +86,8 @@ de automotores naqueles horários estipulados como de pique.
                 }]
         });
     });
+
+
 </script>
 </body>
 </html>

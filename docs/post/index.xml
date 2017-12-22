@@ -6,13 +6,22 @@
     <description>Recent content in Posts on Izabella Ayra Antonino de Queiroz</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Thu, 21 Dec 2017 09:36:15 -0300</lastBuildDate>
+    <lastBuildDate>Fri, 22 Dec 2017 16:15:46 -0300</lastBuildDate>
     
 	<atom:link href="https://izabellaaaq.github.io/portfolio-vis/post/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>VisualizacaoComInteracao</title>
+      <title>Visualização 1 Com Interação</title>
+      <link>https://izabellaaaq.github.io/portfolio-vis/post/visualizacao1cominteracao/</link>
+      <pubDate>Fri, 22 Dec 2017 16:15:46 -0300</pubDate>
+      
+      <guid>https://izabellaaaq.github.io/portfolio-vis/post/visualizacao1cominteracao/</guid>
+      <description>Campina Grande, cidade do Agreste do estado da Paraíba, é conhecida por ser uma cidade universitária. Em uma pesquisa realizada por equipe chamada Lab Na Rua, em parceria com o Analytics - Laboratório de análise de dados situado na UFCG - foram coletados dados ao redor do cartão postal da cidade, o Açude Velho. Foram colhidos dados a respeito da circulação dos veículos, ciclistas e pessoas durante o dia (06:00 às 20:00) ao redor do açude, especialmente, passando pelos dois pontos turísticos, a estátua de Jackson e o monumento dos &#34;</description>
+    </item>
+    
+    <item>
+      <title>Visualização 3 Com Interação</title>
       <link>https://izabellaaaq.github.io/portfolio-vis/post/visualizacaocominteracao/</link>
       <pubDate>Thu, 21 Dec 2017 09:36:15 -0300</pubDate>
       

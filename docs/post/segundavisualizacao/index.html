@@ -201,7 +201,7 @@ realizada por equipe chamada Lab Na Rua, em parceria com o Analytics - Laborató
 Foram colhidos dados a respeito da circulação dos veículos, ciclistas e pessoas durante o dia (06:00 às 20:00) ao redor do açude, especialmente, passando
 pelos dois pontos turísticos, a estátua de Jackson e o monumento dos "burrinhos", e no estabelecimento Bobs a cada quinze minutos.
 No gráfico abaixo, temos a movimentação de veículos motorizados ao redor do Açude Velho, dessa vez, o somatório envolve os três pontos analisados pelo Lab na Rua.
-Percebe-se que há uma crescente no início da manhã (6:30 às 8:00), chegando a cerca de 1400 carros, motos, caminhões ou ônibus, que passaram pelo açude. Esse dado é válido para 
+Percebe-se que há uma crescente no início da manhã (6:30 às 8:00), chegando a cerca de 1400 carros, motos, caminhões ou ônibus, que passaram pelo açude. Esse dado é válido para
 engenheiros de trânsito, por exemplo, que podem utilizá-lo para fazer novas trajetórias, colocar ou retirar sinalizações entre outros benefícios.
 Ao mesmo tempo que temos uma pequena quantidade de veículos trafegando às 6h da manhã
 
@@ -227,7 +227,6 @@ Ao mesmo tempo que temos uma pequena quantidade de veículos trafegando às 6h d
     .mychart rect {
       fill: goldenrod;
     }
-
     .mychart text {
       font: 12px sans-serif;
       text-anchor: left;
@@ -255,7 +254,6 @@ Ao mesmo tempo que temos uma pequena quantidade de veículos trafegando às 6h d
       /*
        * As escalas
        */
-
        var listX = dados.map((dado, indice) => dado.horario_inicial)
        listX = listX.filter (function (value, index, array) {
          return array.indexOf (value) == index;
@@ -263,16 +261,13 @@ Ao mesmo tempo que temos uma pequena quantidade de veículos trafegando às 6h d
        var x = d3.scaleBand()
        x.domain(listX)
        x.range([0,larguraSVG - margin.left - margin.right])
-
       var y = d3.scaleLinear()
                 .domain([0, 1500])
                 .range([alturaVis,0]);
-
       // === ATÉ DAQUI ===
       /*
        * As marcas
        */
-
       grafico.selectAll('g')
               .data(dados)
               .enter()
@@ -293,20 +288,16 @@ Ao mesmo tempo que temos uma pequena quantidade de veículos trafegando às 6h d
                .attr("dx", "-.8em")
                .attr("dy", ".15em")
                .attr("transform", "rotate(-90)");// magica do d3: gera eixo a partir da escala
-
       grafico.append('g')
               .attr('transform', 'translate(0,0)')
               .call(d3.axisLeft(y))  // gera eixo a partir da escala
-
       grafico.append("text")
         .attr("transform", "translate(-40," + (alturaVis + margin.top)/2 + ") rotate(-90)")
         .text("Motorizados no Açude");
-
         grafico.append("text")
             .attr("transform", "translate(" + larguraVis/2 +"," + (alturaVis+margin.bottom) + ")")
             .text("Horário");
     }
-
     d3.csv('https://raw.githubusercontent.com/luizaugustomm/pessoas-no-acude/master/dados/processados/dados.csv', function(dados) {
       console.log("provavelmente acontece depois")
       desenhaBarras(dados);
