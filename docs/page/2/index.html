@@ -5,7 +5,7 @@
   <meta charset="utf-8" />
 
   
-  <title>Qual o máximo de volume que o açude de Boqueirão atingiu nos anos de 1990 a 1999? </title>
+  <title>Izabella Queiroz</title>
 
   
   
@@ -15,20 +15,14 @@
 
   
   <meta name="author" content="" />
-  <meta name="description" content="Percebe-se que a maior média de volume atingido pelo Açude de Boqueirão foi no ano de 1992, com pouco mais de 90% de sua capacidade. No ano de 1990, o açude estava próximo dessa capacidade, porém em 1991 houve uma queda para quase 90%.
-
-" />
+  <meta name="description" content="Aqui serão expostas visualizações feitas por Izabella na disciplina de Visualização da Informação no período 2017.2" />
 
   
-  
-    <meta name="twitter:card" content="summary" />
-    <meta name="twitter:site" content="@twitter_username" />
-    <meta name="twitter:title" content="Qual o máximo de volume que o açude de Boqueirão atingiu nos anos de 1990 a 1999? " />
-    <meta name="twitter:description" content="Percebe-se que a maior média de volume atingido pelo Açude de Boqueirão foi no ano de 1992, com pouco mais de 90% de sua capacidade. No ano de 1990, o açude estava próximo dessa capacidade, porém em 1991 houve uma queda para quase 90%.
-
-" />
-    <meta name="twitter:image" content="https://izabellaaaq.github.io/img/perfil.jpg" />
-  
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:site" content="@twitter_username" />
+  <meta name="twitter:title" content="Izabella Queiroz" />
+  <meta name="twitter:description" content="Aqui serão expostas visualizações feitas por Izabella na disciplina de Visualização da Informação no período 2017.2" />
+  <meta name="twitter:image" content="https://izabellaaaq.github.io/img/perfil.jpg" />
 
 
 
@@ -36,7 +30,7 @@
 <meta name="generator" content="Hugo 0.30.2" />
 
 
-<link rel="canonical" href="https://izabellaaaq.github.io/portfolio-vis/post/primeiro-post/" />
+<link rel="canonical" href="https://izabellaaaq.github.io/portfolio-vis/" />
 <link rel="alternative" href="https://izabellaaaq.github.io/portfolio-vis/index.xml" title="Izabella Ayra Antonino de Queiroz" type="application/atom+xml" />
 
 
@@ -71,8 +65,6 @@
 
 
 
-<link rel="stylesheet" href="//cdn.bootcss.com/video.js/6.2.8/alt/video-js-cdn.min.css" />
-
 <link rel="stylesheet" href="https://izabellaaaq.github.io/portfolio-vis/css/bundle.css" />
 
 
@@ -100,15 +92,13 @@
     <div class="suspension">
       <a title="Go to top" class="to-top is-hide"><span class="icon icon-up"></span></a>
       
-        
-      
     </div>
     
     
   <header class="site-header">
   <img class="avatar" src="https://izabellaaaq.github.io/portfolio-vis/img/perfil.jpg" alt="Avatar">
   
-  <h2 class="title">Izabella Ayra Antonino de Queiroz</h2>
+  <h1 class="title">Izabella Ayra Antonino de Queiroz</h1>
   
   <p class="subtitle">Portfólio de Disciplina de Visualização da Informação</p>
   <button class="menu-toggle" type="button">
@@ -191,73 +181,37 @@
   </nav>
 </header>
 
-  <section class="main post-detail">
-    <header class="post-header">
-      <h1 class="post-title">Qual o máximo de volume que o açude de Boqueirão atingiu nos anos de 1990 a 1999? </h1>
-      <p class="post-meta">@ · Nov 22, 2017 · 1 min read</p>
+  <section class="main post-list">
+    <header class="list-header offscreen">
+      <h2 class="list-label">All Posts</h2>
     </header>
-    <article class="post-content"><p>Percebe-se que a maior média de volume atingido pelo Açude de Boqueirão foi no ano de 1992, com pouco mais de 90% de sua capacidade. No ano de 1990, o açude estava próximo dessa capacidade, porém em 1991 houve uma queda para quase 90%.</p>
-
-<p></p>
-
-<div id="vis" width=300></div>
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/vega/3.0.7/vega.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/vega-lite/2.0.1/vega-lite.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/vega-embed/3.0.0-rc7/vega-embed.js"></script>
-<script>
-    const spec = {
-    "$schema": "https://vega.github.io/schema/vega-lite/v2.json",
- "data": {
-      "url":"https://api.insa.gov.br/reservatorios/12172/monitoramento",
-      "format": {
-          "type": "json",
-          "property": "volumes",
-          "parse": {"DataInformacao": "utc:'%d/%m/%Y'"}
-      }
-  },
-  "mark": "bar",
-  "width": 180,
- "transform": [
-    {
-      "filter": {
-        "timeUnit": "year",
-        "field": "DataInformacao",
-        "range": [
-          1990,
-          1999
-        ]
-      }
-    }
-
-  ],
-  
-"encoding": {
-  "x": {
-    "timeUnit": "year",
-    "field": "DataInformacao",
-    "type": "temporal",
-    "axis": {"title": "Anos"}
-  },
-  "y": {
-    "aggregate": "mean",
-    "field": "VolumePercentual",
-    "type": "quantitative",
-    "axis": {"title": "Média do volume (%)"}
-  }
-}
-
-     };
-    vegaEmbed('#vis', spec).catch(console.warn);
-</script></article>
-    <footer class="post-footer">
-      
-      <p class="post-copyright">
-        
-      </p>
-    </footer>
+    
     
       
+        <article class="post-entry">
+  <header class="post-header">
+    <h3 class="post-title"><a href="https://izabellaaaq.github.io/portfolio-vis/post/dadospbmapa2/" class="post-link"></a></h3>
+    <p class="post-meta">@ · Jan 1, 0001 · 1 min read</p>
+  </header>
+  
+  <p class="post-summary">title: &#34;Moradores em domicílios particulares permanentes com abastecimento de água da rede geral &#34; date: 2018-02-19T16:44:05-03:00 draft: false ---    Laboratório 3, parte 2      var svg = d3.select(&#34;svg&#34;), width = &#43;svg.attr(&#34;width&#34;), height = &#43;svg.attr(&#34;height&#34;); var x = d3.scaleLinear() .domain([0,7]) .rangeRound([100, 360]); var color = d3.scaleThreshold() .domain(d3.range(0, 5)) .range(d3.schemeOrRd[5]); var g = svg.append(&#34;g&#34;) .attr(&#34;class&#34;, &#34;key&#34;) .attr(&#34;transform&#34;, &#34;translate(0,40)&#34;); g.selectAll(&#34;rect&#34;) .data(color.range().map(function(d) { d = color.invertExtent(d); if (d[0] == null) d[0] = x.</p>
+  <footer class="post-footer">
+    <a class="read-more" href="https://izabellaaaq.github.io/portfolio-vis/post/dadospbmapa2/">Read More →</a>
+  </footer>
+</article>
+
+      
+    
+    
+      <footer class="list-footer">
+        <nav class="pagination">
+          <h3 class="offscreen">Pagination</h3>
+          
+            <a class="pagination-previous" href="https://izabellaaaq.github.io/portfolio-vis/">← Newer Posts</a>
+          
+          
+        </nav>
+      </footer>
     
   </section>
   <footer class="site-footer">
@@ -267,30 +221,6 @@
 </footer>
 
 
-
-<script async src="//cdn.bootcss.com/video.js/6.2.8/alt/video.novtt.min.js"></script>
-<script async src="//cdn.bootcss.com/mathjax/2.7.2/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-<script type="text/x-mathjax-config">
-  MathJax.Hub.Config({
-    tex2jax: {
-      inlineMath: [['$','$'], ['\\(','\\)']],
-      displayMath: [['$$','$$'], ['\[','\]']],
-      processEscapes: true,
-      processEnvironments: true,
-      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
-      TeX: { equationNumbers: { autoNumber: "AMS" },
-      extensions: ["AMSmath.js", "AMSsymbols.js"] }
-    }
-  });
-</script>
-<script type="text/x-mathjax-config">
-  // Fix <code> tags after MathJax finishes running. This is a
-  // hack to overcome a shortcoming of Markdown. Discussion at
-  // https://github.com/mojombo/jekyll/issues/199
-  MathJax.Hub.Queue(() => {
-    MathJax.Hub.getAllJax().map(v => v.SourceElement().parentNode.className += ' has-jax');
-  });
-</script>
 
 <script src="https://izabellaaaq.github.io/portfolio-vis/js/bundle.js"></script>
 

@@ -5,7 +5,7 @@
   <meta charset="utf-8" />
 
   
-  <title>Visualização 3 Com Interação</title>
+  <title>Dados do IBGE da Paraíba</title>
 
   
   
@@ -15,14 +15,14 @@
 
   
   <meta name="author" content="" />
-  <meta name="description" content="Campina Grande, cidade do Agreste do estado da Paraíba, é conhecida por ser uma cidade universitária. Em uma pesquisa realizada por equipe chamada Lab Na Rua, em parceria com o Analytics - Laboratório de análise de dados situado na UFCG - foram coletados dados ao redor do cartão postal da cidade, o Açude Velho. Foram colhidos dados a respeito da circulação dos veículos, ciclistas e pessoas durante o dia (06:00 às 20:00) ao redor do açude, especialmente, passando pelos dois pontos turísticos, a estátua de Jackson e o monumento dos &#34;" />
+  <meta name="description" content="      Rendimento Domiciliar na Paraíba       Moradores em domicílios particulares permanentes com abastecimento de água.     " />
 
   
   
     <meta name="twitter:card" content="summary" />
     <meta name="twitter:site" content="@twitter_username" />
-    <meta name="twitter:title" content="Visualização 3 Com Interação" />
-    <meta name="twitter:description" content="Campina Grande, cidade do Agreste do estado da Paraíba, é conhecida por ser uma cidade universitária. Em uma pesquisa realizada por equipe chamada Lab Na Rua, em parceria com o Analytics - Laboratório de análise de dados situado na UFCG - foram coletados dados ao redor do cartão postal da cidade, o Açude Velho. Foram colhidos dados a respeito da circulação dos veículos, ciclistas e pessoas durante o dia (06:00 às 20:00) ao redor do açude, especialmente, passando pelos dois pontos turísticos, a estátua de Jackson e o monumento dos &#34;" />
+    <meta name="twitter:title" content="Dados do IBGE da Paraíba" />
+    <meta name="twitter:description" content="      Rendimento Domiciliar na Paraíba       Moradores em domicílios particulares permanentes com abastecimento de água.     " />
     <meta name="twitter:image" content="https://izabellaaaq.github.io/img/perfil.jpg" />
   
 
@@ -32,7 +32,7 @@
 <meta name="generator" content="Hugo 0.30.2" />
 
 
-<link rel="canonical" href="https://izabellaaaq.github.io/portfolio-vis/post/visualizacaocominteracao/" />
+<link rel="canonical" href="https://izabellaaaq.github.io/portfolio-vis/post/dadospb/" />
 <link rel="alternative" href="https://izabellaaaq.github.io/portfolio-vis/index.xml" title="Izabella Ayra Antonino de Queiroz" type="application/atom+xml" />
 
 
@@ -189,96 +189,34 @@
 
   <section class="main post-detail">
     <header class="post-header">
-      <h1 class="post-title">Visualização 3 Com Interação</h1>
-      <p class="post-meta">@ · Dec 21, 2017 · 2 min read</p>
+      <h1 class="post-title">Dados do IBGE da Paraíba</h1>
+      <p class="post-meta">@ · Feb 18, 2018 · 1 min read</p>
     </header>
     <article class="post-content"><!DOCTYPE html>
+<meta charset="utf-8">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+<style>
+</style>
+<p> Rendimento Domiciliar na Paraíba </p>
+<script src="https://d3js.org/d3.v4.min.js"></script>
+<script src="https://d3js.org/d3-scale-chromatic.v1.min.js"></script>
+<script src="https://d3js.org/topojson.v2.min.js"></script>
+<div class="row">
+  <img src="https://izabellaaaq.github.io/portfolio-vis/post/data/pb-mapa1.svg" width="570" height="auto">
+  <svg id="map1" width="400" height="300"></svg>
+</div>
+<p> Moradores em domicílios particulares permanentes com abastecimento de água. </p>
+<div class="row">
+  <img src="https://izabellaaaq.github.io/portfolio-vis/post/data/pb-mapa2.svg" width="570" height="auto">
+  <svg id="map2" width="400" height="300"></svg>
 
-<cite>Campina Grande, cidade do Agreste do estado da Paraíba, é conhecida por ser uma cidade universitária. Em uma pesquisa
-realizada por equipe chamada Lab Na Rua, em parceria com o Analytics - Laboratório de análise de dados situado na UFCG - foram coletados dados ao redor do cartão postal da cidade, o Açude Velho.
-Foram colhidos dados a respeito da circulação dos veículos, ciclistas e pessoas durante o dia (06:00 às 20:00) ao redor do açude, especialmente, passando
-pelos dois pontos turísticos, a estátua de Jackson e o monumento dos "burrinhos", e no estabelecimento Bobs a cada quinze minutos.
-Na visualização abaixo, cada círculo vai possuir informações sobre o trânsito na cidade e em especial, próximo ao Açude Velho nos horários de pique. O açude é
-situado no centro da cidade, é o caminho que muitos pais levam seus filhos para as escolas e pessoas seguem para seu trabalho. Cada bolha possui o valor
-de automotores naqueles horários estipulados como de pique.
-</cite>
+</div>
+<script src="https://izabellaaaq.github.io/portfolio-vis/post/script/legMapa1.js"></script>
 
-<html>
-<head>
-    <title>Visualização 3</title>
-    <meta charset="utf-8">
-    <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,600,200italic,600italic&subset=latin,vietnamese'
-    rel='stylesheet' type='text/css'>
-    <script src="https://phuonghuynh.github.io/js/bower_components/jquery/dist/jquery.min.js"></script>
-    <script src="https://phuonghuynh.github.io/js/bower_components/d3/d3.min.js"></script>
-    <script src="https://phuonghuynh.github.io/js/bower_components/cafej/src/extarray.js"></script>
-    <script src="https://phuonghuynh.github.io/js/bower_components/cafej/src/misc.js"></script>
-    <script src="https://phuonghuynh.github.io/js/bower_components/cafej/src/micro-observer.js"></script>
-    <script src="https://phuonghuynh.github.io/js/bower_components/microplugin/src/microplugin.js"></script>
-    <script src="https://phuonghuynh.github.io/js/bower_components/bubble-chart/src/bubble-chart.js"></script>
-    <script src="https://phuonghuynh.github.io/js/bower_components/bubble-chart/src/plugins/central-click/central-click.js"></script>
-    <script src="https://phuonghuynh.github.io/js/bower_components/bubble-chart/src/plugins/lines/lines.js"></script>
-    <style>
-        .bubbleChart svg{
-            background: white;
-        }
-    </style>
-</head>
-<body style="background: white">
-  <div class="bubbleChart"/>
-
-<!--more-->
-<script src="https://phuonghuynh.github.io/js/bower_components/d3-transform/src/d3-transform.js"></script>
-
-<script>
-    $(document).ready(function () {
-        var bubbleChart = new d3.svg.BubbleChart({
-            size: 600,
-            innerRadius: 800 /8,
-            radiusMin: 80,
-            data: {items: [{text: "Manhã: 06h às 07h", count: "3.808"}, {text: "Tarde: 12h às 13h", count: "6.220"}, {text: "Noite: 18h às 19h", count: "6.245"},],
-                eval: function (item) {return item.count;}, classed: function (item) {return item.text.split(" ").join("");}
-            },
-            plugins: [
-              {
-                    name: "lines",
-                    options: {
-                        format: [
-                            {
-                                textField: "count",
-                                classed: {count: true},
-                                style: {"font-size": "20px", "font-family": "Source Sans Pro, sans-serif","text-anchor": "middle",
-                                fill: "Black"},
-                                attr: {
-                                    dy: "0px",
-                                    x: function (d) {return d.cx;},
-                                    y: function (d) {return d.cy;}
-                                }
-                            },
-                            {
-                                textField: "text",
-                                classed: {text: true},
-                                style: {
-                                    "font-size": "20px", "font-family": "Source Sans Pro, sans-serif", "text-anchor": "middle",
-                                    fill: "Blue" //nome do Patrimônio
-                                },
-                                attr: {
-                                    dy: "20px",
-                                    x: function (d) {return d.cx;},
-                                    y: function (d) {return d.cy;}
-                                }
-                            }
-                        ],
-                        centralFormat: [{style: {"font-size": "50px"}, attr: {}},{style: {"font-size": "20px"},attr: {dy: "50px"}}]
-                    }
-                }]
-        });
-    });
-
-
-</script>
-</body>
-</html>
+<script src="https://izabellaaaq.github.io/portfolio-vis/post/script/legMapa2.js"></script>
 </article>
     <footer class="post-footer">
       

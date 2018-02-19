@@ -5,7 +5,7 @@
   <meta charset="utf-8" />
 
   
-  <title>Visualização 3 Com Interação</title>
+  <title></title>
 
   
   
@@ -15,14 +15,14 @@
 
   
   <meta name="author" content="" />
-  <meta name="description" content="Campina Grande, cidade do Agreste do estado da Paraíba, é conhecida por ser uma cidade universitária. Em uma pesquisa realizada por equipe chamada Lab Na Rua, em parceria com o Analytics - Laboratório de análise de dados situado na UFCG - foram coletados dados ao redor do cartão postal da cidade, o Açude Velho. Foram colhidos dados a respeito da circulação dos veículos, ciclistas e pessoas durante o dia (06:00 às 20:00) ao redor do açude, especialmente, passando pelos dois pontos turísticos, a estátua de Jackson e o monumento dos &#34;" />
+  <meta name="description" content="title: &#34;Moradores em domicílios particulares permanentes com abastecimento de água da rede geral &#34; date: 2018-02-19T16:44:05-03:00 draft: false ---    Laboratório 3, parte 2      var svg = d3.select(&#34;svg&#34;), width = &#43;svg.attr(&#34;width&#34;), height = &#43;svg.attr(&#34;height&#34;); var x = d3.scaleLinear() .domain([0,7]) .rangeRound([100, 360]); var color = d3.scaleThreshold() .domain(d3.range(0, 5)) .range(d3.schemeOrRd[5]); var g = svg.append(&#34;g&#34;) .attr(&#34;class&#34;, &#34;key&#34;) .attr(&#34;transform&#34;, &#34;translate(0,40)&#34;); g.selectAll(&#34;rect&#34;) .data(color.range().map(function(d) { d = color.invertExtent(d); if (d[0] == null) d[0] = x." />
 
   
   
     <meta name="twitter:card" content="summary" />
     <meta name="twitter:site" content="@twitter_username" />
-    <meta name="twitter:title" content="Visualização 3 Com Interação" />
-    <meta name="twitter:description" content="Campina Grande, cidade do Agreste do estado da Paraíba, é conhecida por ser uma cidade universitária. Em uma pesquisa realizada por equipe chamada Lab Na Rua, em parceria com o Analytics - Laboratório de análise de dados situado na UFCG - foram coletados dados ao redor do cartão postal da cidade, o Açude Velho. Foram colhidos dados a respeito da circulação dos veículos, ciclistas e pessoas durante o dia (06:00 às 20:00) ao redor do açude, especialmente, passando pelos dois pontos turísticos, a estátua de Jackson e o monumento dos &#34;" />
+    <meta name="twitter:title" content="" />
+    <meta name="twitter:description" content="title: &#34;Moradores em domicílios particulares permanentes com abastecimento de água da rede geral &#34; date: 2018-02-19T16:44:05-03:00 draft: false ---    Laboratório 3, parte 2      var svg = d3.select(&#34;svg&#34;), width = &#43;svg.attr(&#34;width&#34;), height = &#43;svg.attr(&#34;height&#34;); var x = d3.scaleLinear() .domain([0,7]) .rangeRound([100, 360]); var color = d3.scaleThreshold() .domain(d3.range(0, 5)) .range(d3.schemeOrRd[5]); var g = svg.append(&#34;g&#34;) .attr(&#34;class&#34;, &#34;key&#34;) .attr(&#34;transform&#34;, &#34;translate(0,40)&#34;); g.selectAll(&#34;rect&#34;) .data(color.range().map(function(d) { d = color.invertExtent(d); if (d[0] == null) d[0] = x." />
     <meta name="twitter:image" content="https://izabellaaaq.github.io/img/perfil.jpg" />
   
 
@@ -32,7 +32,7 @@
 <meta name="generator" content="Hugo 0.30.2" />
 
 
-<link rel="canonical" href="https://izabellaaaq.github.io/portfolio-vis/post/visualizacaocominteracao/" />
+<link rel="canonical" href="https://izabellaaaq.github.io/portfolio-vis/post/dadospbmapa2/" />
 <link rel="alternative" href="https://izabellaaaq.github.io/portfolio-vis/index.xml" title="Izabella Ayra Antonino de Queiroz" type="application/atom+xml" />
 
 
@@ -189,101 +189,78 @@
 
   <section class="main post-detail">
     <header class="post-header">
-      <h1 class="post-title">Visualização 3 Com Interação</h1>
-      <p class="post-meta">@ · Dec 21, 2017 · 2 min read</p>
+      <h1 class="post-title"></h1>
+      <p class="post-meta">@ · Jan 1, 0001 · 1 min read</p>
     </header>
-    <article class="post-content"><!DOCTYPE html>
+    <article class="post-content">title: "Moradores em domicílios particulares permanentes com abastecimento de água
+da rede geral "
+date: 2018-02-19T16:44:05-03:00
+draft: false
+---
+<!DOCTYPE html>
+<meta charset="utf-8">
 
-<cite>Campina Grande, cidade do Agreste do estado da Paraíba, é conhecida por ser uma cidade universitária. Em uma pesquisa
-realizada por equipe chamada Lab Na Rua, em parceria com o Analytics - Laboratório de análise de dados situado na UFCG - foram coletados dados ao redor do cartão postal da cidade, o Açude Velho.
-Foram colhidos dados a respeito da circulação dos veículos, ciclistas e pessoas durante o dia (06:00 às 20:00) ao redor do açude, especialmente, passando
-pelos dois pontos turísticos, a estátua de Jackson e o monumento dos "burrinhos", e no estabelecimento Bobs a cada quinze minutos.
-Na visualização abaixo, cada círculo vai possuir informações sobre o trânsito na cidade e em especial, próximo ao Açude Velho nos horários de pique. O açude é
-situado no centro da cidade, é o caminho que muitos pais levam seus filhos para as escolas e pessoas seguem para seu trabalho. Cada bolha possui o valor
-de automotores naqueles horários estipulados como de pique.
-</cite>
+<style>
+</style>
+<p> Laboratório 3, parte 2 </p>
+<img src="https://izabellaaaq.github.io/portfolio-vis/post/data/pb-mapa2.svg" width="570" height="auto">
+<svg width="400" height="300"></svg>
 
-<html>
-<head>
-    <title>Visualização 3</title>
-    <meta charset="utf-8">
-    <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,600,200italic,600italic&subset=latin,vietnamese'
-    rel='stylesheet' type='text/css'>
-    <script src="https://phuonghuynh.github.io/js/bower_components/jquery/dist/jquery.min.js"></script>
-    <script src="https://phuonghuynh.github.io/js/bower_components/d3/d3.min.js"></script>
-    <script src="https://phuonghuynh.github.io/js/bower_components/cafej/src/extarray.js"></script>
-    <script src="https://phuonghuynh.github.io/js/bower_components/cafej/src/misc.js"></script>
-    <script src="https://phuonghuynh.github.io/js/bower_components/cafej/src/micro-observer.js"></script>
-    <script src="https://phuonghuynh.github.io/js/bower_components/microplugin/src/microplugin.js"></script>
-    <script src="https://phuonghuynh.github.io/js/bower_components/bubble-chart/src/bubble-chart.js"></script>
-    <script src="https://phuonghuynh.github.io/js/bower_components/bubble-chart/src/plugins/central-click/central-click.js"></script>
-    <script src="https://phuonghuynh.github.io/js/bower_components/bubble-chart/src/plugins/lines/lines.js"></script>
-    <style>
-        .bubbleChart svg{
-            background: white;
-        }
-    </style>
-</head>
-<body style="background: white">
-  <div class="bubbleChart"/>
-
-<!--more-->
-<script src="https://phuonghuynh.github.io/js/bower_components/d3-transform/src/d3-transform.js"></script>
-
+<script src="https://d3js.org/d3.v4.min.js"></script>
+<script src="https://d3js.org/d3-scale-chromatic.v1.min.js"></script>
+<script src="https://d3js.org/topojson.v2.min.js"></script>
 <script>
-    $(document).ready(function () {
-        var bubbleChart = new d3.svg.BubbleChart({
-            size: 600,
-            innerRadius: 800 /8,
-            radiusMin: 80,
-            data: {items: [{text: "Manhã: 06h às 07h", count: "3.808"}, {text: "Tarde: 12h às 13h", count: "6.220"}, {text: "Noite: 18h às 19h", count: "6.245"},],
-                eval: function (item) {return item.count;}, classed: function (item) {return item.text.split(" ").join("");}
-            },
-            plugins: [
-              {
-                    name: "lines",
-                    options: {
-                        format: [
-                            {
-                                textField: "count",
-                                classed: {count: true},
-                                style: {"font-size": "20px", "font-family": "Source Sans Pro, sans-serif","text-anchor": "middle",
-                                fill: "Black"},
-                                attr: {
-                                    dy: "0px",
-                                    x: function (d) {return d.cx;},
-                                    y: function (d) {return d.cy;}
-                                }
-                            },
-                            {
-                                textField: "text",
-                                classed: {text: true},
-                                style: {
-                                    "font-size": "20px", "font-family": "Source Sans Pro, sans-serif", "text-anchor": "middle",
-                                    fill: "Blue" //nome do Patrimônio
-                                },
-                                attr: {
-                                    dy: "20px",
-                                    x: function (d) {return d.cx;},
-                                    y: function (d) {return d.cy;}
-                                }
-                            }
-                        ],
-                        centralFormat: [{style: {"font-size": "50px"}, attr: {}},{style: {"font-size": "20px"},attr: {dy: "50px"}}]
-                    }
-                }]
-        });
-    });
 
+var svg = d3.select("svg"),
+    width = +svg.attr("width"),
+    height = +svg.attr("height");
 
-</script>
-</body>
-</html>
+var x = d3.scaleLinear()
+    .domain([0,7])
+    .rangeRound([100, 360]);
+
+var color = d3.scaleThreshold()
+    .domain(d3.range(0, 5))
+    .range(d3.schemeOrRd[5]);
+
+var g = svg.append("g")
+    .attr("class", "key")
+    .attr("transform", "translate(0,40)");
+
+g.selectAll("rect")
+  .data(color.range().map(function(d) {
+      d = color.invertExtent(d);
+      if (d[0] == null) d[0] = x.domain()[0];
+      if (d[1] == null) d[1] = x.domain()[1];
+      return d;
+    }))
+  .enter().append("rect")
+    .attr("height", 6)
+    .attr("x", function(d) { return x(d[0]); })
+    .attr("width", function(d) { return x(d[1]) - x(d[0]); })
+    .attr("fill", function(d) { return color(d[0]); });
+
+g.append("text")
+    .attr("class", "caption")
+    .attr("x", x.range()[0])
+    .attr("y", -6)
+    .attr("fill", "#000")
+    .attr("text-anchor", "start")
+    .attr("font-weight", "bold")
+    .text("Moradores com abastecimento");
+
+g.call(d3.axisBottom(x)
+    .tickSize(13)
+    .tickFormat(function(x, i) { return i ? x * 500   : x; })
+    .tickValues(color.domain()))
+  .select(".domain")
+    .remove();
+</script> -->
 </article>
     <footer class="post-footer">
       
       <p class="post-copyright">
-        
+        This post was published <strong>736743</strong> days ago, content in the post may be inaccurate, even wrong now, please take risk yourself.
       </p>
     </footer>
     

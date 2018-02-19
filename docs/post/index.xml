@@ -6,10 +6,19 @@
     <description>Recent content in Posts on Izabella Ayra Antonino de Queiroz</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Fri, 22 Dec 2017 16:15:46 -0300</lastBuildDate>
+    <lastBuildDate>Sun, 18 Feb 2018 02:29:18 -0300</lastBuildDate>
     
 	<atom:link href="https://izabellaaaq.github.io/portfolio-vis/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Dados do IBGE da Paraíba</title>
+      <link>https://izabellaaaq.github.io/portfolio-vis/post/dadospb/</link>
+      <pubDate>Sun, 18 Feb 2018 02:29:18 -0300</pubDate>
+      
+      <guid>https://izabellaaaq.github.io/portfolio-vis/post/dadospb/</guid>
+      <description>      Rendimento Domiciliar na Paraíba       Moradores em domicílios particulares permanentes com abastecimento de água.     </description>
+    </item>
     
     <item>
       <title>Visualização 1 Com Interação</title>
@@ -94,6 +103,15 @@
       <description>&lt;p&gt;Percebe-se que a maior média de volume atingido pelo Açude de Boqueirão foi no ano de 1992, com pouco mais de 90% de sua capacidade. No ano de 1990, o açude estava próximo dessa capacidade, porém em 1991 houve uma queda para quase 90%.&lt;/p&gt;
 
 &lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://izabellaaaq.github.io/portfolio-vis/post/dadospbmapa2/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://izabellaaaq.github.io/portfolio-vis/post/dadospbmapa2/</guid>
+      <description>title: &#34;Moradores em domicílios particulares permanentes com abastecimento de água da rede geral &#34; date: 2018-02-19T16:44:05-03:00 draft: false ---    Laboratório 3, parte 2      var svg = d3.select(&#34;svg&#34;), width = +svg.attr(&#34;width&#34;), height = +svg.attr(&#34;height&#34;); var x = d3.scaleLinear() .domain([0,7]) .rangeRound([100, 360]); var color = d3.scaleThreshold() .domain(d3.range(0, 5)) .range(d3.schemeOrRd[5]); var g = svg.append(&#34;g&#34;) .attr(&#34;class&#34;, &#34;key&#34;) .attr(&#34;transform&#34;, &#34;translate(0,40)&#34;); g.selectAll(&#34;rect&#34;) .data(color.range().map(function(d) { d = color.invertExtent(d); if (d[0] == null) d[0] = x.</description>
     </item>
     
   </channel>
