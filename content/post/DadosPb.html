@@ -1,81 +1,30 @@
 ---
-title: "Rendimento Domociliar na Paraíba"
+title: "Dados do IBGE da Paraíba"
 date: 2018-02-18T02:29:18-03:00
 draft: false
 ---
 <!DOCTYPE html>
 <meta charset="utf-8">
-
-<h1>Através de duas diferentes perspectivas...</h1>
-
-<p>Para esta visualização foram utilizados dados dos setores censitários da PB
-  segundo o censo do IBGE de 2010. Mais especificamente, os dados são um recorte
-  relacionados às mulheres moradoras de domicílios particulares e coletivos.</p>
-
-<p>A visualização abaixo está representado o número de mulheres em cada setor
-censitário do estado. <b>A variação das cores representa um intervalo em
-valores brutos</b>. É possível observar que a maior parte se encontra com números
-no intervalo 0-249 ou 250-500. O que o mapa abaixo pode nos mostrar é quais são os
-setores com mais ou menos mulheres que moram em domicílios particulares ou coletivos
-em valores absolutos, nos permite realizar este tipo de comparação entre os setores. </p>
-
-<h3 align = "center">Número de mulheres moradoras em domicílios particulares e coletivos</h3>
-<img src="https://github.com/Izabellaaaq/portfolio-vis/blob/master/docs/img/pb-mapa1.svg" width="570" height="auto">
-<br><br><br>
-
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 <style>
-
-
 </style>
-<svg width="400" height="300"></svg>
-
+<p> Rendimento Domiciliar na Paraíba </p>
 <script src="https://d3js.org/d3.v4.min.js"></script>
 <script src="https://d3js.org/d3-scale-chromatic.v1.min.js"></script>
 <script src="https://d3js.org/topojson.v2.min.js"></script>
-<script>
+<div class="row">
+  <img src="/post/data/pb-mapa1.svg" width="570" height="auto">
+  <svg id="map1" width="400" height="300"></svg>
+</div>
+<p> Moradores em domicílios particulares permanentes com abastecimento de água. </p>
+<div class="row">
+  <img src="/post/data/pb-mapa2.svg" width="570" height="auto">
+  <svg id="map2" width="400" height="300"></svg>
 
-var svg = d3.select("svg"),
-    width = +svg.attr("width"),
-    height = +svg.attr("height");
+</div>
+<script src="/post/script/legMapa1.js"></script>
 
-var x = d3.scaleLinear()
-    .domain([1, 10])
-    .rangeRound([100, 360]);
-
-var color = d3.scaleThreshold()
-    .domain(d3.range(2, 10))
-    .range(d3.schemeBlues[9]);
-
-var g = svg.append("g")
-    .attr("class", "key")
-    .attr("transform", "translate(0,40)");
-
-g.selectAll("rect")
-  .data(color.range().map(function(d) {
-      d = color.invertExtent(d);
-      if (d[0] == null) d[0] = x.domain()[0];
-      if (d[1] == null) d[1] = x.domain()[1];
-      return d;
-    }))
-  .enter().append("rect")
-    .attr("height", 8)
-    .attr("x", function(d) { return x(d[0]); })
-    .attr("width", function(d) { return x(d[1]) - x(d[0]); })
-    .attr("fill", function(d) { return color(d[0]); });
-
-g.append("text")
-    .attr("class", "caption")
-    .attr("x", x.range()[0])
-    .attr("y", -6)
-    .attr("fill", "#000")
-    .attr("text-anchor", "start")
-    .attr("font-weight", "bold")
-    .text("Medida XYZ");
-
-g.call(d3.axisBottom(x)
-    .tickSize(13)
-    .tickFormat(function(x, i) { return i ? x : x + "%"; })
-    .tickValues(color.domain()))
-  .select(".domain")
-    .remove();
-</script>
+<script src="/post/script/legMapa2.js"></script>
