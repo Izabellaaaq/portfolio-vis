@@ -6,7 +6,15 @@ draft: false
 
 <!DOCTYPE html>
 <meta charset="utf-8">
+
+<p> Abaixo, temos uma visualização que mostra o crescimento dos municípios paraibanos em pontos percentuais de acordo com o Índice de Desenvolvimento da Educação Básica (IDBE) entre 2011 e 2013. Estes dados são representados de acordo com a legenda. </p>
+
+<p> Percebe-se que algumas cidades do interior possuem bons valores de crescimento, enquanto Campina Grande, que possue um dos melhores desenvolvimento, está na cor cinza.</p>
+
 <style>
+
+
+
 
 /*python -m SimpleHTTPServer*/
 
@@ -32,12 +40,12 @@ div.tooltip {
 
 </style>
 
-<svg width="1000" height="600"></svg>
+<svg width="1300" height="600"></svg>
 
 <script src="https://d3js.org/d3.v4.min.js"></script>
 <script src="https://d3js.org/d3-scale-chromatic.v1.min.js"></script>
 <script src="https://d3js.org/topojson.v2.min.js"></script>
-<script src="legenda-d3-cor.js"></script>
+<script src="../legenda-d3-cor.js"></script>
 <script>
 
 var svg = d3.select("svg"),
