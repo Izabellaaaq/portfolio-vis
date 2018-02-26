@@ -5,10 +5,7 @@
   <meta charset="utf-8" />
 
   
-  <title>
-  Posts
-   | Izabella Queiroz
-</title>
+  <title>Porcentagem de jovens de 15 a 17 anos na escola em 2014</title>
 
   
   
@@ -18,14 +15,14 @@
 
   
   <meta name="author" content="" />
-  <meta name="description" content="" />
+  <meta name="description" content="/*python -m SimpleHTTPServer*/ .cidades { fill: none; stroke: #fff; stroke-linejoin: round; } path:hover, path.highlighted { fill: tomato; } div.tooltip { position: absolute; background-color: white; border: 1px solid black; color: black; font-family:&#34;avenir next&#34;, Arial, sans-serif; padding: 4px 8px; display: none; }        var svg = d3.select(&#34;svg&#34;), width = &#43;svg.attr(&#34;width&#34;), height = &#43;svg.attr(&#34;height&#34;); var path = d3.geoPath(); // a escala de cores var color = d3." />
 
   
   
     <meta name="twitter:card" content="summary" />
     <meta name="twitter:site" content="@twitter_username" />
-    <meta name="twitter:title" content="Posts" />
-    <meta name="twitter:description" content="" />
+    <meta name="twitter:title" content="Porcentagem de jovens de 15 a 17 anos na escola em 2014" />
+    <meta name="twitter:description" content="/*python -m SimpleHTTPServer*/ .cidades { fill: none; stroke: #fff; stroke-linejoin: round; } path:hover, path.highlighted { fill: tomato; } div.tooltip { position: absolute; background-color: white; border: 1px solid black; color: black; font-family:&#34;avenir next&#34;, Arial, sans-serif; padding: 4px 8px; display: none; }        var svg = d3.select(&#34;svg&#34;), width = &#43;svg.attr(&#34;width&#34;), height = &#43;svg.attr(&#34;height&#34;); var path = d3.geoPath(); // a escala de cores var color = d3." />
     <meta name="twitter:image" content="https://izabellaaaq.github.io/img/perfil.jpg" />
   
 
@@ -35,7 +32,7 @@
 <meta name="generator" content="Hugo 0.30.2" />
 
 
-<link rel="canonical" href="https://izabellaaaq.github.io/portfolio-vis/post/" />
+<link rel="canonical" href="https://izabellaaaq.github.io/portfolio-vis/post/aprendizadobr/" />
 <link rel="alternative" href="https://izabellaaaq.github.io/portfolio-vis/index.xml" title="Izabella Ayra Antonino de Queiroz" type="application/atom+xml" />
 
 
@@ -98,6 +95,8 @@
     
     <div class="suspension">
       <a title="Go to top" class="to-top is-hide"><span class="icon icon-up"></span></a>
+      
+        
       
     </div>
     
@@ -188,66 +187,136 @@
   </nav>
 </header>
 
-  <section class="main post-list">
-    <header class="list-header offscreen">
-      <h2 class="list-label">Posts List</h2>
+  <section class="main post-detail">
+    <header class="post-header">
+      <h1 class="post-title">Porcentagem de jovens de 15 a 17 anos na escola em 2014</h1>
+      <p class="post-meta">@ · Feb 26, 2018 · 2 min read</p>
     </header>
-    
-    
-      
-        <article class="post-entry">
-  <header class="post-header">
-    <h3 class="post-title"><a href="https://izabellaaaq.github.io/portfolio-vis/post/primeiro-post/" class="post-link">Qual o máximo de volume que o açude de Boqueirão atingiu nos anos de 1990 a 1999? </a></h3>
-    <p class="post-meta">@ · Nov 22, 2017 · 1 min read</p>
-  </header>
-  
-  <p class="post-summary">Percebe-se que a maior média de volume atingido pelo Açude de Boqueirão foi no ano de 1992, com pouco mais de 90% de sua capacidade. No ano de 1990, o açude estava próximo dessa capacidade, porém em 1991 houve uma queda para quase 90%.
+    <article class="post-content"><!DOCTYPE html>
+<meta charset="utf-8">
+<style>
 
-</p>
-  <footer class="post-footer">
-    <a class="read-more" href="https://izabellaaaq.github.io/portfolio-vis/post/primeiro-post/">Read More →</a>
-  </footer>
+/*python -m SimpleHTTPServer*/
+
+.cidades {
+  fill: none;
+  stroke: #fff;
+  stroke-linejoin: round;
+}
+
+path:hover, path.highlighted {
+  fill: tomato;
+}
+
+div.tooltip {
+  position: absolute;
+  background-color: white;
+  border: 1px solid black;
+  color: black;
+  font-family:"avenir next", Arial, sans-serif;
+  padding: 4px 8px;
+  display: none;
+}
+
+</style>
+
+<svg width="1000" height="600"></svg>
+
+<script src="https://d3js.org/d3.v4.min.js"></script>
+<script src="https://d3js.org/d3-scale-chromatic.v1.min.js"></script>
+<script src="https://d3js.org/topojson.v2.min.js"></script>
+<script src="../legenda-d3-cor-br.js"></script>
+<script>
+
+var svg = d3.select("svg"),
+    width = +svg.attr("width"),
+    height = +svg.attr("height");
+
+var path = d3.geoPath();
+
+// a escala de cores
+var color = d3.scaleThreshold()
+      .domain(d3.range(25, 101, 25))
+      .range(d3.schemeRdBu[4]);
+
+// função aux definida em legenda-d3-cor.js
+desenhaLegenda(0, 100, color, "Porcentagem de jovens de 15 a 17 anos na escola em 2014")
+
+d3.queue()
+    .defer(d3.json,  "https://raw.githubusercontent.com/Izabellaaaq/portfolio-vis/master/content/post/data/geo4-municipios-e-educacao-basica-simplificado.json")
+    .await(ready);
+
+function ready(error, dados) {
+  if (error) throw error;
+
+  var cidades = dados.features;
+
+  svg.append("g")
+      .attr("class", "Localidade")
+    .selectAll("path")
+    .data(cidades)
+    .enter()
+    .append("path")
+    .attr("stroke-width", d => {return 0.3 })
+    .attr("stroke", d => {return "#000000" })
+      .attr("fill", d => {valor = d.properties["2014 (%)"]; return valor === "NA" ? '#e0e0eb' : color(valor)})
+      .attr("d", path)
+      .on("mouseover",showTooltip)
+      .on("mousemove",moveTooltip)
+      .on("mouseout",hideTooltip)
+}
+
+// ZOOM
+
+//create zoom handler
+var zoom_handler = d3.zoom()
+    .on("zoom", zoom_actions);
+
+//specify what to do when zoom event listener is triggered
+function zoom_actions(){
+ d3.selectAll("path").attr("transform", d3.event.transform);
+}
+
+//add zoom behaviour to the svg element
+//same as svg.call(zoom_handler);
+zoom_handler(svg);
+
+
+// TOOLTIP
+
+//Create a tooltip, hidden at the start
+var tooltip = d3.select("body").append("div").attr("class","tooltip");
+//Position of the tooltip relative to the cursor
+var tooltipOffset = {x: 5, y: -25};
+
+function showTooltip(d) {
+  moveTooltip();
+
+  tooltip.style("display","block")
+        .text(d.properties.NM_ESTADO + ": " + d.properties["2014 (%)"] + "%");
+}
+
+//Move the tooltip to track the mouse
+function moveTooltip() {
+  tooltip.style("top",(d3.event.pageY+tooltipOffset.y)+"px")
+      .style("left",(d3.event.pageX+tooltipOffset.x)+"px");
+}
+
+//Create a tooltip, hidden at the start
+function hideTooltip() {
+  tooltip.style("display","none");
+}
+
+</script>
 </article>
-
+    <footer class="post-footer">
       
-        <article class="post-entry">
-  <header class="post-header">
-    <h3 class="post-title"><a href="https://izabellaaaq.github.io/portfolio-vis/post/segundo-post/" class="post-link">Mínimo de volume do Açude de Boqueirão entre os anos de 1990 e 1999.</a></h3>
-    <p class="post-meta">@ · Nov 22, 2017 · 1 min read</p>
-  </header>
-  
-  <p class="post-summary">
-</p>
-  <footer class="post-footer">
-    <a class="read-more" href="https://izabellaaaq.github.io/portfolio-vis/post/segundo-post/">Read More →</a>
-  </footer>
-</article>
-
-      
-        <article class="post-entry">
-  <header class="post-header">
-    <h3 class="post-title"><a href="https://izabellaaaq.github.io/portfolio-vis/post/dadospbmapa2/" class="post-link"></a></h3>
-    <p class="post-meta">@ · Jan 1, 0001 · 1 min read</p>
-  </header>
-  
-  <p class="post-summary">title: &#34;Moradores em domicílios particulares permanentes com abastecimento de água da rede geral &#34; date: 2018-02-19T16:44:05-03:00 draft: false ---    Laboratório 3, parte 2      var svg = d3.select(&#34;svg&#34;), width = &#43;svg.attr(&#34;width&#34;), height = &#43;svg.attr(&#34;height&#34;); var x = d3.scaleLinear() .domain([0,7]) .rangeRound([100, 360]); var color = d3.scaleThreshold() .domain(d3.range(0, 5)) .range(d3.schemeOrRd[5]); var g = svg.append(&#34;g&#34;) .attr(&#34;class&#34;, &#34;key&#34;) .attr(&#34;transform&#34;, &#34;translate(0,40)&#34;); g.selectAll(&#34;rect&#34;) .data(color.range().map(function(d) { d = color.invertExtent(d); if (d[0] == null) d[0] = x.</p>
-  <footer class="post-footer">
-    <a class="read-more" href="https://izabellaaaq.github.io/portfolio-vis/post/dadospbmapa2/">Read More →</a>
-  </footer>
-</article>
-
-      
+      <p class="post-copyright">
+        
+      </p>
+    </footer>
     
-    
-      <footer class="list-footer">
-        <nav class="pagination">
-          <h3 class="offscreen">Pagination</h3>
-          
-            <a class="pagination-previous" href="https://izabellaaaq.github.io/portfolio-vis/post/">← Newer Posts</a>
-          
-          
-        </nav>
-      </footer>
+      
     
   </section>
   <footer class="site-footer">
