@@ -17,7 +17,7 @@
       <pubDate>Mon, 26 Feb 2018 16:07:11 -0300</pubDate>
       
       <guid>https://izabellaaaq.github.io/portfolio-vis/post/aprendizadobr/</guid>
-      <description>/*python -m SimpleHTTPServer*/ .cidades { fill: none; stroke: #fff; stroke-linejoin: round; } path:hover, path.highlighted { fill: tomato; } div.tooltip { position: absolute; background-color: white; border: 1px solid black; color: black; font-family:&#34;avenir next&#34;, Arial, sans-serif; padding: 4px 8px; display: none; }        var svg = d3.select(&#34;svg&#34;), width = +svg.attr(&#34;width&#34;), height = +svg.attr(&#34;height&#34;); var path = d3.geoPath(); // a escala de cores var color = d3.</description>
+      <description>Um dos dados que mais preocupam os brasileiros são os relacionados a educação. Com a má qualidade da mesma e a crescente desigualdade social muitos jovens têm abadonado a escola o mais cedo possível. Com isso, outros grandes problemas vão surgindo, como por exemplo, o trabalho infantil.  Abaixo, temos uma visualização que mostra a porcentagem de jovens entre 15 e 17 anos na escola no ano de 2014 nos estados brasileiros.</description>
     </item>
     
     <item>

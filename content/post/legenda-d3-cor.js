@@ -1,12 +1,10 @@
-
-
 /*
  * LEGENDA
  */
 var desenhaLegenda = function(min, max, escalaDeCor, nomeVariavel){
   var x = d3.scaleLinear()
       .domain([min, max])
-      .rangeRound([600,1000]);
+      .rangeRound([600, 860]);
 
   var g = svg.append("g")
       .attr("class", "key")
@@ -31,14 +29,13 @@ var desenhaLegenda = function(min, max, escalaDeCor, nomeVariavel){
       .attr("y", -6)
       .attr("fill", "#000")
       .attr("text-anchor", "start")
-      .attr("font-size", "20")
       .attr("font-weight", "bold")
       .text(nomeVariavel);
 
   g.call(d3.axisBottom(x)
       .tickSize(13)
-      .tickFormat(function(x, i) { return (i ? x : x + "%"); })
-      .tickValues(escalaDeCor.domain()))
+    //  .tickFormat(function(x, i) { return (i ? x : x +); })
+      .tickValues(escalaDeCor.domain().concat(min))
     .select(".domain")
       .remove();
 }
