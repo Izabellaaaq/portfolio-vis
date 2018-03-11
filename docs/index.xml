@@ -6,10 +6,19 @@
     <description>Recent content on Izabella Ayra Antonino de Queiroz</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Mon, 26 Feb 2018 16:07:11 -0300</lastBuildDate>
+    <lastBuildDate>Sun, 11 Mar 2018 11:27:18 -0300</lastBuildDate>
     
 	<atom:link href="https://izabellaaaq.github.io/portfolio-vis/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Intro D3 Redes</title>
+      <link>https://izabellaaaq.github.io/portfolio-vis/post/intro-d3-redes/</link>
+      <pubDate>Sun, 11 Mar 2018 11:27:18 -0300</pubDate>
+      
+      <guid>https://izabellaaaq.github.io/portfolio-vis/post/intro-d3-redes/</guid>
+      <description>D3  .node { fill: #ccc; stroke: #fff; stroke-width: 2px; } .link { stroke: #999; stroke-opacity: 0.3; }    Force layout    1 2 3 4   A preferida do Brasil     var width = 1000, height = 1000; var svg = d3.select(&#34;#chart&#34;) .append(&#34;svg&#34;) .attr(&#39;version&#39;, &#39;1.1&#39;) .attr(&#39;viewBox&#39;, &#39;0 0 &#39;+width+&#39; &#39;+height) .attr(&#39;width&#39;, &#39;100%&#39;); var color = d3.scaleOrdinal(d3.schemeCategory20); var simulation = d3.forceSimulation() .</description>
+    </item>
     
     <item>
       <title>Porcentagem de jovens de 15 a 17 anos na escola em 2014</title>

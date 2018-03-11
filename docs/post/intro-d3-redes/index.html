@@ -5,7 +5,7 @@
   <meta charset="utf-8" />
 
   
-  <title>Maior queda de percentual do Açude de Boqueirão</title>
+  <title>Intro D3 Redes</title>
 
   
   
@@ -15,18 +15,14 @@
 
   
   <meta name="author" content="" />
-  <meta name="description" content="De acordo com os dados analisados, percebe-se que a maior queda de percentual do açude de Boqueirão foi entre 2011 até os dias atuais. Onde, o mesmo tinha 90% de sua capacidade em 2011 e foi caindo aos poucos, chegando a cerca de 8% de volume médio. Lembrando que nos últimos dois anos, tivemos racionamento e em 2017 a chegada das águas do Rio São Francisco por meio da transposição.
-
-" />
+  <meta name="description" content="D3  .node { fill: #ccc; stroke: #fff; stroke-width: 2px; } .link { stroke: #999; stroke-opacity: 0.3; }    Force layout    1 2 3 4   A preferida do Brasil     var width = 1000, height = 1000; var svg = d3.select(&#34;#chart&#34;) .append(&#34;svg&#34;) .attr(&#39;version&#39;, &#39;1.1&#39;) .attr(&#39;viewBox&#39;, &#39;0 0 &#39;&#43;width&#43;&#39; &#39;&#43;height) .attr(&#39;width&#39;, &#39;100%&#39;); var color = d3.scaleOrdinal(d3.schemeCategory20); var simulation = d3.forceSimulation() ." />
 
   
   
     <meta name="twitter:card" content="summary" />
     <meta name="twitter:site" content="@twitter_username" />
-    <meta name="twitter:title" content="Maior queda de percentual do Açude de Boqueirão" />
-    <meta name="twitter:description" content="De acordo com os dados analisados, percebe-se que a maior queda de percentual do açude de Boqueirão foi entre 2011 até os dias atuais. Onde, o mesmo tinha 90% de sua capacidade em 2011 e foi caindo aos poucos, chegando a cerca de 8% de volume médio. Lembrando que nos últimos dois anos, tivemos racionamento e em 2017 a chegada das águas do Rio São Francisco por meio da transposição.
-
-" />
+    <meta name="twitter:title" content="Intro D3 Redes" />
+    <meta name="twitter:description" content="D3  .node { fill: #ccc; stroke: #fff; stroke-width: 2px; } .link { stroke: #999; stroke-opacity: 0.3; }    Force layout    1 2 3 4   A preferida do Brasil     var width = 1000, height = 1000; var svg = d3.select(&#34;#chart&#34;) .append(&#34;svg&#34;) .attr(&#39;version&#39;, &#39;1.1&#39;) .attr(&#39;viewBox&#39;, &#39;0 0 &#39;&#43;width&#43;&#39; &#39;&#43;height) .attr(&#39;width&#39;, &#39;100%&#39;); var color = d3.scaleOrdinal(d3.schemeCategory20); var simulation = d3.forceSimulation() ." />
     <meta name="twitter:image" content="https://izabellaaaq.github.io/img/perfil.jpg" />
   
 
@@ -36,7 +32,7 @@
 <meta name="generator" content="Hugo 0.30.2" />
 
 
-<link rel="canonical" href="https://izabellaaaq.github.io/portfolio-vis/post/terceiro-post/" />
+<link rel="canonical" href="https://izabellaaaq.github.io/portfolio-vis/post/intro-d3-redes/" />
 <link rel="alternative" href="https://izabellaaaq.github.io/portfolio-vis/index.xml" title="Izabella Ayra Antonino de Queiroz" type="application/atom+xml" />
 
 
@@ -193,68 +189,153 @@
 
   <section class="main post-detail">
     <header class="post-header">
-      <h1 class="post-title">Maior queda de percentual do Açude de Boqueirão</h1>
-      <p class="post-meta">@ · Nov 22, 2017 · 1 min read</p>
+      <h1 class="post-title">Intro D3 Redes</h1>
+      <p class="post-meta">@ · Mar 11, 2018 · 1 min read</p>
     </header>
-    <article class="post-content"><p>De acordo com os dados analisados, percebe-se que a maior queda de percentual do açude de Boqueirão foi entre 2011 até os dias atuais. Onde, o mesmo tinha 90% de sua capacidade em 2011 e foi caindo aos poucos, chegando a cerca de 8% de volume médio. Lembrando que nos últimos dois anos, tivemos racionamento e em 2017 a chegada das águas do Rio São Francisco por meio da transposição.</p>
+    <article class="post-content"><!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="shortcut icon" href="https://izabellaaaq.github.io/portfolio-vis/favicon.ico" type="image/x-icon">
+	<link rel="icon" href="https://izabellaaaq.github.io/portfolio-vis/favicon.ico" type="image/x-icon">
+	<title>D3</title>
 
-<p></p>
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans|Roboto+Slab" rel="stylesheet">
+	<link href="css/bootstrap.min.css" rel="stylesheet">
+	<link href="css/main.css" rel="stylesheet">
+	<link href="css/fonts.css" rel="stylesheet">
+	<style>
+			.node {
+			    fill: #ccc;
+			    stroke: #fff;
+			    stroke-width: 2px;
+			}
 
-<div id="vis" width=300></div>
+			.link {
+					stroke: #999;
+					stroke-opacity: 0.3;
+			}
+    </style>
+</head>
+<body>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/vega/3.0.7/vega.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/vega-lite/2.0.1/vega-lite.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/vega-embed/3.0.0-rc7/vega-embed.js"></script>
-<script>
-    const spec = {
-    "$schema": "https://vega.github.io/schema/vega-lite/v2.json",
-  "data": {
-      "url":"https://api.insa.gov.br/reservatorios/12172/monitoramento",
-      "format": {
-          "type": "json",
-          "property": "volumes",
-          "parse": {"DataInformacao": "utc:'%d/%m/%Y'"}
-      }
-  },
-  "mark": "area",
-  "width": 600,
-  "height": 400,
- "transform": [
-    {
-      "filter": {
-        "timeUnit": "year",
-        "field": "DataInformacao",
-        "range": [
-          2010,
-          2017
-        ]
-      }
-    }
-    
-  ],
-  
-"encoding": {
-  "x": {
-    "timeUnit": "year",
-    "field": "DataInformacao",
-    "type": "temporal",
-    "axis": {"title": "Anos"}
-  },
-  "y": {
-    "aggregate": "mean",
-    "field": "VolumePercentual",
-    "type": "quantitative",
-    "axis": {"title": "Média do volume (%)"}
-  }
-}
+	<div class="container">
 
-     };
-    vegaEmbed('#vis', spec).catch(console.warn);
-</script></article>
+		<div class="header">
+			<div class="row">
+				<div class="col-xs-10">
+					<h2>Force layout</h2>
+				</div>
+			</div>
+		</div>
+		<ol class="breadcrumb">
+			<li><a href="networks1.html">1</a></li>
+			<li><a href="networks2.html">2</a></li>
+			<li><a href="networks3.html">3</a></li>
+			<li><a href="networks4.html">4</a></li>
+		</ol>
+		<header>
+			<h1>A preferida do Brasil</h1>
+		</header>
+
+		<div id="chart"></div>
+
+
+<!-- scripts -->
+	<script src="js/d3.v4.min.js"></script>
+	<script>
+		var
+		    width = 1000,
+		    height = 1000;
+
+		var svg = d3.select("#chart")
+				.append("svg")
+				.attr('version', '1.1')
+				.attr('viewBox', '0 0 '+width+' '+height)
+				.attr('width', '100%');
+
+		var color = d3.scaleOrdinal(d3.schemeCategory20);
+
+		var simulation = d3.forceSimulation()
+		    .force("link", d3.forceLink().id(function(d) { return d.id; }))
+		    .force("charge", d3.forceManyBody())
+		    .force("center", d3.forceCenter(width / 2, height / 2));
+
+		d3.json("https://raw.githubusercontent.com/Izabellaaaq/portfolio-vis/master/content/post/data/artistas.json", function(error, graph) {
+		  if (error) throw error;
+
+			console.dir(graph.edges);
+			console.dir(graph.nodes);
+
+		  var link = svg.append("g")
+		      .attr("class", "link")
+		    .selectAll("line")
+		    	.data(graph.edges)
+		    .enter().append("line");
+
+		  var node = svg.append("g")
+		      .attr("class", "nodes")
+		    .selectAll("circle")
+		    	.data(graph.nodes)
+		    .enter().append("circle")
+		      .attr("r", 5)
+		      .attr("fill", function(d) { return color(d.group); })
+		      .call(d3.drag()
+		          .on("start", dragstarted)
+		          .on("drag", dragged)
+		          .on("end", dragended));
+
+		  node.append("title")
+		      .text(function(d) { return d.label; });
+
+		  simulation
+		      .nodes(graph.nodes)
+		      .on("tick", ticked);
+
+		  simulation.force("link")
+		      .links(graph.edges);
+
+		  function ticked() {
+		    link
+		        .attr("x1", function(d) { return d.source.x; })
+		        .attr("y1", function(d) { return d.source.y; })
+		        .attr("x2", function(d) { return d.target.x; })
+		        .attr("y2", function(d) { return d.target.y; });
+
+		    node
+		        .attr("cx", function(d) { return d.x; })
+		        .attr("cy", function(d) { return d.y; });
+		  }
+		});
+
+		function dragstarted(d) {
+		  if (!d3.event.active) simulation.alphaTarget(0.3).restart();
+		  d.fx = d.x;
+		  d.fy = d.y;
+		}
+
+		function dragged(d) {
+		  d.fx = d3.event.x;
+		  d.fy = d3.event.y;
+		}
+
+		function dragended(d) {
+		  if (!d3.event.active) simulation.alphaTarget(0);
+		  d.fx = null;
+		  d.fy = null;
+		}
+
+</script>
+
+</body>
+</html>
+</article>
     <footer class="post-footer">
       
       <p class="post-copyright">
-        This post was published <strong>109</strong> days ago, content in the post may be inaccurate, even wrong now, please take risk yourself.
+        
       </p>
     </footer>
     
