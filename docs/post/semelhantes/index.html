@@ -5,7 +5,7 @@
   <meta charset="utf-8" />
 
   
-  <title></title>
+  <title>Semelhanças no Spotify</title>
 
   
   
@@ -15,14 +15,14 @@
 
   
   <meta name="author" content="" />
-  <meta name="description" content="title: &#34;Moradores em domicílios particulares permanentes com abastecimento de água da rede geral &#34; date: 2018-02-19T16:44:05-03:00 draft: false ---    Laboratório 3, parte 2      var svg = d3.select(&#34;svg&#34;), width = &#43;svg.attr(&#34;width&#34;), height = &#43;svg.attr(&#34;height&#34;); var x = d3.scaleLinear() .domain([0,7]) .rangeRound([100, 360]); var color = d3.scaleThreshold() .domain(d3.range(0, 5)) .range(d3.schemeOrRd[5]); var g = svg.append(&#34;g&#34;) .attr(&#34;class&#34;, &#34;key&#34;) .attr(&#34;transform&#34;, &#34;translate(0,40)&#34;); g.selectAll(&#34;rect&#34;) .data(color.range().map(function(d) { d = color.invertExtent(d); if (d[0] == null) d[0] = x." />
+  <meta name="description" content="D3  .node { fill: #ccc; stroke: #fff; stroke-width: 2px; } .link { stroke: #999; stroke-opacity: 0.3; }    Force layout    1 2 3 4   A preferida do Brasil   O que        var width = 1000, height = 1000; var svg = d3.select(&#34;#chart&#34;) .append(&#34;svg&#34;) .attr(&#39;version&#39;, &#39;1.1&#39;) .attr(&#39;viewBox&#39;, &#39;0 0 &#39;&#43;width&#43;&#39; &#39;&#43;height) .attr(&#39;width&#39;, &#39;100%&#39;); var color = d3." />
 
   
   
     <meta name="twitter:card" content="summary" />
     <meta name="twitter:site" content="@twitter_username" />
-    <meta name="twitter:title" content="" />
-    <meta name="twitter:description" content="title: &#34;Moradores em domicílios particulares permanentes com abastecimento de água da rede geral &#34; date: 2018-02-19T16:44:05-03:00 draft: false ---    Laboratório 3, parte 2      var svg = d3.select(&#34;svg&#34;), width = &#43;svg.attr(&#34;width&#34;), height = &#43;svg.attr(&#34;height&#34;); var x = d3.scaleLinear() .domain([0,7]) .rangeRound([100, 360]); var color = d3.scaleThreshold() .domain(d3.range(0, 5)) .range(d3.schemeOrRd[5]); var g = svg.append(&#34;g&#34;) .attr(&#34;class&#34;, &#34;key&#34;) .attr(&#34;transform&#34;, &#34;translate(0,40)&#34;); g.selectAll(&#34;rect&#34;) .data(color.range().map(function(d) { d = color.invertExtent(d); if (d[0] == null) d[0] = x." />
+    <meta name="twitter:title" content="Semelhanças no Spotify" />
+    <meta name="twitter:description" content="D3  .node { fill: #ccc; stroke: #fff; stroke-width: 2px; } .link { stroke: #999; stroke-opacity: 0.3; }    Force layout    1 2 3 4   A preferida do Brasil   O que        var width = 1000, height = 1000; var svg = d3.select(&#34;#chart&#34;) .append(&#34;svg&#34;) .attr(&#39;version&#39;, &#39;1.1&#39;) .attr(&#39;viewBox&#39;, &#39;0 0 &#39;&#43;width&#43;&#39; &#39;&#43;height) .attr(&#39;width&#39;, &#39;100%&#39;); var color = d3." />
     <meta name="twitter:image" content="https://izabellaaaq.github.io/img/perfil.jpg" />
   
 
@@ -32,7 +32,7 @@
 <meta name="generator" content="Hugo 0.30.2" />
 
 
-<link rel="canonical" href="https://izabellaaaq.github.io/portfolio-vis/post/dadospbmapa2/" />
+<link rel="canonical" href="https://izabellaaaq.github.io/portfolio-vis/post/semelhantes/" />
 <link rel="alternative" href="https://izabellaaaq.github.io/portfolio-vis/index.xml" title="Izabella Ayra Antonino de Queiroz" type="application/atom+xml" />
 
 
@@ -189,78 +189,170 @@
 
   <section class="main post-detail">
     <header class="post-header">
-      <h1 class="post-title"></h1>
-      <p class="post-meta">@ · Jan 1, 0001 · 1 min read</p>
+      <h1 class="post-title">Semelhanças no Spotify</h1>
+      <p class="post-meta">@ · Mar 11, 2018 · 1 min read</p>
     </header>
-    <article class="post-content">title: "Moradores em domicílios particulares permanentes com abastecimento de água
-da rede geral "
-date: 2018-02-19T16:44:05-03:00
-draft: false
----
-<!DOCTYPE html>
-<meta charset="utf-8">
+    <article class="post-content"><!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="shortcut icon" href="https://izabellaaaq.github.io/portfolio-vis/favicon.ico" type="image/x-icon">
+	<link rel="icon" href="https://izabellaaaq.github.io/portfolio-vis/favicon.ico" type="image/x-icon">
+	<title>D3</title>
 
-<style>
-</style>
-<p> Laboratório 3, parte 2 </p>
-<img src="https://izabellaaaq.github.io/portfolio-vis/post/data/pb-mapa2.svg" width="570" height="auto">
-<svg width="400" height="300"></svg>
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans|Roboto+Slab" rel="stylesheet">
+	<link href="css/bootstrap.min.css" rel="stylesheet">
+	<link href="css/main.css" rel="stylesheet">
+	<link href="css/fonts.css" rel="stylesheet">
+	<style>
+			.node {
+			    fill: #ccc;
+			    stroke: #fff;
+			    stroke-width: 2px;
+			}
 
-<script src="https://d3js.org/d3.v4.min.js"></script>
-<script src="https://d3js.org/d3-scale-chromatic.v1.min.js"></script>
-<script src="https://d3js.org/topojson.v2.min.js"></script>
-<script>
+			.link {
+					stroke: #999;
+					stroke-opacity: 0.3;
+			}
+    </style>
+</head>
+<body>
 
-var svg = d3.select("svg"),
-    width = +svg.attr("width"),
-    height = +svg.attr("height");
+	<div class="container">
 
-var x = d3.scaleLinear()
-    .domain([0,7])
-    .rangeRound([100, 360]);
+		<div class="header">
+			<div class="row">
+				<div class="col-xs-10">
+					<h2>Force layout</h2>
+				</div>
+			</div>
+		</div>
+		<ol class="breadcrumb">
+			<li><a href="networks1.html">1</a></li>
+			<li><a href="networks2.html">2</a></li>
+			<li><a href="networks3.html">3</a></li>
+			<li><a href="networks4.html">4</a></li>
+		</ol>
+		<header>
+			<h1>A preferida do Brasil</h1>
+		</header>
 
-var color = d3.scaleThreshold()
-    .domain(d3.range(0, 5))
-    .range(d3.schemeOrRd[5]);
+		<div id="chart"></div>
 
-var g = svg.append("g")
-    .attr("class", "key")
-    .attr("transform", "translate(0,40)");
+		<div class="section">
 
-g.selectAll("rect")
-  .data(color.range().map(function(d) {
-      d = color.invertExtent(d);
-      if (d[0] == null) d[0] = x.domain()[0];
-      if (d[1] == null) d[1] = x.domain()[1];
-      return d;
-    }))
-  .enter().append("rect")
-    .attr("height", 6)
-    .attr("x", function(d) { return x(d[0]); })
-    .attr("width", function(d) { return x(d[1]) - x(d[0]); })
-    .attr("fill", function(d) { return color(d[0]); });
+			<div class="row">
+				<div class="col-md-8">
+					<h3>O que</h3>
 
-g.append("text")
-    .attr("class", "caption")
-    .attr("x", x.range()[0])
-    .attr("y", -6)
-    .attr("fill", "#000")
-    .attr("text-anchor", "start")
-    .attr("font-weight", "bold")
-    .text("Moradores com abastecimento");
+				</div>
+			</div>
+		</div>
+	</div>
 
-g.call(d3.axisBottom(x)
-    .tickSize(13)
-    .tickFormat(function(x, i) { return i ? x * 500   : x; })
-    .tickValues(color.domain()))
-  .select(".domain")
-    .remove();
-</script> -->
+	<footer></footer>
+
+	<!-- scripts -->
+	<script src="js/d3.v4.min.js"></script>
+	<script>
+		var
+		    width = 1000,
+		    height = 1000;
+
+		var svg = d3.select("#chart")
+				.append("svg")
+				.attr('version', '1.1')
+				.attr('viewBox', '0 0 '+width+' '+height)
+				.attr('width', '100%');
+
+		var color = d3.scaleOrdinal(d3.schemeCategory20);
+
+		var simulation = d3.forceSimulation()
+		    .force("link", d3.forceLink().id(function(d) { return d.id; }))
+		    .force("charge", d3.forceManyBody().strength(-5))
+		    .force("center", d3.forceCenter(width / 2, height / 2));
+
+
+		d3.json("https://raw.githubusercontent.com/Izabellaaaq/portfolio-vis/master/content/post/data/artistas.json", function(error, graph) {
+		  if (error) throw error;
+
+			console.dir(graph.edges);
+			console.dir(graph.nodes);
+
+		  var link = svg.append("g")
+		      .attr("class", "link")
+		    .selectAll("line")
+		    	.data(graph.edges)
+		    .enter().append("line");
+
+		  var node = svg.append("g")
+		      .attr("class", "nodes")
+		    .selectAll("circle")
+		    	.data(graph.nodes)
+		    .enter().append("circle")
+            .attr("r", function(d) { return d.size/8; })
+            .attr("fill", function(d) { return color(d.size); })
+
+		      .call(d3.drag()
+		          .on("start", dragstarted)
+		          .on("drag", dragged)
+		          .on("end", dragended));
+
+		  node._groups[0][0].setAttribute("fill", "#000");
+
+
+		  node.append("title")
+		      .text(function(d) { return d.label; });
+
+		  simulation
+		      .nodes(graph.nodes)
+		      .on("tick", ticked);
+
+		  simulation.force("link")
+		      .links(graph.edges);
+
+		  function ticked() {
+		    link
+		        .attr("x1", function(d) { return d.source.x; })
+		        .attr("y1", function(d) { return d.source.y; })
+		        .attr("x2", function(d) { return d.target.x; })
+		        .attr("y2", function(d) { return d.target.y; });
+
+		    node
+		        .attr("cx", function(d) { return d.x; })
+		        .attr("cy", function(d) { return d.y; });
+		  }
+		});
+
+		function dragstarted(d) {
+		  if (!d3.event.active) simulation.alphaTarget(0.3).restart();
+		  d.fx = d.x;
+		  d.fy = d.y;
+		}
+
+		function dragged(d) {
+		  d.fx = d3.event.x;
+		  d.fy = d3.event.y;
+		}
+
+		function dragended(d) {
+		  if (!d3.event.active) simulation.alphaTarget(0);
+		  d.fx = null;
+		  d.fy = null;
+		}
+
+</script>
+
+</body>
+</html>
 </article>
     <footer class="post-footer">
       
       <p class="post-copyright">
-        This post was published <strong>736764</strong> days ago, content in the post may be inaccurate, even wrong now, please take risk yourself.
+        
       </p>
     </footer>
     

@@ -1,8 +1,9 @@
 ---
-title: "Intro D3 Redes"
-date: 2018-03-11T11:27:18-03:00
-draft: false 
+title: "Semelhanças no Spotify"
+date: 2018-03-11T21:51:09-03:00
+draft: false
 ---
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -53,8 +54,20 @@ draft: false
 
 		<div id="chart"></div>
 
+		<div class="section">
 
-<!-- scripts -->
+			<div class="row">
+				<div class="col-md-8">
+					<h3>O que</h3>
+
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<footer></footer>
+
+	<!-- scripts -->
 	<script src="js/d3.v4.min.js"></script>
 	<script>
 		var
@@ -71,8 +84,9 @@ draft: false
 
 		var simulation = d3.forceSimulation()
 		    .force("link", d3.forceLink().id(function(d) { return d.id; }))
-		    .force("charge", d3.forceManyBody())
+		    .force("charge", d3.forceManyBody().strength(-5))
 		    .force("center", d3.forceCenter(width / 2, height / 2));
+
 
 		d3.json("https://raw.githubusercontent.com/Izabellaaaq/portfolio-vis/master/content/post/data/artistas.json", function(error, graph) {
 		  if (error) throw error;
@@ -91,12 +105,16 @@ draft: false
 		    .selectAll("circle")
 		    	.data(graph.nodes)
 		    .enter().append("circle")
-		      .attr("r", 5)
-		      .attr("fill", function(d) { return color(d.group); })
+            .attr("r", function(d) { return d.size/8; })
+            .attr("fill", function(d) { return color(d.size); })
+
 		      .call(d3.drag()
 		          .on("start", dragstarted)
 		          .on("drag", dragged)
 		          .on("end", dragended));
+
+		  node._groups[0][0].setAttribute("fill", "#000");
+
 
 		  node.append("title")
 		      .text(function(d) { return d.label; });
